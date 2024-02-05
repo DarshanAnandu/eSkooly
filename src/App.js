@@ -1,12 +1,12 @@
 import './App.css';
-import { BrowserRouter as Router } from 'react-router-dom';
+// import { BrowserRouter as Router } from 'react-router-dom';
 import Dashboard from './components/pages/Dashboard';
 
 function App() {
   return (
-    <Router>
+    <div>
       <Dashboard />
-    </Router>
+    </div>
   );
 }
 
