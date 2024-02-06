@@ -1,20 +1,30 @@
-import React from 'react';
-// import { a } from "react-router-dom";
-// flex items-stretch min-h-12 w-full
+import React from 'react'
+import { RxHamburgerMenu } from "react-icons/rx";
+import { CiSearch } from "react-icons/ci";
+import { TfiFullscreen } from "react-icons/tfi";
+
 const NavDashboard = () => {
     return (
-        <div className='navbar-placeholder'>
-            <nav className='nav-placeholder navbar navbar-wrapper navbar-default navbar-fade is-transparent' style={{
-                backgroundColor: 'linear-gradient(href right, #09327f, #06183b)',
-            }}>
-                <div className='navContainer h-full w-full'>
-                    <div className='brand h-full w-full'>
-                        <a href="/" className='navbar-item h-full w-full'>
-                            <img src='https://eskooly.com/assets/images/logos/logoxx.png' className='navBrand' alt='logo' />
-                        </a>
-                    </div>
-                </div>
-            </nav>
+        <div className="h-14 d-bg flex items-center">
+            <div className='h-full w-60 flex items-center justify-between p-2.5'>
+                <img src="https://eskooly.com/bb/assets/images/logo.png" className="pl-7 max-h-11" alt="eSkooly-Logo" />
+                <RxHamburgerMenu color="white" fontSize="30px" />
+            </div>
+            <div>
+                <ul className='flex items-center'>
+                    <li></li>
+                    <li className='p-2'>
+                        <CiSearch color='white' fontSize="30px" />
+                    </li>
+                    <li className='p-1'>
+                        <TfiFullscreen color='white' fontSize="30px" />
+                    </li>
+                </ul>
+                <ul>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
         </div>
     )
 }
