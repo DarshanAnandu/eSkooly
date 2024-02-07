@@ -1,13 +1,13 @@
 import './App.css';
 // import { BrowserRouter as Router } from 'react-router-dom';
 // import Home from './components/pages/Home';
-import Dashboard from './components/pages/Dashboard'
+import Pages from './components/pages/Pages'
 
 function App() {
   return (
     <div>
       {/* <Home /> */}
-      <Dashboard/>
+      <Pages/>
     </div>
   );
 }

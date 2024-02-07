@@ -31,6 +31,23 @@ body {
   background: linear-gradient(to right, #0071f3, #73b4ff);
 }
 
+.mar-min {
+  margin-top: -20px;
+}
+
+.max-w {
+  /* max-width: 450px; */
+  max-width: 100%;
+}
+
+.bg-m-dblue {
+  background: linear-gradient(45deg, #4d4cac, #5a59ab)!important;
+}
+
+.bg-m-gray {
+  background: linear-gradient(45deg, #9698d6, #a9abdb) !important;
+}
+
 .sideNav-shadow {
   box-shadow: 2.4px 0px #888888;
 }
