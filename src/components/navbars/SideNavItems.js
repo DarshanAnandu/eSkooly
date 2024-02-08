@@ -15,6 +15,7 @@ const SideNavItems = [
         name: 'General Settings',
         icon: '',
         dropdown: true,
+        drop: false,
         Lock: false,
         subItems: [
             { idx: 0, name: 'Institute Profile', icon: '' },

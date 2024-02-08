@@ -3,12 +3,12 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { CiSearch } from "react-icons/ci";
 import { TfiFullscreen } from "react-icons/tfi";
 
-const NavDashboard = () => {
+const NavDashboard = ({sidebar, toggle}) => {
     return (
         <div className="h-14 d-bg flex items-center">
             <div className='h-full w-60 flex items-center justify-between p-2.5'>
                 <img src="https://eskooly.com/bb/assets/images/logo.png" className="pl-7 max-h-11" alt="eSkooly-Logo" />
-                <RxHamburgerMenu color="white" fontSize="30px" />
+                <RxHamburgerMenu color="white" fontSize="30px" onClick={() => toggle(!sidebar)} />
             </div>
             <div>
                 <ul className='flex items-center'>

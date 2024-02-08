@@ -35,13 +35,17 @@ body {
   margin-top: -20px;
 }
 
+.bord {
+  border: 1px solid rgba(0,0,0,.125);
+}
+
 .max-w {
   /* max-width: 450px; */
-  max-width: 100%;
+  width: 25%;
 }
 
 .bg-m-dblue {
-  background: linear-gradient(45deg, #4d4cac, #5a59ab)!important;
+  background: linear-gradient(45deg, #4d4cac, #5a59ab) !important;
 }
 
 .bg-m-gray {
