@@ -31,21 +31,59 @@ body {
   background: linear-gradient(to right, #0071f3, #73b4ff);
 }
 
+.bod-in {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+.bod-sin {
+  border: 1px solid #9698d6;
+}
+.lab-txt {
+  color: #9698d6;
+}
+.acc-det-bg {
+  background:
+    url(https://eskooly.com/bb/assets/bl.png) left bottom no-repeat,
+    url(https://eskooly.com/bb/assets/tr1.png) top right no-repeat;
+  background-size: 60px;
+}
+.bod-ip {
+  width: 120px;
+  height: 120px;
+  border: 4px solid gray;
+  border-radius: 60px;
+  margin: 0 auto;
+  padding-top: 25px;
+  background: #c3bfbf52;
+}
 .mar-min {
   margin-top: -20px;
 }
 
 .bord {
-  border: 1px solid rgba(0,0,0,.125);
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 .max-w {
   /* max-width: 450px; */
-  width: 25%;
+  width: 23%;
+}
+.ww {
+  width: 30px;
+}
+
+.bg-sms {
+  background-image: linear-gradient(45deg, rgb(77, 76, 172), rgb(90, 89, 171));
+}
+
+.mar-sms {
+  margin-top: -25px;
 }
 
 .bg-m-dblue {
   background: linear-gradient(45deg, #4d4cac, #5a59ab) !important;
+}
+.bg-m-orange {
+  background: linear-gradient(45deg, #ff808b, #f79099) !important;
 }
 
 .bg-m-gray {

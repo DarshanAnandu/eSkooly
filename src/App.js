@@ -5,7 +5,7 @@ import Pages from './components/pages/Pages'
 
 function App() {
   return (
-    <div>
+    <div className='overflow-auto'>
       {/* <Home /> */}
       <Pages/>
     </div>

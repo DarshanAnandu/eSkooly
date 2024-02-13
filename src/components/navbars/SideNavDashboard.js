@@ -7,16 +7,17 @@ import SideNavItems from "./SideNavItems";
 
 const SideNavDashboard = ({ selectedTab, onTabChange }) => {
   const [hoveredIdx, setHoveredIdx] = useState(null);
+  const [hoveredSubIdx, setHoveredSubIdx] = useState(null);
   // console.log(SideNavItems[0].goto)
   return (
-    <div className=' w-56 sideNav-shadow overflow-y-auto'>
+    <div className='z-50 w-60 h-full sideNav-shadow overflow-y-auto'>
       {/* <span className='py-2.5 px-3.5'></span> */}
       <ul className=''>
         <li className='px-2.5 py-1.5'><span></span>menu</li>
         {SideNavItems.map((items) => (
           <li
             key={items.idx}
-            className={`px-5 py-1.5 w-full cursor-pointer ${hoveredIdx === items.idx ? 'text-blue-600 ' : ''
+            className={`px-5 py-1.5 w-full cursor-pointer hover: ${hoveredIdx === items.idx ? 'text-blue-600 ' : ''
               } ${!items.dropdown && selectedTab === items.idx ? 'border-l-4 border-indigo-500' : ''}`}
             onMouseEnter={() => setHoveredIdx(items.idx)}
             onMouseLeave={() => setHoveredIdx(null)}
@@ -24,7 +25,7 @@ const SideNavDashboard = ({ selectedTab, onTabChange }) => {
               if (items.dropdown) {
                 items.drop = !items.drop;
               } else {
-                onTabChange(items.idx, items.goto);
+                onTabChange(items.idx, null);
               }
             }}
           >
@@ -33,17 +34,17 @@ const SideNavDashboard = ({ selectedTab, onTabChange }) => {
                 <span className='p-1 pt-2 mr-2.5 inline-block items-center h-8 w-8 rounded'>{items.icon}</span>
                 <span className='text-sm'>{items.name}</span>
               </div>
-              {items.dropdown ? <div className='flex items-center w-2 justify-end'>{items.drop ? <FaMinus color='gray' /> : <FaPlus color='gray' />}</div> : null}
+              {items.dropdown ? <div className='flex items-center w-2 justify-end'>{items.drop ? <FaMinus color='gray' /> : <FaPlus color='gray' />}</div>: null}
             </div>
             {items.dropdown && items.drop ? <ul>
               {items.subItems.map((item) => (
                 <li
                   key={item.idx}
-                  className={`px-5 py-1.5 w-full cursor-pointer ${hoveredIdx === item.idx ? 'text-blue-600 ' : ''
+                  className={`px-5 py-1.5 w-full cursor-pointer ${hoveredSubIdx === item.idx ? 'text-blue-600 ' : ''
                     } ${selectedTab === item.idx ? 'border-l-4 border-indigo-500' : ''}`}
-                  onMouseEnter={() => setHoveredIdx(item.idx)}
-                  onMouseLeave={() => setHoveredIdx(null)}
-                  onClick={() => onTabChange(item.idx, item.idx)}
+                  onMouseEnter={() => setHoveredSubIdx(item.idx)}
+                  onMouseLeave={() => setHoveredSubIdx(null)}
+                  onClick={() => onTabChange(items.idx, item.idx)}
                 >
                   <div className='flex items-center w-full'>
                     <div className='flex items-center'>
