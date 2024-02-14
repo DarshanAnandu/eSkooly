@@ -8,7 +8,7 @@ const NavDashboard = ({sidebar, toggle}) => {
         <div className="h-14 d-bg flex items-center">
             <div className='h-full w-60 flex items-center justify-between p-2.5'>
                 <img src="https://eskooly.com/bb/assets/images/logo.png" className="pl-7 max-h-11" alt="eSkooly-Logo" />
-                <RxHamburgerMenu color="white" fontSize="30px" onClick={() => toggle(!sidebar)} />
+                <RxHamburgerMenu color="white" fontSize="30px" className='cursor-pointer' onClick={() => toggle(!sidebar)} />
             </div>
             <div>
                 <ul className='flex items-center'>

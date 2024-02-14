@@ -1,56 +1,69 @@
 import React from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa";
 // import { AiOutlineHome } from "react-icons/ai";
 import SideNavItems from "./SideNavItems";
-
 const SideNavDashboard = ({ selectedTab, onTabChange }) => {
   const [hoveredIdx, setHoveredIdx] = useState(null);
-  const [hoveredSubIdx, setHoveredSubIdx] = useState(null);
-  // console.log(SideNavItems[0].goto)
+  // const [hoveredSubIdx, setHoveredSubIdx] = useState(null);
+  const [expandedDropdown, setExpandedDropdown] = useState(null);
+
+  const toggleDropdown = (idx) => {
+    setExpandedDropdown((prev) => (prev === idx ? null : idx));
+    console.log(expandedDropdown);
+  };
+
+  const handleItemClick = (idx, dropdown) => {
+    if (dropdown) {
+      if (expandedDropdown === idx) {
+        setExpandedDropdown(null);
+      } else {
+        setExpandedDropdown(idx);
+      }
+    } else {
+      onTabChange(idx, null);
+    }
+  };
+
   return (
-    <div className='z-50 w-60 h-full sideNav-shadow overflow-y-auto'>
-      {/* <span className='py-2.5 px-3.5'></span> */}
+    <div className='z-50 w-60 h-screen sideNav-shadow overflow-auto'>
       <ul className=''>
         <li className='px-2.5 py-1.5'><span></span>menu</li>
         {SideNavItems.map((items) => (
           <li
             key={items.idx}
-            className={`px-5 py-1.5 w-full cursor-pointer hover: ${hoveredIdx === items.idx ? 'text-blue-600 ' : ''
-              } ${!items.dropdown && selectedTab === items.idx ? 'border-l-4 border-indigo-500' : ''}`}
+            className={`px-5 py-1.5 w-full cursor-pointer hover:${hoveredIdx === items.idx ? 'text-blue-600 ' : ''} ${!items.dropdown && selectedTab === items.idx ? 'border-l-4 border-indigo-500' : ''}`}
+            onClick={() => handleItemClick(items.idx, items.dropdown)}
             onMouseEnter={() => setHoveredIdx(items.idx)}
             onMouseLeave={() => setHoveredIdx(null)}
-            onClick={() => {
-              if (items.dropdown) {
-                items.drop = !items.drop;
-              } else {
-                onTabChange(items.idx, null);
-              }
-            }}
           >
-            <div className='flex items-center justify-between w-full'>
-              <div className='flex items-center'>
-                <span className='p-1 pt-2 mr-2.5 inline-block items-center h-8 w-8 rounded'>{items.icon}</span>
-                <span className='text-sm'>{items.name}</span>
+            <Link to={items.goto} className='flex items-center justify-between w-full'>
+              <div className='flex items-center justify-between w-full'>
+                <div className='flex items-center'>
+                  <span className='p-1 pt-2 mr-2.5 inline-block items-center h-8 w-8 rounded'>{items.icon}</span>
+                  <span className='text-sm'>{items.name}</span>
+                </div>
+                {items.dropdown ? <div className='flex items-center w-2 justify-end'>{expandedDropdown === items.idx ? <FaMinus color='gray' /> : <FaPlus color='gray' />}</div> : null}
               </div>
-              {items.dropdown ? <div className='flex items-center w-2 justify-end'>{items.drop ? <FaMinus color='gray' /> : <FaPlus color='gray' />}</div>: null}
-            </div>
-            {items.dropdown && items.drop ? <ul>
+            </Link>
+            {items.dropdown && expandedDropdown === items.idx ? <ul>
               {items.subItems.map((item) => (
                 <li
                   key={item.idx}
-                  className={`px-5 py-1.5 w-full cursor-pointer ${hoveredSubIdx === item.idx ? 'text-blue-600 ' : ''
-                    } ${selectedTab === item.idx ? 'border-l-4 border-indigo-500' : ''}`}
-                  onMouseEnter={() => setHoveredSubIdx(item.idx)}
-                  onMouseLeave={() => setHoveredSubIdx(null)}
+                  className={`px-5 py-1.5 w-full cursor-pointer ${hoveredIdx === item.idx ? 'text-blue-600 ' : ''} ${selectedTab === item.idx ? 'border-l-4 border-indigo-500' : ''}`}
                   onClick={() => onTabChange(items.idx, item.idx)}
+                  onMouseEnter={() => setHoveredIdx(item.idx)}
+                  onMouseLeave={() => setHoveredIdx(null)}
                 >
-                  <div className='flex items-center w-full'>
-                    <div className='flex items-center'>
-                      <span className='text-sm'>{item.name}</span>
+                  <Link to={item.goto} className='flex items-center justify-between w-full'>
+                    <div className='flex items-center w-full'>
+                      <div className='flex items-center'>
+                        <span className='text-sm'>{item.name}</span>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </li>
               ))}
             </ul> : null}
@@ -58,8 +71,8 @@ const SideNavDashboard = ({ selectedTab, onTabChange }) => {
         ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
 export default SideNavDashboard;
 

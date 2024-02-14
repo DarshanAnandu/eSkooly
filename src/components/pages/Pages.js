@@ -1,4 +1,5 @@
 import React from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import PageNav from '../navbars/NavDashboard'
 import SideNavPage from '../navbars/SideNavDashboard'
 import { useState } from 'react';
@@ -24,6 +25,11 @@ import { FiAlignLeft } from "react-icons/fi";
 import { CiSettings } from "react-icons/ci";
 import { CiLock } from "react-icons/ci";
 import { IoTrashOutline } from "react-icons/io5";
+import { FaMinus, FaPlus } from "react-icons/fa";
+import { CiSearch } from "react-icons/ci";
+import { AiOutlineIdcard } from "react-icons/ai";
+import { TfiPrinter } from "react-icons/tfi";
+import { CiImport } from "react-icons/ci";
 
 
 // import SideNavItems from "./SideNavItems";
@@ -32,8 +38,8 @@ const Dashboard = () => {
   const Display = () => {
     return (
       <div>
-        <div className='p-8 flex flex-wrap w-full justify-around'>
-          <div className='p-6 max-w min-w-48  min-h-36 mx-2 mb-2 mr-0 w-1/6 flex flex-col bg-m-dblue hover:shadow-2xl rounded-2xl text-white'>
+        <div className='p-8 flex flex-wrap justify-around sm:justify-start md:justify-center lg:justify-between xl:justify-around'>
+          <div className='p-6 max-w min-w-48  min-h-36 mx-2 mb-2 mr-0 w-1/6 flex flex-col bg-m-dblue hover:shadow-2xl rounded-2xl xl:w-1/4 text-white'>
             <h6 className='mb-3 text-lg font-semibold'>Total Students</h6>
             <h2 className='flex mb-2 justify-between font-semibold text-4xl'>
               <span><FaRegUser /></span>
@@ -228,7 +234,7 @@ const Dashboard = () => {
     </div>
   );
 };
-const GeneralSettings = (subtab) => {
+const GeneralSettings = () => {
   const InstitureProfile = () => {
     const UpdateInstituteLogo = () => {
       return (
@@ -623,14 +629,18 @@ const GeneralSettings = (subtab) => {
       {/* <MarksGradings /> */}
       {/* <ThemeAndLanguage /> */}
       {/* <AccountSettings /> */}
-      {subtab === 0 ? <InstitureProfile /> :
+      {/* {subtab === 0 ? <InstitureProfile /> :
         subtab === 1 ? <FeeParticulars /> :
           subtab === 4 ? <DetailsForFeeChallan /> :
             subtab === 5 ? <RulesAndRegulations /> :
               subtab === 6 ? <MarksGradings /> :
                 subtab === 7 ? <ThemeAndLanguage /> :
                   subtab === 8 ? <AccountSettings /> :
-                    subtab === 9 ? null : null}
+                    subtab === 9 ? null : null} */}
+      {/* <Routes>
+        <Route path='/Institute-Profile' element={<InstitureProfile />} />
+        <Route path='/General-Settings/Fee-Particulars' element={<FeeParticulars />} />
+      </Routes> */}
     </div>
   );
 }
@@ -682,48 +692,74 @@ const Classes = () => {
 }
 // Subjects
 const Subjects = () => {
-  const AllClasses = () => {
+  const ClassesWithSubjects = () => {
     return (
       <div className='hover:shadow-2xl shadow flex flex-col p-9 text-white w-1/5 rounded-2xl cursor-pointer bg-red-400 items-center text-2xl'>
         <span className='text-4xl'>+</span>
-        <h2>Add New</h2>
-      </div>
-    );
-  }
-  const ClassesWithSubjects = () => {
-    return (
-      <div className='flex flex-col justify-center items-center w-full'>
-        <input type='text' name='fileToUpload' className='bod-in w-1/3 mt-2 p-2' placeholder='Name of Class' required />
-        <input type='text' name='fileToUpload' className='bod-in w-1/3 mt-2 p-2' placeholder='Monthly Tution Fees' required />
-        {/* <input type='file' name='fileToUpload' className='bod-in w-full p-2' required /> */}
-        <select id="feeFor" placeholder="---- Select Class Teacher ----" className="w-1/3 mt-2 p-2 focus:ring-blue-500 focus:border-blue-500">
-          <option selected>---- Select Class Teacher ----</option>
-        </select>
-        <button className='flex items-center bg-blue-500 rounded-sm mt-2 p-5 text-white'><IoMdCheckmark color='white' /> <span className='pl-2'>Submit</span></button>
+        <h2 className='font-bold'>Add Subject</h2>
       </div>
     );
   }
   const AssignSubjects = () => {
     return (
       <div className='flex flex-col justify-center items-center w-full'>
-        <select id="feeFor" placeholder="---- Select Class Teacher ----" className="w-1/3 mt-2 p-2 focus:ring-blue-500 focus:border-blue-500">
+        <select id="feeFor" placeholder="---- Select Class Teacher ----" className="w-3/6 bod-in mt-2 p-2 focus:ring-blue-500 focus:border-blue-500">
           <option selected>---- Select Class ----</option>
         </select>
-        <div className='flex w-full justify-center'>
-          <input type='text' placeholder='Name of Subject' />
-          <input type='number' placeholder='Marks' />
+        <div className='flex justify-center w-3/6 mt-3'>
+          <input type='text' placeholder='Name of Subject' className='w-3/5 p-2 bod-in' />
+          <input type='number' placeholder='Marks' className='w-2/5 bod-in p-2' />
+        </div>
+        <div className='flex'>
+          <button className='flex items-center bg-blue-500 rounded-3xl mt-2 p-1 text-white'><FaPlus /> <span className='pl-2'>Add More</span></button>
+          <button className='flex items-center bg-red-400 rounded-3xl ml-2 mt-2 p-1 text-white justify-center'><FaMinus /> <span className='pl-2'>Remove</span></button>
         </div>
         <hr />
-        <div className='flex'>
-          <button className='flex items-center bg-blue-500 rounded-sm mt-2 p-2 text-white'><TfiReload color='white' /> <span className='pl-2'>Update</span></button>
-          <button className='flex items-center bg-red-500 rounded-sm ml-2 mt-2 p-2 text-white'><IoMdClose color='white' /> <span className='pl-2'>Delete</span></button>
-        </div>
+        <div className='flex justify-center'><button className='flex items-center bg-blue-400 rounded-sm mt-7 p-2 px-5 text-white'><FaPlus color='white' /> <span className='pl-2'>Add Subjects</span></button></div>
       </div>
     );
   }
   return (
     <div className='h-full w-full p-9'>
-      <AssignSubjects />
+      {/* <AssignSubjects /> */}
+      <ClassesWithSubjects />
+    </div>
+  );
+}
+const Students = () => {
+  const AllStudents = () => {
+    return (
+      <div>
+        <div className='flex items-center justify-between'>
+          <div className='w-3/5 flex'>
+            <div className='flex w-1/2 items-center'><input type='text' placeholder='Search Student' className='border-0 border-b-2 bg-transparent focus:outline-none ml-4 p-2 w-11/12 border-gray-500' required /> <CiSearch size='25px' /></div>
+            <div className='flex w-1/2 items-center'><select className='border-0 border-b-2 bg-transparent focus:outline-none ml-4 p-2 w-11/12 border-gray-500'><option>--select class--</option></select> <CiSearch size='25px' /></div>
+          </div>
+          <div className='flex h-10' style={{ backgroundColor: 'rgb(240, 240, 240)' }}><TfiReload className='h-full w-16 p-3 cursor-pointer' /><AiOutlineIdcard className='h-full w-16 p-3 cursor-pointer' /> <TfiPrinter className='h-full p-3 w-16 cursor-pointer' /></div>
+        </div>
+        <div className='flex flex-col p-8 text-white cursor-pointer mt-5 items-center justify-center' style={{ background: 'linear-gradient(45deg, #4b49ac, #5d5ba9)', borderRadius: '50%', height: '155px', width: '155px' }}>
+          <FaPlus />
+          {/* <span>+</span> */}
+          <span className=''>Add Subject</span>
+        </div>
+      </div>
+    );
+  }
+  const AddNew = () => {
+    return (
+      <div>
+        <div className='bg-white flex flex-wrap justify-between rounded-xl'>
+          <div className=' flex items-center p-2 pt-3 pb-4' style={{ borderRadius: '10px', fontSize: '16px'}}><strong className='' style={{ borderRight: '1px solid #777', paddingRight: '10px', marginRight: '10px'}}>Students</strong> <TiHomeOutline /> <span> - Admission Form</span></div>
+          <button className='flex items-center py-2 px-3 cursor-pointer text-white font-semibold m-2 rounded-3xl' style={{ background: 'linear-gradient(45deg, #7878e8, #8787e5)', lineHeight: '16px', fontSize: '11px'}}><CiImport color='white' /> <span className='pl-2'>Import Students</span></button>
+        </div>
+        <h3 className='text-center mt-3 font-semibold w-full text-3xl' style={{ color: '#ff808b'}}>Admission Form</h3>
+      </div>
+    );
+  }
+  return (
+    <div className='h-screen w-full p-9' style={{ backgroundColor: '#f3f3f3'}}>
+      {/* <AllStudents /> */}
+      <AddNew />
     </div>
   );
 }
@@ -750,9 +786,9 @@ const Pages = () => {
     // setSelectedTabName(tabName);
   };
   return (
-    <div className='bg-gray-100 w-full h-full '>
+    <div className='bg-gray-100 w-full h-full overflow-hidden'>
       <PageNav sideBar={sideBar} toggle={toggleSideBar} />
-      <div className='flex'>
+      <div className='flex '>
 
         {sideBar ? <SideNavPage selectedTab={selectedTab} onTabChange={handleTabChange} /> : null}
         {/* {SideNavItems.map((items) => (
@@ -769,8 +805,20 @@ const Pages = () => {
         {/* <GeneralSettings /> */}
         {/* <Classes /> */}
         {/* <Subjects /> */}
+        <div className='flex flex-col flex-grow'>
+          <Students />
+          {/* <Switch>
+            <Route path="/general-settings/institute-profile" component={GeneralSettings.InstitureProfile} />
+            <Route path="/general-settings/fee-particulars" component={GeneralSettings.FeeParticulars} />
+          </Switch> */}
+          <Routes>
+            <Route path='/Dashboard' Component={Dashboard} />
+            {/* <Route path='/General-Settings/Institute-Profile' component={GeneralSettings.InstitureProfile} />
+            <Route path='/General-Settings/Fee-Particulars' component={Dashboard.FeeParticulars} /> */}
+          </Routes>
+        </div>
 
-        {selectedSubTab !== null ? (
+        {/* {selectedSubTab !== null ? (
           selectedTab === 1 ? (
             <GeneralSettings subtab={selectedSubTab} />
           ) : null
@@ -778,7 +826,7 @@ const Pages = () => {
           selectedTab === 0 ? <Dashboard /> : (
             selectedTab === 11 ? <Homework /> : null
           )
-        )}
+        )} */}
       </div>
     </div>
   )

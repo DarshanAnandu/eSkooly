@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  background-image: linear-gradient(to right, #09327f, #06183b);
+  background-color: #f3f3f3;
+  /* background-image: linear-gradient(to right, #09327f, #06183b); */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol";
   overflow: hidden !important;
