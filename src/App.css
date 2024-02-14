@@ -17,6 +17,33 @@ body {
   transform: rotate(180deg);
 }
 
+.disp-stu-adding {
+  display: flex;
+}
+.wid-stu-adding {
+  width: 33%;
+}
+
+@media (max-width: 991px) {
+  .disp-stu-adding {
+    display: flex;
+    flex-direction: column;
+  }
+  .wid-stu-adding {
+    width: 100%;
+  }
+  .addr {
+    width: 100%;
+  }
+}
+
+@media (max-width: 330px) {
+  .inlin {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .custom-shape-divider-bottom-1707203134 svg {
   position: relative;
   display: block;
