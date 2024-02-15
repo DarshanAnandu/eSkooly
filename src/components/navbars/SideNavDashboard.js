@@ -22,7 +22,7 @@ const SideNavDashboard = ({ selectedTab, onTabChange }) => {
   };
 
   return (
-    <div className='z-50 h-screen sideNav-shadow overflow-auto' style={{ width: '235px'}}>
+    <div className='z-50 h-screen sideNav-shadow overflow-auto' style={{ width: '235px' }}>
       <ul>
         <li className='px-2.5 py-1.5'><span></span>menu</li>
         {SideNavItems.map((items) => (

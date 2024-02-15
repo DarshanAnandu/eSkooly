@@ -61,7 +61,7 @@ const SideNavItems = [
         Lock: false,
         subItems: [
             { idx: 0, name: 'All Students', goto: '/eSkooly/Students/All-Students', icon: '' },
-            { idx: 1, name: 'Add New', goto: '/eSkooly/Students/Add-New', icon: '' },
+            { idx: 1, name: 'Add New', goto: '/eSkooly/Students/Add-Students', icon: '' },
             { idx: 2, name: 'Manage Families', icon: '' },
             { idx: 3, name: 'Active / Inactive', icon: '' },
             { idx: 4, name: 'Admission Letter', goto: '/eSkooly/Students/Admission-Letter', icon: '' },
@@ -77,10 +77,10 @@ const SideNavItems = [
         dropdown: true,
         Lock: false,
         subItems: [
-            { idx: 0, name: 'All Employees', icon: '' },
-            { idx: 1, name: 'Add New', icon: '' },
-            { idx: 2, name: 'Staff ID Cards', icon: '' },
-            { idx: 3, name: 'Job Letter', icon: '' }
+            { idx: 0, name: 'All Employees', goto: '/eSkooly/Employees/All-Employees', icon: '' },
+            { idx: 1, name: 'Add New', goto: '/eSkooly/Employees/Add-Employee', icon: '' },
+            { idx: 2, name: 'Staff ID Cards', goto: '/eSkooly/Employees/Staff-ID-Card', icon: '' },
+            { idx: 3, name: 'Job Letter', goto: '/eSkooly/Employees/Job-Letter', icon: '' }
         ]
     },
     {
@@ -90,10 +90,10 @@ const SideNavItems = [
         dropdown: true,
         Lock: false,
         subItems: [
-            { idx: 0, name: 'Chart Of Account', icon: '' },
-            { idx: 1, name: 'Add Income', icon: '' },
-            { idx: 2, name: 'Add Expense', icon: '' },
-            { idx: 3, name: 'Account Statement', icon: '' }
+            { idx: 0, name: 'Chart Of Account', goto: '/eSkooly/Accounts/Chart-Of-Account', icon: '' },
+            { idx: 1, name: 'Add Income', goto: '/eSkooly/Accounts/Add-Income', icon: '' },
+            { idx: 2, name: 'Add Expense', goto: '/eSkooly/Accounts/Add-Expense', icon: '' },
+            { idx: 3, name: 'Account Statement', goto: '/eSkooly/Accounts/Account-Statement', icon: '' }
         ]
     },
     {
