@@ -60,14 +60,14 @@ const SideNavItems = [
         dropdown: true,
         Lock: false,
         subItems: [
-            { idx: 0, name: 'All Students', icon: '' },
-            { idx: 1, name: 'Add New', icon: '' },
+            { idx: 0, name: 'All Students', goto: '/eSkooly/Students/All-Students', icon: '' },
+            { idx: 1, name: 'Add New', goto: '/eSkooly/Students/Add-New', icon: '' },
             { idx: 2, name: 'Manage Families', icon: '' },
             { idx: 3, name: 'Active / Inactive', icon: '' },
-            { idx: 4, name: 'Admission Letter', icon: '' },
-            { idx: 5, name: 'Student ID Cards', icon: '' },
-            { idx: 6, name: 'Print Basic List', icon: '' },
-            { idx: 7, name: 'Promote Students', icon: '' }
+            { idx: 4, name: 'Admission Letter', goto: '/eSkooly/Students/Admission-Letter', icon: '' },
+            { idx: 5, name: 'Student ID Cards', goto: '/eSkooly/Students/Student-ID-Cards', icon: '' },
+            { idx: 6, name: 'Print Basic List', goto: '/eSkooly/Students/Print-Basic-Lists', icon: '' },
+            { idx: 7, name: 'Promote Students', goto: '/eSkooly/Students/Promote-Students', icon: '' }
         ]
     },
     {
