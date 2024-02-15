@@ -8,7 +8,7 @@ const SideNavItems = [
         icon: <AiOutlineHome color='gray'/>,
         dropdown: false,
         Lock: false,
-        goto: '/dashboard',
+        goto: '/eSkooly',
     },
     {
         idx: 1,
@@ -18,15 +18,15 @@ const SideNavItems = [
         drop: false,
         Lock: false,
         subItems: [
-            { idx: 110, name: 'Institute Profile', goto: '/Institute-Profile', icon: '' },
-            { idx: 111, name: 'Fee Particulars', goto: '/General-Settings/Fee-Particulars', icon: '' },
+            { idx: 110, name: 'Institute Profile', goto: '/eSkooly/General-Settings/Institute-Profile', icon: '' },
+            { idx: 111, name: 'Fee Particulars', goto: '/eSkooly/General-Settings/Fee-Particulars', icon: '' },
             { idx: 112, name: 'Fee Structure', icon: '' },
             { idx: 113, name: 'Discount Type', icon: '' },
-            { idx: 114, name: 'Details for Fee challan', icon: '' },
-            { idx: 115, name: 'Rules and Regulations', icon: '' },
-            { idx: 116, name: 'Marks Grading', icon: '' },
-            { idx: 117, name: 'Theme & Language', icon: '' },
-            { idx: 118, name: 'Account Settings', icon: '' },
+            { idx: 114, name: 'Details for Fee challan', goto: '/eSkooly/General-Settings/Details-For-Fee-Challan', icon: '' },
+            { idx: 115, name: 'Rules and Regulations', goto: '/eSkooly/General-Settings/Rules&Regulations', icon: '' },
+            { idx: 116, name: 'Marks Grading', goto: '/eSkooly/General-Settings/Marks-Grading', icon: '' },
+            { idx: 117, name: 'Theme & Language', goto: '/eSkooly/General-Settings/Theme&Language', icon: '' },
+            { idx: 118, name: 'Account Settings', goto: '/eSkooly/General-Settings/Account-Settings', icon: '' },
             { idx: 119, name: 'Log out', icon: '' }
         ]
     },
@@ -37,9 +37,9 @@ const SideNavItems = [
         dropdown: true,
         Lock: false,
         subItems: [
-            { idx: 0, name: 'All Classes', icon: '' },
-            { idx: 1, name: 'New Class', icon: '' },
-            { idx: 2, name: 'Edit OR Delete', icon: '' }
+            { idx: 0, name: 'All Classes', goto: '/eSkooly/Classes/All-Classes', icon: '' },
+            { idx: 1, name: 'New Class', goto: '/eSkooly/Classes/New-Class', icon: '' },
+            { idx: 2, name: 'Edit OR Delete', goto: '/eSkooly/Classes/Edit-Or-Delete', icon: '' }
         ]
     },
     {
@@ -49,8 +49,8 @@ const SideNavItems = [
         dropdown: true,
         Lock: false,
         subItems: [
-            { idx: 0, name: 'Classes with Subjects', icon: '' },
-            { idx: 1, name: 'Assign Subjects', icon: '' }
+            { idx: 0, name: 'Classes with Subjects', goto: '/eSkooly/Subjects/Classes-With-Subjects', icon: '' },
+            { idx: 1, name: 'Assign Subjects', goto: '/eSkooly/Subjects/Assign-Subjects', icon: '' }
         ]
     },
     {

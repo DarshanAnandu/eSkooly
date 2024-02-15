@@ -235,391 +235,6 @@ const Dashboard = () => {
   );
 };
 const GeneralSettings = () => {
-  const InstitureProfile = () => {
-    const UpdateInstituteLogo = () => {
-      return (
-        <div className='hover:shadow-2xl shadow border-black bod-in p-6 flex flex-col m-2 rounded-2xl'>
-          <div className='font-semibold w-full'>
-            <h5>Update Instute Logo Here</h5>
-          </div>
-          <form className='w-full'>
-            <label>Institute Logo <br /><input type='file' name='fileToUpload' className='bod-in w-full p-2' required /></label>
-
-            <div className='flex justify-end'><button className='text-white bg-blue-500 flex flex-end items-center p-2 rounded-sm justify-end mt-3'><TfiReload color='white' /> Update</button></div>
-          </form>
-        </div>
-      );
-    }
-    const UpdateInstituteInfo = () => {
-      return (
-        <div className='hover:shadow-2xl shadow border-black bod-in p-6 flex flex-col m-2 rounded-2xl'>
-          <div className='font-semibold w-full'>
-            <h5>Update Instute Info Here</h5>
-          </div>
-          <form className='w-full mt-3'>
-            <div class="relative flex items-center my-3">
-              <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Name of the Institute</label>
-              <input type="text" placeholder="Name of the Institute"
-                class="px-2 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none" />
-            </div>
-            <div class="relative flex items-center my-3">
-              <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Target Line</label>
-              <input type="text" placeholder="Target Line"
-                class="px-2 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none" />
-            </div>
-            <div class="relative flex items-center my-3">
-              <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Phone Number</label>
-              <input type="tel" placeholder="Phone"
-                class="px-2 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none" />
-            </div>
-            <div class="relative flex items-center my-3">
-              <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Website</label>
-              <input type="text" placeholder="Website"
-                class="px-2 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none" />
-            </div>
-            <div class="relative flex items-center my-3">
-              <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Address</label>
-              <input type="text" placeholder="Address"
-                class="px-2 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none" />
-            </div>
-            <div class="relative flex items-center my-3">
-              <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Country</label>
-              <select name='country' className='px-4 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none'>
-                <option value selected="selected">select Country</option>
-                <option value="India">India</option>
-              </select>
-            </div>
-            <div className='flex justify-end'><button className='text-white bg-blue-500 flex flex-end items-center p-2 rounded-sm justify-end mt-3'><TfiReload color='white' /> Update</button></div>
-          </form>
-        </div>
-      );
-    }
-    const YourInstituteProfile = () => {
-      return (
-        <div className=' hover:shadow-2xl w-2/4 text-gray-700 h-auto shadow rounded-2xl flex flex-col m-2 p-6 bod-in'>
-          <div className=' w-full font-semibold text-gray-500'>
-            <h5>Your Institute Profile</h5>
-          </div>
-          <div className='flex justify-center bod-ip p-6 pt-0'><TiHomeOutline color='gray' size="60px" /></div>
-          <div className='flex flex-col p-3 '>
-            <h4 className='flex justify-center'>Your Institute Name</h4>
-            <h6 className='flex justify-center'>Your Target Line</h6>
-            <hr />
-            <p className='flex items-center justify-between'><CiMobile4 color='gray' /> +92 (356) 787 5465</p>
-            <p className='flex items-center justify-between'><CiMail color='gray' /> suport@saanvigs.com</p>
-            <p className='flex items-center justify-between'><TfiWorld color='gray' /> www.eskooly.com</p>
-            <hr />
-            <p className='flex flex-col items-center pt-3'><CiLocationOn color='gray' /> Your Institute Address will goes here!</p>
-            <p className='flex justify-center p-3 pt-0'>COUNTRY</p>
-          </div>
-        </div>
-      );
-    }
-    return (
-      <div className='h-full w-full p-10 pl-7 flex'>
-        <div className=' w-3/5 h-full'>
-          <UpdateInstituteLogo />
-          <UpdateInstituteInfo />
-        </div>
-        <YourInstituteProfile />
-      </div>
-    );
-  }
-  const FeeParticulars = () => {
-    return (
-      <div className='p-6 pt-6 shadow border-black bod-in m-9 rounded-2xl bg-white hover:shadow-2xl'>
-        <div className='flex justify-between'>
-          <h5 className='font-semibold text-blue-500' style={{ fontSize: '14px', fontFamily: 'Poppins, sans-serif' }}>Change Fee Particulars</h5>
-          <div className='bg-red-400 text-white items-center rounded-2xl p-2 px-5 flex'><TfiReload size="12px" /><span className='px-2'>Reset to Default</span></div>
-        </div>
-        <div className=''>
-          <div className='flex flex-col'>
-            <label className='lab-txt' style={{ fontSize: '13px' }}>Fee Particulars for*</label>
-            <select id="feeFor" className="w-min rounded-2xl bod-in p-2 focus:ring-blue-500 focus:border-blue-500">
-              <option selected>All Students</option>
-              <option value="Specific Class">Specific Class</option>
-              <option value="Specific Student">Specific Student</option>
-            </select>
-          </div>
-          <div className='flex w-full' style={{ fontSize: '14px' }}>
-            <div className='w-2/3'>
-              <span className='text-red-500 px-2 flex w-full'>Particular Name</span>
-              <span className='bod-in py-2 px-2 flex w-full uppercase cursor-not-allowed' disabled style={{ margin: '2px', opacity: '0.5px', backgroundColor: '#e9ecef', color: '#acb3b9' }}>Monthly Tution Fee</span>
-              <input type="text" defaultValue="Admission Fee" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '' }} required />
-              <input type="text" defaultValue="Registration Fee" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
-              <input type="text" defaultValue="Art Material" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
-              <input type="text" defaultValue="Transport" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
-              <input type="text" defaultValue="Books" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
-              <input type="text" defaultValue="Uniform" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
-              <input type="text" defaultValue="Fine" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
-              <input type="text" defaultValue="Others" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
-              <span className='bod-in py-2 px-3 flex w-full uppercase cursor-not-allowed' style={{ margin: '2px', color: '#495057', opacity: '0.5px', backgroundColor: '#e9ecef' }}>Previous Balance</span>
-              <span className='bod-in py-2 px-3 flex w-full uppercase cursor-not-allowed' style={{ margin: '2px', color: '#495057', opacity: '0.5px', backgroundColor: '#e9ecef' }}>Discount in fee [fixed]</span>
-            </div>
-            <div className='w-2/5' style={{ marginLeft: '2px' }}>
-              <span className='text-red-500 px-2 flex w-full'>Prefix Amount</span>
-              <span className='bod-in py-2 px-3 flex w-full cursor-not-allowed' style={{ margin: '2px', color: '##acb3b9', opacity: '0.5px', backgroundColor: '#e9ecef' }}>[Fixed]</span>
-              <input type="number" defaultValue="0" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '' }} required />
-              <input type="number" defaultValue="0" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
-              <input type="number" defaultValue="0" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
-              <input type="number" defaultValue="0" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
-              <input type="number" defaultValue="0" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
-              <input type="number" defaultValue="0" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
-              <input type="number" defaultValue="0" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
-              <input type="number" defaultValue="0" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
-              <span className='bod-in py-2 px-3 flex w-full cursor-not-allowed' style={{ margin: '2px', color: '#acb3b9', opacity: '0.5px', backgroundColor: '#e9ecef' }}>[Fixed]</span>
-              <span className='bod-in py-2 px-3 flex w-full cursor-not-allowed' style={{ margin: '2px', color: '#acb3b9', opacity: '0.5px', backgroundColor: '#e9ecef' }}>[Fixed]</span>
-            </div>
-          </div>
-          <div className='flex justify-end'><button className='flex items-center justify-end bg-blue-500 mt-2 p-2 px-5 rounded-2xl text-white'><IoMdCheckmark color='white' /> <span className='pl-2'>Save Changes</span></button></div>
-        </div>
-      </div>
-    );
-  }
-  const DetailsForFeeChallan = () => {
-    const UpdateInstituteLogo = () => {
-      return (
-        <div className='hover:shadow-2xl shadow border-black bod-in p-6 flex flex-col m-2 rounded-2xl'>
-          <div className='font-semibold w-full'>
-            <h5>Update Bank Logo Here</h5>
-          </div>
-          <form className='w-full'>
-            <label>Bank Logo <br /><input type='file' name='fileToUpload' className='bod-in w-full p-2' required /></label>
-
-            <div className='flex justify-end'><button className='text-white bg-blue-500 flex flex-end items-center p-2 rounded-sm justify-end mt-3'><TfiReload color='white' /> Update</button></div>
-          </form>
-        </div>
-      );
-    }
-    const UpdateInstituteInfo = () => {
-      return (
-        <div className='hover:shadow-2xl shadow border-black bod-in p-6 flex flex-col m-2 rounded-2xl'>
-          <div className='font-semibold w-full'>
-            <h5>Update Instute Info Here</h5>
-          </div>
-          <form className='w-full mt-3'>
-            <div class="relative flex items-center my-3">
-              <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Bank Name</label>
-              <input type="text" placeholder="Your Bank Name"
-                class="px-2 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none" />
-            </div>
-            <div class="relative flex items-center my-3">
-              <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Bank / Branch Address</label>
-              <input type="text" placeholder="Bank Address"
-                class="px-2 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none" />
-            </div>
-            <div class="relative flex items-center my-3">
-              <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Account Number</label>
-              <input type="tel" placeholder="Bank Account#"
-                class="px-2 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none" />
-            </div>
-            <div className='flex justify-end'><button className='text-white bg-blue-500 flex flex-end items-center p-2 rounded-sm justify-end mt-3'><TfiReload color='white' /> Update</button></div>
-          </form>
-        </div>
-      );
-    }
-    const YourInstituteProfile = () => {
-      return (
-        <div className=' hover:shadow-2xl w-2/4 text-gray-700 h-auto shadow rounded-2xl flex flex-col m-2 p-6 bod-in'>
-          <div className=' w-full font-semibold text-gray-500'>
-            <h5>Your Bank Profile</h5>
-          </div>
-          <div className='flex justify-center bod-ip p-6 pt-0'><TiHomeOutline color='gray' size="60px" /></div>
-          <div className='flex flex-col p-3 '>
-            <h4 className='flex justify-center'>Your Bank Name</h4>
-            <hr />
-            <p className='flex items-center justify-between'><MdCreditCard color='gray' /> Your Banks Account#</p>
-            <hr />
-            <p className='flex flex-col items-center pt-3'><CiLocationOn color='gray' /> Your Bank Address will goes here!</p>
-            <p className='flex justify-center p-3 pt-0'>COUNTRY</p>
-          </div>
-        </div>
-      );
-    }
-    return (
-      <div className='h-full w-full p-10 pl-7 flex'>
-        <div className=' w-3/5 h-full'>
-          <UpdateInstituteLogo />
-          <UpdateInstituteInfo />
-        </div>
-        <YourInstituteProfile />
-      </div>
-    );
-  }
-  const RulesAndRegulations = () => {
-    return (
-      <div className='p-6 pt-6 shadow border-black bod-in m-9 rounded-2xl bg-white hover:shadow-2xl'>
-        <h5 className='font-semibold text-blue-500 mb-4' style={{ fontSize: '14px', fontFamily: 'Poppins, sans-serif' }}>Institute Rules & Regulations</h5>
-        <div className='bod-in'>
-          <div className='flex' style={{ padding: '1px', fontSize: '16px', borderBottom: '1px solid rgba(0,0,0,.125)' }}>
-            <div className='p-1 py-2 cursor-default rounded-sm hover:bg-gray-300'><span className='px-1'>File</span></div>
-            <div className='p-1 py-2 cursor-default rounded-sm hover:bg-gray-300'><span className='px-1'>Edit</span></div>
-            <div className='p-1 py-2 cursor-default rounded-sm hover:bg-gray-300'><span className='px-1'>View</span></div>
-            <div className='p-1 py-2 cursor-default rounded-sm hover:bg-gray-300'><span className='px-1'>Format</span></div>
-          </div>
-          <div className='flex'>
-            <LuUndo2 size="24px" className='m-2' />
-            <GrRedo size="24px" className='m-2' style={{ borderRight: '1px solid rgba(0,0,0,.125)' }} />
-            {/* <hr /> */}
-            <select>
-              <option value="">Headings
-                <div className=''>
-                  <h1>Heading 1</h1>
-                  <h2>Heading 2</h2>
-                  <h3>Heading 3</h3>
-                  <h4>Heading 4</h4>
-                  <h5>Heading 5</h5>
-                  <h6>Heading 6</h6>
-                </div>
-              </option>
-              <option value="">Inline <select></select></option>
-              <option value="">Blocks <select></select></option>
-              <option value="">Align <select></select></option>
-            </select>
-          </div>
-        </div>
-        <div className='flex justify-end'><button className='flex items-center justify-end bg-blue-500 mt-2 p-2 px-5 rounded-sm text-white'><IoMdCheckmark color='white' /> <span className='pl-2'>Save Changes</span></button></div>
-      </div>
-    );
-  }
-  const MarksGradings = () => {
-    return (
-      <div className='p-6 pt-6 shadow border-black bod-in m-9 rounded-2xl bg-white hover:shadow-2xl'>
-        <div className='flex justify-between'>
-          <h5 className='font-semibold text-blue-500 pb-6' style={{ fontSize: '14px', fontFamily: 'Poppins, sans-serif' }}>Change Fee Particulars</h5>
-        </div>
-        <div className=''>
-          <div className='flex w-full' style={{ fontSize: '14px' }}>
-            <div className='w-1/4'>
-              <span className='text-red-500 px-2 flex w-full'>Grade Name</span>
-              <input type="text" defaultValue="A+" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-              <input type="text" defaultValue="A" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-              <input type="text" defaultValue="B+" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-              <input type="text" defaultValue="B" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-              <input type="text" defaultValue="C" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-              <input type="text" defaultValue="D" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-              <input type="text" defaultValue="F" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-            </div>
-            <div className='w-1/4' style={{ marginLeft: '4px' }}>
-              <span className='text-red-500 px-2 flex w-full'>Percentage From</span>
-              <input type="number" defaultValue="80" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-              <input type="number" defaultValue="70" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-              <input type="number" defaultValue="60" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-              <input type="number" defaultValue="50" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-              <input type="number" defaultValue="40" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-              <input type="number" defaultValue="33" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-              <input type="number" defaultValue="0" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-            </div>
-            <div className='w-1/4' style={{ marginLeft: '4px' }}>
-              <span className='text-red-500 px-2 flex w-full'>Percentage Upto</span>
-              <input type="number" defaultValue="100" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-              <input type="number" defaultValue="79" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-              <input type="number" defaultValue="69" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-              <input type="number" defaultValue="59" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-              <input type="number" defaultValue="49" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-              <input type="number" defaultValue="49" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-              <input type="number" defaultValue="32" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-            </div>
-            <div className='w-1/4' style={{ marginLeft: '4px' }}>
-              <span className='text-red-500 px-2 flex w-full'>Status</span>
-              <input type="text" defaultValue="Pass" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-              <input type="text" defaultValue="Pass" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-              <input type="text" defaultValue="Pass" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-              <input type="text" defaultValue="Pass" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-              <input type="text" defaultValue="Pass" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-              <input type="text" defaultValue="Pass" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-              <input type="text" defaultValue="Fail" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
-            </div>
-          </div>
-          <div className='flex justify-end'><button className='flex items-center justify-end bg-blue-500 mt-2 p-2 px-5 rounded-2xl text-white'><IoMdCheckmark color='white' /> <span className='pl-2'>Save Changes</span></button></div>
-        </div>
-      </div>
-    );
-  }
-  const ThemeAndLanguage = () => {
-    return (
-      <div className='p-6 pt-6 shadow border-black bod-in m-9 rounded-2xl bg-white hover:shadow-2xl'>
-        <div className='flex flex-col justify-between h-full w-full'>
-          <h6 className='mt-3'>Theme Placement</h6>
-          <hr className='mt-0 mb-4' style={{ borderTop: '1px solid rgba(0,0,0,.1)' }} />
-          <div className='flex flex-col'>
-            <input type='radio' id='ltl' className='' />
-            <label for="ltl" className='flex flex-col ' style={{ fontSize: '20px' }}><FiAlignLeft /><span className='text-green-600' style={{ fontSize: '27px' }}>LTL</span></label>
-          </div>
-        </div>
-        <div className=''>
-          <div className='flex justify-center'><button className='flex items-center justify-end bg-blue-500 mt-2 p-2 px-5 rounded-2xl text-white'><IoMdCheckmark color='white' /> <span className='pl-2'>Save Changes</span></button></div>
-        </div>
-      </div>
-    );
-  }
-  const AccountSettings = () => {
-    return (
-      <div className='h-full p-6 pt-6 m-9'>
-        <div className='flex text-white w-full p-5 items-center bg-blue-500' style={{ borderRadius: '30px' }}><CiSettings color='white' size="23px" /><strong>Account Settings</strong></div>
-        <div className='mt-7 flex'>
-          <div className='w-8/12'>
-            <div class="relative flex items-center my-3 mt-5">
-              <label class="text-[13px] text-white absolute px-2 top-[-10px] left-[18px] font-semibold" style={{ background: 'linear-gradient(87deg, #5e72e4 0, #825ee4 100%)', borderRadius: '30px', border: '1px solid #999' }}>Username*</label>
-              <input type="text" placeholder="New Email ?"
-                class="px-5 bod-sin py-3.5 bg-transparent text-black w-full text-sm border-2 rounded outline-none" style={{ borderRadius: '30px' }} />
-            </div>
-            <div class="relative flex items-center my-3 mt-5">
-              <label class="text-[13px] text-white absolute px-2 top-[-10px] left-[18px] font-semibold" style={{ background: 'linear-gradient(87deg, #5e72e4 0, #825ee4 100%)', borderRadius: '30px', border: '1px solid #999' }}>Password*</label>
-              <input type="text" placeholder="******"
-                class="px-5 bod-sin py-3.5 bg-transparent text-black w-full text-sm border-2 rounded outline-none" style={{ borderRadius: '30px' }} />
-            </div>
-            <div class="relative flex items-center my-3 mt-5">
-              <label class="text-[13px] text-white absolute px-2 top-[-10px] left-[18px] font-semibold" style={{ background: 'linear-gradient(87deg, #5e72e4 0, #825ee4 100%)', borderRadius: '30px', border: '1px solid #999' }}>TimeZone*</label>
-              <select name="timezone" id='searchlist'
-                class="px-5 bod-sin py-3.5 bg-transparent text-black w-full text-sm border-2 rounded outline-none" style={{ borderRadius: '30px', }}>
-                <option value="Asia/Karachi" selected>Asia/Karachi</option>
-                <option value="Asia/kabul">Asia/kabul</option>
-                <option value="Asia/India">Asia/India</option>
-              </select>
-            </div>
-            <div className='flex'>
-              <div class="relative flex items-center my-3 mt-5 w-1/2">
-                <label class="text-[13px] text-white absolute px-2 top-[-10px] left-[18px] font-semibold" style={{ background: 'linear-gradient(87deg, #5e72e4 0, #825ee4 100%)', borderRadius: '30px', border: '1px solid #999' }}>Currency*</label>
-                <select name="timezone" id='searchlist'
-                  class="px-5 bod-sin py-3.5 bg-transparent text-black w-full text-sm border-2 rounded outline-none" style={{ borderRadius: '30px', }}>
-                  <option value="Dollar (USD)" selected>Dollar (USD)</option>
-                  <option value="Dollar (TTD)">Dollar (TTD)</option>
-                  <option value="Dollar (TVD)">Dollar (TVD)</option>
-                </select>
-              </div>
-              <div class="relative flex items-center my-3 mt-5 ml-3 w-1/2">
-                <label class="text-[13px] text-white absolute px-2 top-[-10px] left-[18px] font-semibold" style={{ background: 'linear-gradient(87deg, #5e72e4 0, #825ee4 100%)', borderRadius: '30px', border: '1px solid #999' }}>Symbol*</label>
-                <input type="text" placeholder="Currency Symbol"
-                  class="px-5 bod-sin py-3.5 bg-transparent text-black w-full text-sm border-2 rounded outline-none" style={{ borderRadius: '30px' }} />
-              </div>
-            </div>
-            <div className='flex justify-center'><button className='flex items-center mt-2 p-2 px-5 text-white' style={{ background: 'linear-gradient(87deg, #11cdef 0, #1171ef 100%)', borderRadius: '20px' }}><TfiReload color='white' /> <span className='pl-2'>Update Settings</span></button></div>
-          </div>
-          <div className='w-2/5 ml-5 rounded-2xl' style={{ backgroundImage: 'url(https://eskooly.com/bb/asserts/images/apploginbg.jpg)' }}>
-            <div className='p-8 flex flex-col acc-det-bg'>
-              <div className='text-white flex w-full justify-center items-center'><CiLock color='white' size="25px" /> <h5 className='ml-2 font-semibold text-xl'> Account details</h5></div>
-              <div className='flex w-full justify-center mt-4'>
-                <div className='flex flex-col items-end text' style={{ color: 'rgb(150, 152, 214)' }}>
-                  <span>Username:</span>
-                  <span>Password:</span>
-                  <span>Subscription:</span>
-                  <span>Expiry:</span>
-                </div>
-                <div className='flex flex-col items-start ml-5 text-white'>
-                  <span>abc@saanvigs.org</span>
-                  <span>*********</span>
-                  <span className='flex px-2 items-center rounded-3xl' style={{ background: 'linear-gradient(87deg, #2dce89 0, #2dcecc 100%)' }}><IoMdCheckmark color='white' /> <span className='pl-2'>Free</span></span>
-                  <span>Never</span>
-                </div>
-              </div>
-              <div className='flex justify-center'><div className='text-white w-max flex items-center px-5 mt-5 rounded-3xl py-2' style={{ background: 'linear-gradient(87deg, #f5365c 0, #f56036 100%' }}><IoTrashOutline color='white' /><span className='pl-2'>Delete Account</span></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
   return (
     <div className='w-full h-full'>
       {/* <InstitureProfile /> */}
@@ -644,258 +259,671 @@ const GeneralSettings = () => {
     </div>
   );
 }
+const InstitureProfile = () => {
+  const UpdateInstituteLogo = () => {
+    return (
+      <div className='hover:shadow-2xl shadow border-black bod-in p-6 flex flex-col m-2 rounded-2xl'>
+        <div className='font-semibold w-full'>
+          <h5>Update Instute Logo Here</h5>
+        </div>
+        <form className='w-full'>
+          <label>Institute Logo <br /><input type='file' name='fileToUpload' className='bod-in w-full p-2' required /></label>
 
-// Classes
-const Classes = () => {
-  const AllClasses = () => {
-    return (
-      <div className='hover:shadow-2xl shadow flex flex-col p-9 text-white w-1/5 rounded-2xl cursor-pointer bg-red-400 items-center text-2xl'>
-        <span className='text-4xl'>+</span>
-        <h2>Add New</h2>
+          <div className='flex justify-end'><button className='text-white bg-blue-500 flex flex-end items-center p-2 rounded-sm justify-end mt-3'><TfiReload color='white' /> Update</button></div>
+        </form>
       </div>
     );
   }
-  const NewClasses = () => {
+  const UpdateInstituteInfo = () => {
     return (
-      <div className='flex flex-col justify-center items-center w-full'>
-        <input type='text' name='fileToUpload' className='bod-in w-1/3 mt-2 p-2' placeholder='Name of Class' required />
-        <input type='text' name='fileToUpload' className='bod-in w-1/3 mt-2 p-2' placeholder='Monthly Tution Fees' required />
-        {/* <input type='file' name='fileToUpload' className='bod-in w-full p-2' required /> */}
-        <select id="feeFor" placeholder="---- Select Class Teacher ----" className="w-1/3 mt-2 p-2 focus:ring-blue-500 focus:border-blue-500">
-          <option selected>---- Select Class Teacher ----</option>
-        </select>
-        <button className='flex items-center bg-blue-500 rounded-sm mt-2 p-5 text-white'><IoMdCheckmark color='white' /> <span className='pl-2'>Submit</span></button>
+      <div className='hover:shadow-2xl shadow border-black bod-in p-6 flex flex-col m-2 rounded-2xl'>
+        <div className='font-semibold w-full'>
+          <h5>Update Instute Info Here</h5>
+        </div>
+        <form className='w-full mt-3'>
+          <div class="relative flex items-center my-3">
+            <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Name of the Institute</label>
+            <input type="text" placeholder="Name of the Institute"
+              class="px-2 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none" />
+          </div>
+          <div class="relative flex items-center my-3">
+            <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Target Line</label>
+            <input type="text" placeholder="Target Line"
+              class="px-2 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none" />
+          </div>
+          <div class="relative flex items-center my-3">
+            <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Phone Number</label>
+            <input type="tel" placeholder="Phone"
+              class="px-2 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none" />
+          </div>
+          <div class="relative flex items-center my-3">
+            <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Website</label>
+            <input type="text" placeholder="Website"
+              class="px-2 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none" />
+          </div>
+          <div class="relative flex items-center my-3">
+            <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Address</label>
+            <input type="text" placeholder="Address"
+              class="px-2 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none" />
+          </div>
+          <div class="relative flex items-center my-3">
+            <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Country</label>
+            <select name='country' className='px-4 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none'>
+              <option value selected="selected">select Country</option>
+              <option value="India">India</option>
+            </select>
+          </div>
+          <div className='flex justify-end'><button className='text-white bg-blue-500 flex flex-end items-center p-2 rounded-sm justify-end mt-3'><TfiReload color='white' /> Update</button></div>
+        </form>
       </div>
     );
   }
-  const EditORDelete = () => {
+  const YourInstituteProfile = () => {
     return (
-      <div className='flex flex-col justify-center items-center w-full'>
-        <select id="feeFor" placeholder="---- Select Class Teacher ----" className="w-1/3 mt-2 p-2 focus:ring-blue-500 focus:border-blue-500">
-          <option selected>---- Select Class Teacher ----</option>
-        </select>
-        <hr />
-        <div className='flex'>
-          <button className='flex items-center bg-blue-500 rounded-sm mt-2 p-2 text-white'><TfiReload color='white' /> <span className='pl-2'>Update</span></button>
-          <button className='flex items-center bg-red-500 rounded-sm ml-2 mt-2 p-2 text-white'><IoMdClose color='white' /> <span className='pl-2'>Delete</span></button>
+      <div className=' hover:shadow-2xl w-2/4 text-gray-700 h-auto shadow rounded-2xl flex flex-col m-2 p-6 bod-in'>
+        <div className=' w-full font-semibold text-gray-500'>
+          <h5>Your Institute Profile</h5>
+        </div>
+        <div className='flex justify-center bod-ip p-6 pt-0'><TiHomeOutline color='gray' size="60px" /></div>
+        <div className='flex flex-col p-3 '>
+          <h4 className='flex justify-center'>Your Institute Name</h4>
+          <h6 className='flex justify-center'>Your Target Line</h6>
+          <hr />
+          <p className='flex items-center justify-between'><CiMobile4 color='gray' /> +92 (356) 787 5465</p>
+          <p className='flex items-center justify-between'><CiMail color='gray' /> suport@saanvigs.com</p>
+          <p className='flex items-center justify-between'><TfiWorld color='gray' /> www.eskooly.com</p>
+          <hr />
+          <p className='flex flex-col items-center pt-3'><CiLocationOn color='gray' /> Your Institute Address will goes here!</p>
+          <p className='flex justify-center p-3 pt-0'>COUNTRY</p>
         </div>
       </div>
     );
   }
   return (
+    <div className='h-screen w-full p-10 pl-7 flex'>
+      <div className=' w-3/5 h-full'>
+        <UpdateInstituteLogo />
+        <UpdateInstituteInfo />
+      </div>
+      <YourInstituteProfile />
+    </div>
+  );
+}
+const FeeParticulars = () => {
+  return (
+    <div className='p-6 pt-6 shadow border-black bod-in m-9 rounded-2xl bg-white hover:shadow-2xl'>
+      <div className='flex justify-between'>
+        <h5 className='font-semibold text-blue-500' style={{ fontSize: '14px', fontFamily: 'Poppins, sans-serif' }}>Change Fee Particulars</h5>
+        <div className='bg-red-400 text-white items-center rounded-2xl p-2 px-5 flex'><TfiReload size="12px" /><span className='px-2'>Reset to Default</span></div>
+      </div>
+      <div className=''>
+        <div className='flex flex-col'>
+          <label className='lab-txt' style={{ fontSize: '13px' }}>Fee Particulars for*</label>
+          <select id="feeFor" className="w-min rounded-2xl bod-in p-2 focus:ring-blue-500 focus:border-blue-500">
+            <option selected>All Students</option>
+            <option value="Specific Class">Specific Class</option>
+            <option value="Specific Student">Specific Student</option>
+          </select>
+        </div>
+        <div className='flex w-full' style={{ fontSize: '14px' }}>
+          <div className='w-2/3'>
+            <span className='text-red-500 px-2 flex w-full'>Particular Name</span>
+            <span className='bod-in py-2 px-2 flex w-full uppercase cursor-not-allowed' disabled style={{ margin: '2px', opacity: '0.5px', backgroundColor: '#e9ecef', color: '#acb3b9' }}>Monthly Tution Fee</span>
+            <input type="text" defaultValue="Admission Fee" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '' }} required />
+            <input type="text" defaultValue="Registration Fee" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
+            <input type="text" defaultValue="Art Material" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
+            <input type="text" defaultValue="Transport" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
+            <input type="text" defaultValue="Books" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
+            <input type="text" defaultValue="Uniform" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
+            <input type="text" defaultValue="Fine" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
+            <input type="text" defaultValue="Others" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
+            <span className='bod-in py-2 px-3 flex w-full uppercase cursor-not-allowed' style={{ margin: '2px', color: '#495057', opacity: '0.5px', backgroundColor: '#e9ecef' }}>Previous Balance</span>
+            <span className='bod-in py-2 px-3 flex w-full uppercase cursor-not-allowed' style={{ margin: '2px', color: '#495057', opacity: '0.5px', backgroundColor: '#e9ecef' }}>Discount in fee [fixed]</span>
+          </div>
+          <div className='w-2/5' style={{ marginLeft: '2px' }}>
+            <span className='text-red-500 px-2 flex w-full'>Prefix Amount</span>
+            <span className='bod-in py-2 px-3 flex w-full cursor-not-allowed' style={{ margin: '2px', color: '##acb3b9', opacity: '0.5px', backgroundColor: '#e9ecef' }}>[Fixed]</span>
+            <input type="number" defaultValue="0" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '' }} required />
+            <input type="number" defaultValue="0" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
+            <input type="number" defaultValue="0" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
+            <input type="number" defaultValue="0" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
+            <input type="number" defaultValue="0" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
+            <input type="number" defaultValue="0" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
+            <input type="number" defaultValue="0" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
+            <input type="number" defaultValue="0" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '2px', color: '#495057' }} required />
+            <span className='bod-in py-2 px-3 flex w-full cursor-not-allowed' style={{ margin: '2px', color: '#acb3b9', opacity: '0.5px', backgroundColor: '#e9ecef' }}>[Fixed]</span>
+            <span className='bod-in py-2 px-3 flex w-full cursor-not-allowed' style={{ margin: '2px', color: '#acb3b9', opacity: '0.5px', backgroundColor: '#e9ecef' }}>[Fixed]</span>
+          </div>
+        </div>
+        <div className='flex justify-end'><button className='flex items-center justify-end bg-blue-500 mt-2 p-2 px-5 rounded-2xl text-white'><IoMdCheckmark color='white' /> <span className='pl-2'>Save Changes</span></button></div>
+      </div>
+    </div>
+  );
+}
+const DetailsForFeeChallan = () => {
+  const UpdateInstituteLogo = () => {
+    return (
+      <div className='hover:shadow-2xl shadow border-black bod-in p-6 flex flex-col m-2 rounded-2xl'>
+        <div className='font-semibold w-full'>
+          <h5>Update Bank Logo Here</h5>
+        </div>
+        <form className='w-full'>
+          <label>Bank Logo <br /><input type='file' name='fileToUpload' className='bod-in w-full p-2' required /></label>
+
+          <div className='flex justify-end'><button className='text-white bg-blue-500 flex flex-end items-center p-2 rounded-sm justify-end mt-3'><TfiReload color='white' /> Update</button></div>
+        </form>
+      </div>
+    );
+  }
+  const UpdateInstituteInfo = () => {
+    return (
+      <div className='hover:shadow-2xl shadow border-black bod-in p-6 flex flex-col m-2 rounded-2xl'>
+        <div className='font-semibold w-full'>
+          <h5>Update Instute Info Here</h5>
+        </div>
+        <form className='w-full mt-3'>
+          <div class="relative flex items-center my-3">
+            <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Bank Name</label>
+            <input type="text" placeholder="Your Bank Name"
+              class="px-2 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none" />
+          </div>
+          <div class="relative flex items-center my-3">
+            <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Bank / Branch Address</label>
+            <input type="text" placeholder="Bank Address"
+              class="px-2 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none" />
+          </div>
+          <div class="relative flex items-center my-3">
+            <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Account Number</label>
+            <input type="tel" placeholder="Bank Account#"
+              class="px-2 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none" />
+          </div>
+          <div className='flex justify-end'><button className='text-white bg-blue-500 flex flex-end items-center p-2 rounded-sm justify-end mt-3'><TfiReload color='white' /> Update</button></div>
+        </form>
+      </div>
+    );
+  }
+  const YourInstituteProfile = () => {
+    return (
+      <div className=' hover:shadow-2xl w-2/4 text-gray-700 h-auto shadow rounded-2xl flex flex-col m-2 p-6 bod-in'>
+        <div className=' w-full font-semibold text-gray-500'>
+          <h5>Your Bank Profile</h5>
+        </div>
+        <div className='flex justify-center bod-ip p-6 pt-0'><TiHomeOutline color='gray' size="60px" /></div>
+        <div className='flex flex-col p-3 '>
+          <h4 className='flex justify-center'>Your Bank Name</h4>
+          <hr />
+          <p className='flex items-center justify-between'><MdCreditCard color='gray' /> Your Banks Account#</p>
+          <hr />
+          <p className='flex flex-col items-center pt-3'><CiLocationOn color='gray' /> Your Bank Address will goes here!</p>
+          <p className='flex justify-center p-3 pt-0'>COUNTRY</p>
+        </div>
+      </div>
+    );
+  }
+  return (
+    <div className='h-full w-full p-10 pl-7 flex'>
+      <div className=' w-3/5 h-full'>
+        <UpdateInstituteLogo />
+        <UpdateInstituteInfo />
+      </div>
+      <YourInstituteProfile />
+    </div>
+  );
+}
+const RulesAndRegulations = () => {
+  return (
+    <div className='p-6 pt-6 shadow border-black bod-in m-9 rounded-2xl bg-white hover:shadow-2xl'>
+      <h5 className='font-semibold text-blue-500 mb-4' style={{ fontSize: '14px', fontFamily: 'Poppins, sans-serif' }}>Institute Rules & Regulations</h5>
+      <div className='bod-in'>
+        <div className='flex' style={{ padding: '1px', fontSize: '16px', borderBottom: '1px solid rgba(0,0,0,.125)' }}>
+          <div className='p-1 py-2 cursor-default rounded-sm hover:bg-gray-300'><span className='px-1'>File</span></div>
+          <div className='p-1 py-2 cursor-default rounded-sm hover:bg-gray-300'><span className='px-1'>Edit</span></div>
+          <div className='p-1 py-2 cursor-default rounded-sm hover:bg-gray-300'><span className='px-1'>View</span></div>
+          <div className='p-1 py-2 cursor-default rounded-sm hover:bg-gray-300'><span className='px-1'>Format</span></div>
+        </div>
+        <div className='flex'>
+          <LuUndo2 size="24px" className='m-2' />
+          <GrRedo size="24px" className='m-2' style={{ borderRight: '1px solid rgba(0,0,0,.125)' }} />
+          {/* <hr /> */}
+          <select>
+            <option value="">Headings
+              <div className=''>
+                <h1>Heading 1</h1>
+                <h2>Heading 2</h2>
+                <h3>Heading 3</h3>
+                <h4>Heading 4</h4>
+                <h5>Heading 5</h5>
+                <h6>Heading 6</h6>
+              </div>
+            </option>
+            <option value="">Inline <select></select></option>
+            <option value="">Blocks <select></select></option>
+            <option value="">Align <select></select></option>
+          </select>
+        </div>
+      </div>
+      <div className='flex justify-end'><button className='flex items-center justify-end bg-blue-500 mt-2 p-2 px-5 rounded-sm text-white'><IoMdCheckmark color='white' /> <span className='pl-2'>Save Changes</span></button></div>
+    </div>
+  );
+}
+const MarksGradings = () => {
+  return (
+    <div className='p-6 pt-6 shadow border-black bod-in m-9 rounded-2xl bg-white hover:shadow-2xl'>
+      <div className='flex justify-between'>
+        <h5 className='font-semibold text-blue-500 pb-6' style={{ fontSize: '14px', fontFamily: 'Poppins, sans-serif' }}>Change Fee Particulars</h5>
+      </div>
+      <div className=''>
+        <div className='flex w-full' style={{ fontSize: '14px' }}>
+          <div className='w-1/4'>
+            <span className='text-red-500 px-2 flex w-full'>Grade Name</span>
+            <input type="text" defaultValue="A+" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+            <input type="text" defaultValue="A" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+            <input type="text" defaultValue="B+" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+            <input type="text" defaultValue="B" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+            <input type="text" defaultValue="C" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+            <input type="text" defaultValue="D" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+            <input type="text" defaultValue="F" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+          </div>
+          <div className='w-1/4' style={{ marginLeft: '4px' }}>
+            <span className='text-red-500 px-2 flex w-full'>Percentage From</span>
+            <input type="number" defaultValue="80" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+            <input type="number" defaultValue="70" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+            <input type="number" defaultValue="60" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+            <input type="number" defaultValue="50" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+            <input type="number" defaultValue="40" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+            <input type="number" defaultValue="33" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+            <input type="number" defaultValue="0" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+          </div>
+          <div className='w-1/4' style={{ marginLeft: '4px' }}>
+            <span className='text-red-500 px-2 flex w-full'>Percentage Upto</span>
+            <input type="number" defaultValue="100" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+            <input type="number" defaultValue="79" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+            <input type="number" defaultValue="69" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+            <input type="number" defaultValue="59" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+            <input type="number" defaultValue="49" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+            <input type="number" defaultValue="49" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+            <input type="number" defaultValue="32" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+          </div>
+          <div className='w-1/4' style={{ marginLeft: '4px' }}>
+            <span className='text-red-500 px-2 flex w-full'>Status</span>
+            <input type="text" defaultValue="Pass" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+            <input type="text" defaultValue="Pass" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+            <input type="text" defaultValue="Pass" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+            <input type="text" defaultValue="Pass" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+            <input type="text" defaultValue="Pass" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+            <input type="text" defaultValue="Pass" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+            <input type="text" defaultValue="Fail" className='bod-in py-2 px-3 flex w-full uppercase' style={{ margin: '4px', color: '#495057' }} required />
+          </div>
+        </div>
+        <div className='flex justify-end'><button className='flex items-center justify-end bg-blue-500 mt-2 p-2 px-5 rounded-2xl text-white'><IoMdCheckmark color='white' /> <span className='pl-2'>Save Changes</span></button></div>
+      </div>
+    </div>
+  );
+}
+const ThemeAndLanguage = () => {
+  return (
+    <div className='p-6 pt-6 shadow border-black bod-in m-9 rounded-2xl bg-white hover:shadow-2xl'>
+      <div className='flex flex-col justify-between h-full w-full'>
+        <h6 className='mt-3'>Theme Placement</h6>
+        <hr className='mt-0 mb-4' style={{ borderTop: '1px solid rgba(0,0,0,.1)' }} />
+        <div className='flex flex-col'>
+          <input type='radio' id='ltl' className='' />
+          <label for="ltl" className='flex flex-col ' style={{ fontSize: '20px' }}><FiAlignLeft /><span className='text-green-600' style={{ fontSize: '27px' }}>LTL</span></label>
+        </div>
+      </div>
+      <div className=''>
+        <div className='flex justify-center'><button className='flex items-center justify-end bg-blue-500 mt-2 p-2 px-5 rounded-2xl text-white'><IoMdCheckmark color='white' /> <span className='pl-2'>Save Changes</span></button></div>
+      </div>
+    </div>
+  );
+}
+const AccountSettings = () => {
+  return (
+    <div className='h-full p-6 pt-6 m-9'>
+      <div className='flex text-white w-full p-5 items-center bg-blue-500' style={{ borderRadius: '30px' }}><CiSettings color='white' size="23px" /><strong>Account Settings</strong></div>
+      <div className='mt-7 flex'>
+        <div className='w-8/12'>
+          <div class="relative flex items-center my-3 mt-5">
+            <label class="text-[13px] text-white absolute px-2 top-[-10px] left-[18px] font-semibold" style={{ background: 'linear-gradient(87deg, #5e72e4 0, #825ee4 100%)', borderRadius: '30px', border: '1px solid #999' }}>Username*</label>
+            <input type="text" placeholder="New Email ?"
+              class="px-5 bod-sin py-3.5 bg-transparent text-black w-full text-sm border-2 rounded outline-none" style={{ borderRadius: '30px' }} />
+          </div>
+          <div class="relative flex items-center my-3 mt-5">
+            <label class="text-[13px] text-white absolute px-2 top-[-10px] left-[18px] font-semibold" style={{ background: 'linear-gradient(87deg, #5e72e4 0, #825ee4 100%)', borderRadius: '30px', border: '1px solid #999' }}>Password*</label>
+            <input type="text" placeholder="******"
+              class="px-5 bod-sin py-3.5 bg-transparent text-black w-full text-sm border-2 rounded outline-none" style={{ borderRadius: '30px' }} />
+          </div>
+          <div class="relative flex items-center my-3 mt-5">
+            <label class="text-[13px] text-white absolute px-2 top-[-10px] left-[18px] font-semibold" style={{ background: 'linear-gradient(87deg, #5e72e4 0, #825ee4 100%)', borderRadius: '30px', border: '1px solid #999' }}>TimeZone*</label>
+            <select name="timezone" id='searchlist'
+              class="px-5 bod-sin py-3.5 bg-transparent text-black w-full text-sm border-2 rounded outline-none" style={{ borderRadius: '30px', }}>
+              <option value="Asia/Karachi" selected>Asia/Karachi</option>
+              <option value="Asia/kabul">Asia/kabul</option>
+              <option value="Asia/India">Asia/India</option>
+            </select>
+          </div>
+          <div className='flex'>
+            <div class="relative flex items-center my-3 mt-5 w-1/2">
+              <label class="text-[13px] text-white absolute px-2 top-[-10px] left-[18px] font-semibold" style={{ background: 'linear-gradient(87deg, #5e72e4 0, #825ee4 100%)', borderRadius: '30px', border: '1px solid #999' }}>Currency*</label>
+              <select name="timezone" id='searchlist'
+                class="px-5 bod-sin py-3.5 bg-transparent text-black w-full text-sm border-2 rounded outline-none" style={{ borderRadius: '30px', }}>
+                <option value="Dollar (USD)" selected>Dollar (USD)</option>
+                <option value="Dollar (TTD)">Dollar (TTD)</option>
+                <option value="Dollar (TVD)">Dollar (TVD)</option>
+              </select>
+            </div>
+            <div class="relative flex items-center my-3 mt-5 ml-3 w-1/2">
+              <label class="text-[13px] text-white absolute px-2 top-[-10px] left-[18px] font-semibold" style={{ background: 'linear-gradient(87deg, #5e72e4 0, #825ee4 100%)', borderRadius: '30px', border: '1px solid #999' }}>Symbol*</label>
+              <input type="text" placeholder="Currency Symbol"
+                class="px-5 bod-sin py-3.5 bg-transparent text-black w-full text-sm border-2 rounded outline-none" style={{ borderRadius: '30px' }} />
+            </div>
+          </div>
+          <div className='flex justify-center'><button className='flex items-center mt-2 p-2 px-5 text-white' style={{ background: 'linear-gradient(87deg, #11cdef 0, #1171ef 100%)', borderRadius: '20px' }}><TfiReload color='white' /> <span className='pl-2'>Update Settings</span></button></div>
+        </div>
+        <div className='w-2/5 ml-5 rounded-2xl' style={{ backgroundImage: 'url(https://eskooly.com/bb/asserts/images/apploginbg.jpg)' }}>
+          <div className='p-8 flex flex-col acc-det-bg'>
+            <div className='text-white flex w-full justify-center items-center'><CiLock color='white' size="25px" /> <h5 className='ml-2 font-semibold text-xl'> Account details</h5></div>
+            <div className='flex w-full justify-center mt-4'>
+              <div className='flex flex-col items-end text' style={{ color: 'rgb(150, 152, 214)' }}>
+                <span>Username:</span>
+                <span>Password:</span>
+                <span>Subscription:</span>
+                <span>Expiry:</span>
+              </div>
+              <div className='flex flex-col items-start ml-5 text-white'>
+                <span>abc@saanvigs.org</span>
+                <span>*********</span>
+                <span className='flex px-2 items-center rounded-3xl' style={{ background: 'linear-gradient(87deg, #2dce89 0, #2dcecc 100%)' }}><IoMdCheckmark color='white' /> <span className='pl-2'>Free</span></span>
+                <span>Never</span>
+              </div>
+            </div>
+            <div className='flex justify-center'><div className='text-white w-max flex items-center px-5 mt-5 rounded-3xl py-2' style={{ background: 'linear-gradient(87deg, #f5365c 0, #f56036 100%' }}><IoTrashOutline color='white' /><span className='pl-2'>Delete Account</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Classes
+const Classes = () => {
+  return (
     <div className='h-full w-full p-9'>
       {/* <AllClasses /> */}
       {/* <NewClasses /> */}
-      <EditORDelete />
+      {/* <EditORDelete /> */}
+    </div>
+  );
+}
+const AllClasses = () => {
+  return (
+    <div className='m-9 hover:shadow-2xl shadow flex flex-col p-9 text-white w-1/5 rounded-2xl cursor-pointer bg-red-400 items-center text-2xl'>
+      <span className='text-4xl'>+</span>
+      <h2>Add New</h2>
+    </div>
+  );
+}
+const NewClasses = () => {
+  return (
+    <div className='m-9 flex flex-col justify-center items-center w-full'>
+      <input type='text' name='fileToUpload' className='bod-in w-1/3 mt-2 p-2' placeholder='Name of Class' required />
+      <input type='text' name='fileToUpload' className='bod-in w-1/3 mt-2 p-2' placeholder='Monthly Tution Fees' required />
+      {/* <input type='file' name='fileToUpload' className='bod-in w-full p-2' required /> */}
+      <select id="feeFor" placeholder="---- Select Class Teacher ----" className="w-1/3 mt-2 p-2 focus:ring-blue-500 focus:border-blue-500">
+        <option selected>---- Select Class Teacher ----</option>
+      </select>
+      <button className='flex items-center bg-blue-500 rounded-sm mt-2 p-5 text-white'><IoMdCheckmark color='white' /> <span className='pl-2'>Submit</span></button>
+    </div>
+  );
+}
+const EditORDelete = () => {
+  return (
+    <div className='m-9 flex flex-col justify-center items-center w-full'>
+      <select id="feeFor" placeholder="---- Select Class Teacher ----" className="w-1/3 mt-2 p-2 focus:ring-blue-500 focus:border-blue-500">
+        <option selected>---- Select Class Teacher ----</option>
+      </select>
+      <hr />
+      <div className='flex'>
+        <button className='flex items-center bg-blue-500 rounded-sm mt-2 p-2 text-white'><TfiReload color='white' /> <span className='pl-2'>Update</span></button>
+        <button className='flex items-center bg-red-500 rounded-sm ml-2 mt-2 p-2 text-white'><IoMdClose color='white' /> <span className='pl-2'>Delete</span></button>
+      </div>
     </div>
   );
 }
 // Subjects
 const Subjects = () => {
-  const ClassesWithSubjects = () => {
-    return (
-      <div className='hover:shadow-2xl shadow flex flex-col p-9 text-white w-1/5 rounded-2xl cursor-pointer bg-red-400 items-center text-2xl'>
-        <span className='text-4xl'>+</span>
-        <h2 className='font-bold'>Add Subject</h2>
-      </div>
-    );
-  }
-  const AssignSubjects = () => {
-    return (
-      <div className='flex flex-col justify-center items-center w-full'>
-        <select id="feeFor" placeholder="---- Select Class Teacher ----" className="w-3/6 bod-in mt-2 p-2 focus:ring-blue-500 focus:border-blue-500">
-          <option selected>---- Select Class ----</option>
-        </select>
-        <div className='flex justify-center w-3/6 mt-3'>
-          <input type='text' placeholder='Name of Subject' className='w-3/5 p-2 bod-in' />
-          <input type='number' placeholder='Marks' className='w-2/5 bod-in p-2' />
-        </div>
-        <div className='flex'>
-          <button className='flex items-center bg-blue-500 rounded-3xl mt-2 p-1 text-white'><FaPlus /> <span className='pl-2'>Add More</span></button>
-          <button className='flex items-center bg-red-400 rounded-3xl ml-2 mt-2 p-1 text-white justify-center'><FaMinus /> <span className='pl-2'>Remove</span></button>
-        </div>
-        <hr />
-        <div className='flex justify-center'><button className='flex items-center bg-blue-400 rounded-sm mt-7 p-2 px-5 text-white'><FaPlus color='white' /> <span className='pl-2'>Add Subjects</span></button></div>
-      </div>
-    );
-  }
   return (
     <div className='h-full w-full p-9'>
       {/* <AssignSubjects /> */}
-      <ClassesWithSubjects />
+      {/* <ClassesWithSubjects /> */}
+    </div>
+  );
+}
+const ClassesWithSubjects = () => {
+  return (
+    <div className='hover:shadow-2xl shadow flex flex-col m-9 p-9 text-white w-1/5 rounded-2xl cursor-pointer bg-red-400 items-center text-2xl'>
+      <span className='text-4xl'>+</span>
+      <h2 className='font-bold'>Add Subject</h2>
+    </div>
+  );
+}
+const AssignSubjects = () => {
+  return (
+    <div className='flex flex-col m-9 justify-center items-center w-full'>
+      <select id="feeFor" placeholder="---- Select Class Teacher ----" className="w-3/6 bod-in mt-2 p-2 focus:ring-blue-500 focus:border-blue-500">
+        <option selected>---- Select Class ----</option>
+      </select>
+      <div className='flex justify-center w-3/6 mt-3'>
+        <input type='text' placeholder='Name of Subject' className='w-3/5 p-2 bod-in' />
+        <input type='number' placeholder='Marks' className='w-2/5 bod-in p-2' />
+      </div>
+      <div className='flex'>
+        <button className='flex items-center bg-blue-500 rounded-3xl mt-2 p-1 text-white'><FaPlus /> <span className='pl-2'>Add More</span></button>
+        <button className='flex items-center bg-red-400 rounded-3xl ml-2 mt-2 p-1 text-white justify-center'><FaMinus /> <span className='pl-2'>Remove</span></button>
+      </div>
+      <hr />
+      <div className='flex justify-center'><button className='flex items-center bg-blue-400 rounded-sm mt-7 p-2 px-5 text-white'><FaPlus color='white' /> <span className='pl-2'>Add Subjects</span></button></div>
     </div>
   );
 }
 const Students = () => {
-  const AllStudents = () => {
-    return (
-      <div>
-        <div className='flex items-center justify-between'>
-          <div className='w-3/5 flex'>
-            <div className='flex w-1/2 items-center'><input type='text' placeholder='Search Student' className='border-0 border-b-2 bg-transparent focus:outline-none ml-4 p-2 w-11/12 border-gray-500' required /> <CiSearch size='25px' /></div>
-            <div className='flex w-1/2 items-center'><select className='border-0 border-b-2 bg-transparent focus:outline-none ml-4 p-2 w-11/12 border-gray-500'><option>--select class--</option></select> <CiSearch size='25px' /></div>
-          </div>
-          <div className='flex h-10' style={{ backgroundColor: 'rgb(240, 240, 240)' }}><TfiReload className='h-full w-16 p-3 cursor-pointer' /><AiOutlineIdcard className='h-full w-16 p-3 cursor-pointer' /> <TfiPrinter className='h-full p-3 w-16 cursor-pointer' /></div>
-        </div>
-        <div className='flex flex-col p-8 text-white cursor-pointer mt-5 items-center justify-center' style={{ background: 'linear-gradient(45deg, #4b49ac, #5d5ba9)', borderRadius: '50%', height: '155px', width: '155px' }}>
-          <FaPlus />
-          {/* <span>+</span> */}
-          <span className=''>Add Subject</span>
-        </div>
-      </div>
-    );
-  }
-  const AddNew = () => {
-    return (
-      <div>
-        <div className='bg-white flex flex-wrap justify-between rounded-xl'>
-          <div className=' flex items-center p-2 pt-3 pb-4' style={{ borderRadius: '10px', fontSize: '16px' }}><strong className='' style={{ borderRight: '1px solid #777', paddingRight: '10px', marginRight: '10px' }}>Students</strong> <TiHomeOutline /> <span> - Admission Form</span></div>
-          <button className='flex items-center py-2 px-3 cursor-pointer text-white font-semibold m-2 rounded-3xl' style={{ background: 'linear-gradient(45deg, #7878e8, #8787e5)', lineHeight: '16px', fontSize: '11px' }}><CiImport color='white' /> <span className='pl-2'>Import Students</span></button>
-        </div>
-        <h3 className='text-center mt-3 font-semibold w-full text-3xl' style={{ color: '#ff808b' }}>Admission Form</h3>
-        <div>
-          <h5 className='flex justify-between text-white font-semibold text-xl' style={{ background: 'linear-gradient(45deg, #4d4cac, #5a59ab)', marginBottom: '20px', padding: '10px' }}>
-            <span className=''>Student Information</span>
-            <span>[ *Required ]</span>
-          </h5>
-          <div className='disp-stu-adding my-1 mb-3'>
-            <div className='flex flex-col wid-stu-adding mx-2'>
-              <input type='text' name='studentname' placeholder='Name of the Student' className='outline-black p-2 focus:outline-blue-500' />
-              <label className='flex flex-col mb-3'><span className='flex items-center'><span>Picture:</span><span className='pl-1' style={{ fontSize: '10px' }}>[ optional ]</span></span> <input type='file' name='fileToUpload' className='bod-in p-2 focus:outline-blue-500 bg-white' /><span className='' style={{ fontSize: '10px' }}>[ Max size 100KB ]</span></label>
-            </div>
-            <div className='wid-stu-adding mx-2' style={{ marginTop: '-10px' }}>
-              <div class="relative flex items-center my-3">
-                <label class="text-[13px] bg-white lab-txt absolute px-1 top-[-10px] left-[18px]">Last Reg: None</label>
-                <input type="text" placeholder="Registration No:"
-                  class="bod-sin p-2 bg-white text-black w-full text-sm border-2 rounded outline-none" />
-              </div>
-              <label className='flex flex-col mb-3' style={{ marginTop: '-10px' }}>Admission Date: <input type='date' className='p-2 bod-in focus:outline-blue-500' /></label>
-            </div>
-            <div className='wid-stu-adding mx-2 flex flex-col'>
-              <select className='p-2 mb-2 bod-in' required>
-                <option>select class</option>
-              </select>
-              <input type='number' placeholder='Discount In Fee in %' className='p-2 bod-in' />
-              <font className='mt-2' style={{ fontSize: '9px', color: '#999' }}>Student / Guardian mobile no to receive SMS / WhatsApp</font>
-              <input type='tel' placeholder='Mobile No: e.g +44xxxxxxxxxx' className='p-2 bod-in' name='Gphone' />
-            </div>
-          </div>
-          <h5 className='flex justify-between text-white font-semibold text-xl' style={{ background: 'linear-gradient(45deg, #9698d6, #a9abdb)', marginBottom: '20px', padding: '10px' }}>
-            <span className=''>Other Info</span>
-            <span>[ Optional ]</span>
-          </h5>
-          <div className='disp-stu-adding'>
-            <div className='wid-stu-adding mx-2'>
-              <div className="relative flex items-center my-3">
-                <label class="text-[13px] bg-white lab-txt absolute px-1 top-[-10px] left-[18px]">Date of Birth</label>
-                <input type='date' className='my-2 bod-in bod-sin p-2 bg-white text-black w-full text-sm border-2 rounded outline-none' placeholder='dd-mm-yyyy' />
-              </div>
-              <select className='p-2 w-full my-2 bod-in' required>
-                <option>Gender</option>
-                <option>Male</option>
-                <option>Female</option>
-              </select>
-              <input type='text' name='idmarks' placeholder='Any Identification Mark ?' className='outline-black p-2 w-full my-2 focus:outline-blue-500' />
-              <select className='p-2 w-full my-2 bod-in' required>
-                <option>Blood Group</option>
-                <option>A+</option>
-                <option>A-</option>
-                <option>B+</option>
-                <option>B-</option>
-                <option>O+</option>
-                <option>O-</option>
-                <option>AB+</option>
-                <option>AB-</option>
-              </select>
-              <input type='text' name='disease' placeholder='Disease if any ?' className='outline-black w-full p-2 focus:outline-blue-500 my-2' />
-            </div>
-            <div className='wid-stu-adding flex flex-col mx-2 mt-4'>
-              <input type='text' name='scnic' placeholder='Student Birth Form ID / NIC' className='outline-black bod-in p-2 my-2 focus:outline-blue-500 w-full mb2' />
-              <input type='text' name='cast' placeholder='Cast' className='outline-black p-2 focus:outline-blue-500 bod-in w-full my-2' />
-              <input type='text' name='pr' placeholder='Previous School' className='my-2 outline-black p-2 w-full bod-in focus:outline-blue-500' />
-              <input type='text' name='previousid' placeholder='Previous ID / Board Roll No.' className='outline-black bod-in my-2 p-2 w-full focus:outline-blue-500' />
-              <input type='text' name='additionalinfo' placeholder='Any Additional Note' className='outline-black p-2 bod-in my-2 w-full focus:outline-blue-500' />
-            </div>
-            <div>
-              <select className='p-2 w-full my-2 bod-in' name='os' required>
-                <option>Orphen Student</option>
-                <option>Yes</option>
-                <option>No</option>
-              </select>
-              <select className='p-2 w-full my-2 bod-in' name='osc' required>
-                <option>OSC</option>
-                <option>Yes</option>
-                <option>No</option>
-              </select>
-              <select className='p-2 w-full my-2 bod-in' name='religion' required>
-                <option>Religion</option>
-                <option>Hinduisiam</option>
-                <option>Islam</option>
-              </select>
-              <select className='p-2 w-full my-2 bod-in' name='family' required>
-                <option>Select Family</option>
-              </select>
-              <input type='number' name='noc' placeholder='Total Sibilings' className='outline-black p-2 bod-in my-2 w-full focus:outline-blue-500' />
-            </div>
-          </div>
-          <div className='disp-stu-adding'>
-            <div className='w-2/3 addr'>
-              <input type='text' name='addrss' placeholder='Address' className='outline-black p-2 bod-in my-2 w-11/12 addr focus:outline-blue-500' />
-            </div>
-            <button className='text-white flex p-2 px-5 my-2 mb-5 items-center rounded-3xl' style={{ background: 'linear-gradient(87deg, #5e72e4 0, #825ee4 100%)' }}><FaPlus color='white' /> <span className='pl-2'>Add Parents</span></button>
-          </div>
-          <h5 className='flex justify-between text-white font-semibold text-xl' style={{ background: 'linear-gradient(45deg, #ff808b, #f79099)', marginBottom: '20px', padding: '10px' }}>
-            <span className=''>FATHER INFO</span>
-            <span>[ Optional ]</span>
-          </h5>
-          <div className='disp-stu-adding'>
-            <div className='wid-stu-adding flex flex-col mx-2 mt-4'>
-              <input type='text' name='fnam' placeholder='Name of Father' className='outline-black bod-in p-2 my-2 focus:outline-blue-500 w-full mb2' />
-              <input type='text' name='fedu' placeholder='Education' className='outline-black p-2 focus:outline-blue-500 bod-in w-full my-2' />
-            </div>
-            <div className='wid-stu-adding flex flex-col mx-2 mt-4'>
-              <input type='text' name='fcnic' placeholder='National ID No.' className='outline-black bod-in p-2 my-2 focus:outline-blue-500 w-full mb2' />
-              <input type='text' name='fmob' placeholder='Mobile No' className='outline-black p-2 focus:outline-blue-500 bod-in w-full my-2' />
-            </div>
-            <div className='wid-stu-adding flex flex-col mx-2 mt-4'>
-              <input type='text' name='fo' placeholder='Occupation' className='outline-black bod-in p-2 my-2 focus:outline-blue-500 w-full mb2' />
-              <input type='text' name='fp' placeholder='Profession' className='outline-black p-2 focus:outline-blue-500 bod-in w-full my-2' />
-              <input type='text' name='fi' placeholder='Income' className='my-2 outline-black p-2 w-full bod-in focus:outline-blue-500' />
-            </div>
-          </div>
-          <h5 className='flex justify-between text-white font-semibold text-xl' style={{ background: 'linear-gradient(45deg, #5e81f4, #7191f7)', marginBottom: '20px', padding: '10px' }}>
-            <span className=''>MOTHER INFO</span>
-            <span>[ Optional ]</span>
-          </h5>
-          <div className='disp-stu-adding'>
-            <div className='wid-stu-adding flex flex-col mx-2 mt-4'>
-              <input type='text' name='mnam' placeholder='Name of Mother' className='outline-black bod-in p-2 my-2 mx-2 focus:outline-blue-500 w-full mb2' />
-              <input type='text' name='medu' placeholder='Education' className='outline-black p-2 focus:outline-blue-500 bod-in w-full my-2' />
-            </div>
-            <div className='wid-stu-adding flex flex-col mx-2 mt-4'>
-              <input type='text' name='mcnic' placeholder='National ID No.' className='outline-black bod-in p-2 my-2 focus:outline-blue-500 w-full mb2' />
-              <input type='text' name='mmob' placeholder='Mobile No' className='outline-black p-2 focus:outline-blue-500 bod-in w-full my-2' />
-            </div>
-            <div className='wid-stu-adding flex flex-col mx-2 mt-4'>
-              <input type='text' name='mo' placeholder='Occupation' className='outline-black bod-in p-2 my-2 focus:outline-blue-500 w-full mb2' />
-              <input type='text' name='mp' placeholder='Profession' className='outline-black p-2 focus:outline-blue-500 bod-in w-full my-2' />
-              <input type='text' name='mi' placeholder='Income' className='my-2 outline-black p-2 w-full bod-in focus:outline-blue-500' />
-            </div>
-          </div>
-          <hr />
-          <div className='mb-20 mt-5 flex inlin justify-center'>
-            <button className='flex items-center text-white' style={{ background: 'linear-gradient(45deg, #ff808b, #f79099)', padding: '10px 19px', fontSize: '15px', borderRadius: '2px' }}><TfiReload color='white' /> <span className='pl-2'>Reset</span></button>
-            <button className='flex items-center text-white justify-center ml-3' style={{ background: 'linear-gradient(45deg, #4d4cac, #5a59ab)', width: '170px', padding: '10px', fontSize: '15px', borderRadius: '2px' }}><IoMdCheckmark color='white' /><span className='pl-2'>Submit</span></button>
-          </div>
-        </div>
-      </div>
-    );
-  }
   return (
     <div className='h-screen w-full overflow-auto p-9' style={{ backgroundColor: '#f3f3f3' }}>
       {/* <AllStudents /> */}
-      <AddNew />
+      {/* <AddNew /> */}
+      {/* <AdmissionLetter /> */}
+      <IDCard />
     </div>
+  );
+}
+const AllStudents = () => {
+  return (
+    <div>
+      <div className='flex m-9 items-center justify-between'>
+        <div className='w-3/5 flex'>
+          <div className='flex w-1/2 items-center'><input type='text' placeholder='Search Student' className='focus:outline-none ml-4 w-11/12' style={{ background: 'none', border: 'none', borderBottom: '1px solid gray', padding: '9px 10px 8px 10px' }} required /> <CiSearch size='25px' /></div>
+          <div className='flex w-1/2 items-center'><select className='focus:outline-none ml-4 w-11/12' style={{ background: 'none', border: 'none', borderBottom: '1px solid gray', padding: '9px 10px 8px 10px' }}><option>--select class--</option></select> <CiSearch size='25px' /></div>
+        </div>
+        <div className='flex h-10' style={{ backgroundColor: 'rgb(240, 240, 240)' }}><TfiReload className='h-full w-16 p-3 cursor-pointer' /><AiOutlineIdcard className='h-full w-16 p-3 cursor-pointer' /> <TfiPrinter className='h-full p-3 w-16 cursor-pointer' /></div>
+      </div>
+      <div className='flex flex-col p-8 text-white cursor-pointer mt-5 items-center justify-center' style={{ background: 'linear-gradient(45deg, #4b49ac, #5d5ba9)', borderRadius: '50%', height: '155px', width: '155px' }}>
+        <FaPlus />
+        {/* <span>+</span> */}
+        <span className=''>Add Subject</span>
+      </div>
+    </div>
+  );
+}
+const AddNew = () => {
+  return (
+    <div>
+      <div className='bg-white m-9 flex flex-wrap justify-between rounded-xl'>
+        <div className=' flex items-center p-2 pt-3 pb-4' style={{ borderRadius: '10px', fontSize: '16px' }}><strong className='' style={{ borderRight: '1px solid #777', paddingRight: '10px', marginRight: '10px' }}>Students</strong> <TiHomeOutline /> <span> - Admission Form</span></div>
+        <button className='flex items-center py-2 px-3 cursor-pointer text-white font-semibold m-2 rounded-3xl' style={{ background: 'linear-gradient(45deg, #7878e8, #8787e5)', lineHeight: '16px', fontSize: '11px' }}><CiImport color='white' /> <span className='pl-2'>Import Students</span></button>
+      </div>
+      <h3 className='text-center mt-3 font-semibold w-full text-3xl' style={{ color: '#ff808b' }}>Admission Form</h3>
+      <div>
+        <h5 className='flex justify-between text-white font-semibold text-xl' style={{ background: 'linear-gradient(45deg, #4d4cac, #5a59ab)', marginBottom: '20px', padding: '10px' }}>
+          <span className=''>Student Information</span>
+          <span>[ *Required ]</span>
+        </h5>
+        <div className='disp-stu-adding my-1 mb-3'>
+          <div className='flex flex-col wid-stu-adding mx-2'>
+            <input type='text' name='studentname' placeholder='Name of the Student' className='outline-black p-2 focus:outline-blue-500' />
+            <label className='flex flex-col mb-3'><span className='flex items-center'><span>Picture:</span><span className='pl-1' style={{ fontSize: '10px' }}>[ optional ]</span></span> <input type='file' name='fileToUpload' className='bod-in p-2 focus:outline-blue-500 bg-white' /><span className='' style={{ fontSize: '10px' }}>[ Max size 100KB ]</span></label>
+          </div>
+          <div className='wid-stu-adding mx-2' style={{ marginTop: '-10px' }}>
+            <div class="relative flex items-center my-3">
+              <label class="text-[13px] bg-white lab-txt absolute px-1 top-[-10px] left-[18px]">Last Reg: None</label>
+              <input type="text" placeholder="Registration No:"
+                class="bod-sin p-2 bg-white text-black w-full text-sm border-2 rounded outline-none" />
+            </div>
+            <label className='flex flex-col mb-3' style={{ marginTop: '-10px' }}>Admission Date: <input type='date' className='p-2 bod-in focus:outline-blue-500' /></label>
+          </div>
+          <div className='wid-stu-adding mx-2 flex flex-col'>
+            <select className='p-2 mb-2 bod-in' required>
+              <option>select class</option>
+            </select>
+            <input type='number' placeholder='Discount In Fee in %' className='p-2 bod-in' />
+            <font className='mt-2' style={{ fontSize: '9px', color: '#999' }}>Student / Guardian mobile no to receive SMS / WhatsApp</font>
+            <input type='tel' placeholder='Mobile No: e.g +44xxxxxxxxxx' className='p-2 bod-in' name='Gphone' />
+          </div>
+        </div>
+        <h5 className='flex justify-between text-white font-semibold text-xl' style={{ background: 'linear-gradient(45deg, #9698d6, #a9abdb)', marginBottom: '20px', padding: '10px' }}>
+          <span className=''>Other Info</span>
+          <span>[ Optional ]</span>
+        </h5>
+        <div className='disp-stu-adding'>
+          <div className='wid-stu-adding mx-2'>
+            <div className="relative flex items-center my-3">
+              <label class="text-[13px] bg-white lab-txt absolute px-1 top-[-10px] left-[18px]">Date of Birth</label>
+              <input type='date' className='my-2 bod-in bod-sin p-2 bg-white text-black w-full text-sm border-2 rounded outline-none' placeholder='dd-mm-yyyy' />
+            </div>
+            <select className='p-2 w-full my-2 bod-in' required>
+              <option>Gender</option>
+              <option>Male</option>
+              <option>Female</option>
+            </select>
+            <input type='text' name='idmarks' placeholder='Any Identification Mark ?' className='outline-black p-2 w-full my-2 focus:outline-blue-500' />
+            <select className='p-2 w-full my-2 bod-in' required>
+              <option>Blood Group</option>
+              <option>A+</option>
+              <option>A-</option>
+              <option>B+</option>
+              <option>B-</option>
+              <option>O+</option>
+              <option>O-</option>
+              <option>AB+</option>
+              <option>AB-</option>
+            </select>
+            <input type='text' name='disease' placeholder='Disease if any ?' className='outline-black w-full p-2 focus:outline-blue-500 my-2' />
+          </div>
+          <div className='wid-stu-adding flex flex-col mx-2 mt-4'>
+            <input type='text' name='scnic' placeholder='Student Birth Form ID / NIC' className='outline-black bod-in p-2 my-2 focus:outline-blue-500 w-full mb2' />
+            <input type='text' name='cast' placeholder='Cast' className='outline-black p-2 focus:outline-blue-500 bod-in w-full my-2' />
+            <input type='text' name='pr' placeholder='Previous School' className='my-2 outline-black p-2 w-full bod-in focus:outline-blue-500' />
+            <input type='text' name='previousid' placeholder='Previous ID / Board Roll No.' className='outline-black bod-in my-2 p-2 w-full focus:outline-blue-500' />
+            <input type='text' name='additionalinfo' placeholder='Any Additional Note' className='outline-black p-2 bod-in my-2 w-full focus:outline-blue-500' />
+          </div>
+          <div>
+            <select className='p-2 w-full my-2 bod-in' name='os' required>
+              <option>Orphen Student</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+            <select className='p-2 w-full my-2 bod-in' name='osc' required>
+              <option>OSC</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+            <select className='p-2 w-full my-2 bod-in' name='religion' required>
+              <option>Religion</option>
+              <option>Hinduisiam</option>
+              <option>Islam</option>
+            </select>
+            <select className='p-2 w-full my-2 bod-in' name='family' required>
+              <option>Select Family</option>
+            </select>
+            <input type='number' name='noc' placeholder='Total Sibilings' className='outline-black p-2 bod-in my-2 w-full focus:outline-blue-500' />
+          </div>
+        </div>
+        <div className='disp-stu-adding'>
+          <div className='w-2/3 addr'>
+            <input type='text' name='addrss' placeholder='Address' className='outline-black p-2 bod-in my-2 w-11/12 addr focus:outline-blue-500' />
+          </div>
+          <button className='text-white flex p-2 px-5 my-2 mb-5 items-center rounded-3xl' style={{ background: 'linear-gradient(87deg, #5e72e4 0, #825ee4 100%)' }}><FaPlus color='white' /> <span className='pl-2'>Add Parents</span></button>
+        </div>
+        <h5 className='flex justify-between text-white font-semibold text-xl' style={{ background: 'linear-gradient(45deg, #ff808b, #f79099)', marginBottom: '20px', padding: '10px' }}>
+          <span className=''>FATHER INFO</span>
+          <span>[ Optional ]</span>
+        </h5>
+        <div className='disp-stu-adding'>
+          <div className='wid-stu-adding flex flex-col mx-2 mt-4'>
+            <input type='text' name='fnam' placeholder='Name of Father' className='outline-black bod-in p-2 my-2 focus:outline-blue-500 w-full mb2' />
+            <input type='text' name='fedu' placeholder='Education' className='outline-black p-2 focus:outline-blue-500 bod-in w-full my-2' />
+          </div>
+          <div className='wid-stu-adding flex flex-col mx-2 mt-4'>
+            <input type='text' name='fcnic' placeholder='National ID No.' className='outline-black bod-in p-2 my-2 focus:outline-blue-500 w-full mb2' />
+            <input type='text' name='fmob' placeholder='Mobile No' className='outline-black p-2 focus:outline-blue-500 bod-in w-full my-2' />
+          </div>
+          <div className='wid-stu-adding flex flex-col mx-2 mt-4'>
+            <input type='text' name='fo' placeholder='Occupation' className='outline-black bod-in p-2 my-2 focus:outline-blue-500 w-full mb2' />
+            <input type='text' name='fp' placeholder='Profession' className='outline-black p-2 focus:outline-blue-500 bod-in w-full my-2' />
+            <input type='text' name='fi' placeholder='Income' className='my-2 outline-black p-2 w-full bod-in focus:outline-blue-500' />
+          </div>
+        </div>
+        <h5 className='flex justify-between text-white font-semibold text-xl' style={{ background: 'linear-gradient(45deg, #5e81f4, #7191f7)', marginBottom: '20px', padding: '10px' }}>
+          <span className=''>MOTHER INFO</span>
+          <span>[ Optional ]</span>
+        </h5>
+        <div className='disp-stu-adding'>
+          <div className='wid-stu-adding flex flex-col mx-2 mt-4'>
+            <input type='text' name='mnam' placeholder='Name of Mother' className='outline-black bod-in p-2 my-2 mx-2 focus:outline-blue-500 w-full mb2' />
+            <input type='text' name='medu' placeholder='Education' className='outline-black p-2 focus:outline-blue-500 bod-in w-full my-2' />
+          </div>
+          <div className='wid-stu-adding flex flex-col mx-2 mt-4'>
+            <input type='text' name='mcnic' placeholder='National ID No.' className='outline-black bod-in p-2 my-2 focus:outline-blue-500 w-full mb2' />
+            <input type='text' name='mmob' placeholder='Mobile No' className='outline-black p-2 focus:outline-blue-500 bod-in w-full my-2' />
+          </div>
+          <div className='wid-stu-adding flex flex-col mx-2 mt-4'>
+            <input type='text' name='mo' placeholder='Occupation' className='outline-black bod-in p-2 my-2 focus:outline-blue-500 w-full mb2' />
+            <input type='text' name='mp' placeholder='Profession' className='outline-black p-2 focus:outline-blue-500 bod-in w-full my-2' />
+            <input type='text' name='mi' placeholder='Income' className='my-2 outline-black p-2 w-full bod-in focus:outline-blue-500' />
+          </div>
+        </div>
+        <hr />
+        <div className='mb-20 mt-5 flex inlin justify-center'>
+          <button className='flex items-center text-white' style={{ background: 'linear-gradient(45deg, #ff808b, #f79099)', padding: '10px 19px', fontSize: '15px', borderRadius: '2px' }}><TfiReload color='white' /> <span className='pl-2'>Reset</span></button>
+          <button className='flex items-center text-white justify-center ml-3' style={{ background: 'linear-gradient(45deg, #4d4cac, #5a59ab)', width: '170px', padding: '10px', fontSize: '15px', borderRadius: '2px' }}><IoMdCheckmark color='white' /><span className='pl-2'>Submit</span></button>
+        </div>
+      </div>
+    </div>
+  );
+}
+const AdmissionLetter = () => {
+  return (
+    <div className='h-screen m-9 w-full'>
+      <div className='flex w-full justify-center items-center mt-10'><input type='text' placeholder='Search Student' className='focus:outline-none ml-4 ' style={{ background: 'none', border: 'none', borderBottom: '1px solid gray', padding: '9px 10px 8px 10px', width: '250px' }} required /> <CiSearch size='25px' /></div>
+    </div >
+  );
+}
+const IDCard = () => {
+  return (
+    <div>
+      <div className='flex m-9 items-center justify-between'>
+        <div className='w-3/5 flex m-2'>
+          <div className='flex w-1/2 items-center'><input type='text' placeholder='Search Student' className='focus:outline-none ml-4 w-11/12' style={{ background: 'none', border: 'none', borderBottom: '1px solid gray', padding: '9px 10px 8px 10px' }} required /> <CiSearch size='25px' /></div>
+          <div className='flex w-1/2 items-center'><select className='focus:outline-none ml-4 w-11/12' style={{ background: 'none', border: 'none', borderBottom: '1px solid gray', padding: '9px 10px 8px 10px' }}><option>--select class--</option></select> <CiSearch size='25px' /></div>
+        </div>
+        <div className='flex h-10' style={{ backgroundColor: 'rgb(240, 240, 240)' }}><TfiReload className='h-full w-16 p-3 cursor-pointer' /><TfiPrinter className='h-full p-3 w-16 cursor-pointer' /></div>
+      </div>
+    </div>
+  );
+}
+
+const PrintBasicList = () => {
+  return (
+    <div></div>
   );
 }
 const Homework = () => {
@@ -941,15 +969,26 @@ const Pages = () => {
         {/* <Classes /> */}
         {/* <Subjects /> */}
         <div className='flex flex-col flex-grow'>
-          <Students />
+          {/* <Students /> */}
           {/* <Switch>
             <Route path="/general-settings/institute-profile" component={GeneralSettings.InstitureProfile} />
             <Route path="/general-settings/fee-particulars" component={GeneralSettings.FeeParticulars} />
           </Switch> */}
           <Routes>
-            <Route path='/Dashboard' Component={Dashboard} />
-            {/* <Route path='/General-Settings/Institute-Profile' component={GeneralSettings.InstitureProfile} />
-            <Route path='/General-Settings/Fee-Particulars' component={Dashboard.FeeParticulars} /> */}
+            <Route path='/eSkooly' Component={Dashboard} defaultValue />
+            <Route path='/eSkooly/General-Settings/Institute-Profile' element={<InstitureProfile />} />
+            <Route path='/eSkooly/General-Settings/Fee-Particulars' element={<FeeParticulars />} />
+            <Route path='/eSkooly/General-Settings/Details-For-Fee-Challan' element={<DetailsForFeeChallan />} />
+            <Route path='/eSkooly/General-Settings/Rules&Regulations' element={<RulesAndRegulations />} />
+            <Route path='/eSkooly/General-Settings/Marks-Grading' element={<MarksGradings />} />
+            <Route path='/eSkooly/General-Settings/Theme&Language' element={<ThemeAndLanguage />} />
+            <Route path='/eSkooly/General-Settings/Account-Settings' element={<AccountSettings />} />
+            <Route path='/eSkooly/Classes/All-Classes' element={<AllClasses />} />
+            <Route path='/eSkooly/Classes/New-Class' element={<NewClasses />} />
+            <Route path='/eSkooly/Classes/Edit-Or-Delete' element={<EditORDelete />} />
+            <Route path='/eSkooly/Subjects/Classes-With-Subjects' element={<ClassesWithSubjects />} />
+            <Route path='/eSkooly/Subjects/Assign-Subjects' element={<EditORDelete />} />
+            <Route path='/eSkooly/Students/All-Students' element={<EditORDelete />} />
           </Routes>
         </div>
 
