@@ -30,6 +30,9 @@ import { CiSearch } from "react-icons/ci";
 import { AiOutlineIdcard } from "react-icons/ai";
 import { TfiPrinter } from "react-icons/tfi";
 import { CiImport } from "react-icons/ci";
+import { CiCalendar } from "react-icons/ci";
+import { RiDeleteBin5Line } from "react-icons/ri";
+import { RiFilterLine } from "react-icons/ri";
 
 
 // import SideNavItems from "./SideNavItems";
@@ -1105,7 +1108,7 @@ const AddEmployee = () => {
           </div>
           {/* <button className='text-white flex p-2 px-5 my-2 mb-5 items-center rounded-3xl' style={{ background: 'linear-gradient(87deg, #5e72e4 0, #825ee4 100%)' }}><FaPlus color='white' /> <span className='pl-2'>Add Parents</span></button> */}
         </div>
-        
+
         <hr />
         <div className='mb-20 mt-5 flex inlin justify-center'>
           <button className='flex items-center text-white' style={{ background: 'linear-gradient(45deg, #ff808b, #f79099)', padding: '10px 19px', fontSize: '15px', borderRadius: '2px' }}><TfiReload color='white' /> <span className='pl-2'>Reset</span></button>
@@ -1124,21 +1127,132 @@ const JobLetter = () => {
 }
 const ChartOfAccount = () => {
   return (
-    <div className='h-screen m-9 w-full'>
-      <div className='min-w-60 w-1/4 p-3 bg-white shadow rounded hover:shadow-2xl'>
+    <div className=' m-9 w-full flex'>
+      <div className='min-w-60 w-2/6 p-3 bg-white shadow rounded hover:shadow-2xl'>
         <h5 className='text-center'>Add Chart Of Account</h5>
         <form className='flex flex-col'>
-          <input type='text' name='head' placeholder='Name Of Head*' className='my-2 mx-1 p-3 outline-black focus:outline-blue-400' style={{ outlineWidth: '0.5px'}} />
-          <select className='my2 mx-1 p-3 focus:outline-blue-400'>
+          <input type='text' name='head' placeholder='Name Of Head*' className='my-2 mx-1 p-3 bod-in outline-black focus:outline-blue-400' style={{ outlineWidth: '0.5px' }} />
+          <select className='my-2 mx-1 p-3 bod-in focus:outline-blue-400'>
             <option>Type*</option>
             <option>Income</option>
             <option>Expense</option>
           </select>
           <hr />
-          <div className='flex justify-center'><button type='submit' name='addHead' className='flex items-center m-2 p-2 px-4 justify-center cursor-pointer text-white' style={{ transition: 'all ease-in 0.3s', backgroundColor: '#FF5370', borderColor: '#FF5370'}}><FaPlus color='white' /><span className='pl-2'>Save Head</span></button></div>
+          <div className='flex justify-center mt-4'><button type='submit' name='addHead' className='flex items-center m-2 p-2 px-4 justify-center cursor-pointer text-white' style={{ transition: 'all ease-in 0.3s', backgroundColor: '#FF5370', borderColor: '#FF5370' }}><FaPlus color='white' /><span className='pl-2'>Save Head</span></button></div>
         </form>
       </div>
-      <div className='w-3/5'></div>
+      <div className='w-3/5 m-3 mt-0 ml-10'>
+        <div className='flex justify-between'>
+          <span>
+            Show
+            <select className='bg-transparent bod-in mx-1 p-2 py-1'>
+              <option>10</option>
+              <option>25</option>
+              <option>50</option>
+              <option>100</option>
+            </select>
+            entries
+          </span>
+          <div className=''>
+            <label className='mb-1'>Search: <input type='search' className='focus:outline-none p-2' style={{ borderRadius: '3px', border: '1px solid #aaa', backgroundColor: 'transparent', marginLeft: '0.5em', fontSize: '14px', }} /></label>
+          </div>
+        </div>
+        <div className="w-full mt-2">
+          <table className="w-full" style={{ border: '1px solid #e9ecef', borderBottom: '1px solid #111' }}>
+            <thead>
+              <tr className='text-white' style={{ background: 'linear-gradient(45deg, #4b49ac, #5d5ba9)', borderBottom: '1px solid #111' }}>
+                <th className='cursor-pointer text-left' style={{ width: '435px', padding: '10px 18px' }}>NAME OF THE HEAD</th>
+                <th className='cursor-pointer text-left' style={{ width: '435px', padding: '10px 18px' }}>TYPE</th>
+                <th className='cursor-pointer text-left' style={{ width: '435px', padding: '10px 18px' }}>ACTION</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className='' style={{ backgroundColor: 'rgba(0,0,0,.05)' }}>
+                <td style={{ padding: '10px 18px' }}>Bus repair</td>
+                <td style={{ padding: '10px 18px' }}>EXPENSE</td>
+                <td style={{ padding: '10px 18px' }}>
+                  <button className='cursor-pointer' style={{ background: 'linear-gradient(45deg, #ff808b, #f79099)', padding: '8px 14px', lineHeight: '16px', fontSize: '11px', borderRadius: '2px' }}><IoTrashOutline color='white' /></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className='flex justify-between items-center'>
+          <div className='' style={{ whiteSpace: 'nowrap', }}><span>Showing 1 to 1 of 1 entries</span></div>
+          <div className='text-right m-0 flex flex-end cursor-default' style={{ whiteSpace: 'nowrap', color: '#666', border: '1px solid transparent', background: 'transparent', boxShadow: 'none', }}>
+            <button className='m-1 mt-0 p-3 py-2' style={{ pointerEvents: 'none', }}>Previous</button>
+            <button className='m-1 p-3 py-2 bod-in' style={{ color: '#333', pointerEvents: 'none', backgroundColor: 'rgba(0, 0, 0, 0)', backgroundImage: 'linear-gradient(rgb(255, 255, 255) 0%, rgb(220, 220, 220) 100%)', border: '1px solid #979797', }}>1</button>
+            <button className='m-1 mt-0' style={{ pointerEvents: 'none', }}>Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+const AddIncome = () => {
+  return (
+    <div className='m-9 w-full flex justify-center'>
+      <div className='wid-stu-adding'>
+        <h3 className='text-center font-bold' style={{ color: '#9698d6', fontSize: '1.75rem' }}>Add Income</h3>
+        <hr />
+        <form className='flex flex-col'>
+          <input type='date' name='incomedate' placeholder='' className='bod-in my-1 mt-3 p-2 focus:outline-blue-500' required />
+          <input type='text' name='incomename' placeholder='Income Description' className='bod-in my-1 p-2 focus:outline-blue-500' required />
+          <input type='text' name='incomename' placeholder='Income Amount' className='bod-in my-1 p-2 focus:outline-blue-500' required />
+          <hr className='mt-4' />
+          <div className='flex justify-center mt-3'><button className='flex items-center text-white justify-center ml-3' style={{ background: 'linear-gradient(45deg, #4d4cac, #5a59ab)', width: '170px', padding: '10px', fontSize: '15px', borderRadius: '2px' }}><IoMdCheckmark color='white' /><span className='pl-2'>Submit</span></button></div>
+        </form>
+      </div>
+    </div>
+  );
+}
+const AddExpense = () => {
+  return (
+    <div className='m-9 w-full flex justify-center'>
+      <div className='wid-stu-adding'>
+        <h3 className='text-center font-bold' style={{ color: '#9698d6', fontSize: '1.75rem' }}>Add Expense</h3>
+        <hr />
+        <form className='flex flex-col'>
+          <input type='date' name='expensedate' placeholder='' className='bod-in my-1 mt-3 p-2 focus:outline-blue-500' required />
+          <input type='text' name='expensename' placeholder='Expense Description' className='bod-in my-1 p-2 focus:outline-blue-500' required />
+          <input type='text' name='expensename' placeholder='Expense Amount' className='bod-in my-1 p-2 focus:outline-blue-500' required />
+          <hr className='mt-4' />
+          <div className='flex justify-center mt-3'><button className='flex items-center text-white justify-center ml-3' style={{ background: 'linear-gradient(45deg, #4d4cac, #5a59ab)', width: '170px', padding: '10px', fontSize: '15px', borderRadius: '2px' }}><IoMdCheckmark color='white' /><span className='pl-2'>Submit</span></button></div>
+        </form>
+      </div>
+    </div>
+  );
+}
+const AccountStatement = () => {
+  return (
+    <div className='m-9 w-full'>
+      <div className='flex items-center justify-between w-full'>
+        <div className='flex items-center mt-3'>
+          <input type='date' name='expensedate' placeholder='' className='bod-in my-1 p-2 focus:outline-blue-500' required />
+          <span className='mx-2'>To:</span>
+          <input type='date' name='expensedate' placeholder='' className='bod-in my-1 p-2 focus:outline-blue-500' required />
+          <button className='flex items-center text-white justify-center ml-3 px-8' style={{ backgroundColor: '#4099ff', borderColor: '#4099ff', padding: '10px', fontSize: '15px', borderRadius: '2px' }}><CiSearch /><span className='pl-2'>Statement</span></button>
+        </div>
+        <div className='flex w-min'><div className='flex h-10 w-min' style={{ backgroundColor: 'rgb(240, 240, 240)' }}><CiCalendar className='h-full p-3 w-16 cursor-pointer' /><TfiPrinter className='h-full p-3 w-16 cursor-pointer' /><TfiReload className='h-full w-16 p-3 cursor-pointer' /><RiDeleteBin5Line className='h-full w-16 p-3 cursor-pointer' /><RiFilterLine className='h-full p-3 w-16 cursor-pointer' /></div></div>
+      </div>
+      <table className="w-full" style={{ border: '1px solid #e9ecef', borderBottom: '1px solid #111' }}>
+        <thead>
+          <tr className='text-white' style={{ background: 'linear-gradient(45deg, #4b49ac, #5d5ba9)', borderBottom: '1px solid #111' }}>
+            <th className='cursor-pointer text-left' style={{ width: '435px', padding: '10px 18px' }}>NAME OF THE HEAD</th>
+            <th className='cursor-pointer text-left' style={{ width: '435px', padding: '10px 18px' }}>TYPE</th>
+            <th className='cursor-pointer text-left' style={{ width: '435px', padding: '10px 18px' }}>ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr className='' style={{ backgroundColor: 'rgba(0,0,0,.05)' }}>
+            <td style={{ padding: '10px 18px' }}>Bus repair</td>
+            <td style={{ padding: '10px 18px' }}>EXPENSE</td>
+            <td style={{ padding: '10px 18px' }}>
+              <button className='cursor-pointer' style={{ background: 'linear-gradient(45deg, #ff808b, #f79099)', padding: '8px 14px', lineHeight: '16px', fontSize: '11px', borderRadius: '2px' }}><IoTrashOutline color='white' /></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 }
@@ -1163,7 +1277,6 @@ const Pages = () => {
     <div className='bg-gray-100 w-full h-screen overflow-hidden'>
       <PageNav sideBar={sideBar} toggle={toggleSideBar} />
       <div className='flex '>
-
         {sideBar ? <SideNavPage selectedTab={selectedTab} onTabChange={handleTabChange} /> : null}
         {/* {SideNavItems.map((items) => (
         <div key={items.idx === selectedTab}>
@@ -1210,6 +1323,9 @@ const Pages = () => {
             {/* <Route path='/eSkooly/Employees/Staff-ID-Card' element={<AllEmployees />} /> */}
             <Route path='/eSkooly/Employees/Job-Letter' element={<JobLetter />} />
             <Route path='/eSkooly/Accounts/Chart-Of-Account' element={<ChartOfAccount />} />
+            <Route path='/eSkooly/Accounts/Add-Income' element={<AddIncome />} />
+            <Route path='/eSkooly/Accounts/Add-Expense' element={<AddExpense />} />
+            <Route path='/eSkooly/Accounts/Account-Statement' element={<AccountStatement />} />
           </Routes>
         </div>
 

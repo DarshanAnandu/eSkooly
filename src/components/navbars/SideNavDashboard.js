@@ -20,15 +20,16 @@ const SideNavDashboard = ({ selectedTab, onTabChange }) => {
       onTabChange(idx, null);
     }
   };
-
+// sideNav-shadow
   return (
-    <div className='z-50 h-screen sideNav-shadow overflow-auto' style={{ width: '235px' }}>
+    <div className='z-50 h-screen shadow-2xl overflow-auto' style={{ width: '235px' }}>
       <ul>
         <li className='px-2.5 py-1.5'><span></span>menu</li>
         {SideNavItems.map((items) => (
           <li
             key={items.idx}
             className={`px-5 py-1.5 w-full cursor-pointer hover:${hoveredIdx === items.idx ? 'text-blue-600 ' : ''} ${!items.dropdown && selectedTab === items.idx ? 'border-l-4 border-indigo-500' : ''}`}
+            style={{}}
             onMouseEnter={() => setHoveredIdx(items.idx)}
             onMouseLeave={() => setHoveredIdx(null)}
           >
@@ -50,22 +51,22 @@ const SideNavDashboard = ({ selectedTab, onTabChange }) => {
             {items.dropdown && expandedDropdown === items.idx && (
               <ul>
                 {items.subItems.map((item) => (
-                  <li
-                    key={item.idx}
-                    className={`px-5 py-1.5 w-full cursor-pointer ${hoveredIdx === item.idx ? 'text-blue-600 ' : ''} ${selectedTab === item.idx ? 'border-l-4 border-indigo-500' : ''}`}
-                    onMouseEnter={() => setHoveredIdx(item.idx)}
-                    onMouseLeave={() => setHoveredIdx(null)}
+                  <Link
+                    to={item.goto}
+                    className='flex items-center justify-between w-full'
+                    onClick={() => onTabChange(items.idx, item.idx)}
                   >
-                    <Link
-                      to={item.goto}
-                      className='flex items-center justify-between w-full'
-                      onClick={() => onTabChange(items.idx, item.idx)}
+                    <li
+                      key={item.idx}
+                      className={`px-5 py-1.5 w-full cursor-pointer ${hoveredIdx === item.idx ? 'text-blue-600 ' : ''} ${selectedTab === item.idx ? 'border-l-4 border-indigo-500' : ''}`}
+                      onMouseEnter={() => setHoveredIdx(item.idx)}
+                      onMouseLeave={() => setHoveredIdx(null)}
                     >
                       <div className='flex items-center'>
                         <span className='text-sm'>{item.name}</span>
                       </div>
-                    </Link>
-                  </li>
+                    </li>
+                  </Link>
                 ))}
               </ul>
             )}
