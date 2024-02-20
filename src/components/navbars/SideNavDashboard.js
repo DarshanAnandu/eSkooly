@@ -5,7 +5,7 @@ import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa";
 // import { AiOutlineHome } from "react-icons/ai";
 import SideNavItems from "./SideNavItems";
-const SideNavDashboard = ({ selectedTab, onTabChange }) => {
+const SideNavDashboard = ({ selectedTab, selectedSubTab, onTabChange }) => {
   const [hoveredIdx, setHoveredIdx] = useState(null);
   const [expandedDropdown, setExpandedDropdown] = useState(null);
 
@@ -58,9 +58,10 @@ const SideNavDashboard = ({ selectedTab, onTabChange }) => {
                   >
                     <li
                       key={item.idx}
-                      className={`px-5 py-1.5 w-full cursor-pointer ${hoveredIdx === item.idx ? 'text-blue-600 ' : ''} ${selectedTab === item.idx ? 'border-l-4 border-indigo-500' : ''}`}
+                      className={`px-5 py-1.5 w-full cursor-pointer border-indigo-500 ${hoveredIdx === item.idx ? 'text-blue-600 ' : ''} ${selectedSubTab === item.idx ? '' : ''}`}
                       onMouseEnter={() => setHoveredIdx(item.idx)}
                       onMouseLeave={() => setHoveredIdx(null)}
+                      style={{ borderLeftWidth: hoveredIdx === item.idx ? '4px' : '1px', }}
                     >
                       <div className='flex items-center'>
                         <span className='text-sm'>{item.name}</span>

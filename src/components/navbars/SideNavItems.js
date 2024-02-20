@@ -103,12 +103,12 @@ const SideNavItems = [
         dropdown: true,
         Lock: false,
         subItems: [
-            { idx: 0, name: 'Generate Bank Challan', icon: '' },
-            { idx: 1, name: 'Collect Fee', icon: '' },
-            { idx: 2, name: 'Fee Slip', icon: '' },
-            { idx: 3, name: 'Fees Defaulters', icon: '' },
-            { idx: 4, name: 'Fees Report', icon: '' },
-            { idx: 5, name: 'Delete Fee', icon: '' }
+            { idx: 0, name: 'Generate Bank Challan', goto: '/eSkooly/Fees/Generate-Bank-Challan', icon: '' },
+            { idx: 1, name: 'Collect Fee', goto: '/eSkooly/Fees/Collect-Fee', icon: '' },
+            { idx: 2, name: 'Fee Slip', goto: '/eSkooly/Fees/Fee-Slip', icon: '' },
+            { idx: 3, name: 'Fees Defaulters', goto: '/eSkooly/Fees/Fee-Defaulters', icon: '' },
+            { idx: 4, name: 'Fees Report', goto: '/eSkooly/Fees/Fee-Report', icon: '' },
+            { idx: 5, name: 'Delete Fee', goto: '/eSkooly/Fees/Delete-Fee', icon: '' }
         ]
     },
     {
@@ -118,9 +118,10 @@ const SideNavItems = [
         dropdown: true,
         Lock: false,
         subItems: [
-            { idx: 0, name: 'Pay Salary', icon: '' },
-            { idx: 1, name: 'Salary Slip', icon: '' },
-            { idx: 2, name: 'Salary Report', icon: '' }
+            { idx: 0, name: 'Pay Salary', goto: '/eSkooly/Salary/Pay-Salary', icon: '' },
+            { idx: 1, name: 'Salary Slip', goto: '/eSkooly/Salary/Salary-Slip', icon: '' },
+            { idx: 2, name: 'Salary Sheet', goto: '/eSkooly/Salary/Salary', icon: '' },
+            { idx: 3, name: 'Salary Report', goto: '/eSkooly/Salary/Pay-Salary', icon: '' }
         ]
     },
     {
@@ -130,11 +131,11 @@ const SideNavItems = [
         dropdown: true,
         Lock: false,
         subItems: [
-            { idx: 0, name: 'Mark Structure Attendence', icon: '' },
-            { idx: 1, name: 'Mark Employees', icon: '' },
-            { idx: 2, name: 'Class Wise Report', icon: '' },
-            { idx: 3, name: 'Student Attendance Report', icon: '' },
-            { idx: 4, name: 'Employee Attendance Report', icon: '' }
+            { idx: 0, name: 'Mark Structure Attendence', goto: '/eSkooly/Attendance/Mark-Student-Attendance', icon: '' },
+            { idx: 1, name: 'Mark Employees Attedence', goto: '/eSkooly/Attendance/Mark-Employee-Attendance', icon: '' },
+            { idx: 2, name: 'Class Wise Report', goto: '/eSkooly/Attendance/Mark-Student-Attendan', icon: '' },
+            { idx: 3, name: 'Student Attendance Report', goto: '/eSkooly/Attendance/Student-Attendance-Report', icon: '' },
+            { idx: 4, name: 'Employee Attendance Report', goto: '/eSkooly/Attendance/Employee-Attendance-Report', icon: '' }
         ]
     },
     {
@@ -152,7 +153,7 @@ const SideNavItems = [
             { idx: 5, name: 'Generate for Teacher', icon: '' }
         ]
     },
-    { idx: 11, name: 'Homework', icon: '', dropdown: false, Lock: false },
+    { idx: 11, name: 'Homework', icon: '', goto: '/eSkooly/Homework', dropdown: false, Lock: false },
     {
         idx: 12,
         name: 'Behaviour & Skills',
@@ -160,11 +161,11 @@ const SideNavItems = [
         dropdown: true,
         Lock: false,
         subItems: [
-            { idx: 0, name: 'Rate Behaviours', icon: '' },
-            { idx: 1, name: 'Rate Skills', icon: '' },
-            { idx: 2, name: 'Observations', icon: '' },
-            { idx: 3, name: 'Affective Domain Rating Report', icon: '' },
-            { idx: 4, name: 'Psycomotor Domain Rating Report', icon: '' }
+            { idx: 0, name: 'Rate Behaviours', goto: '/eSkooly/Behaviour-&-Skills/Rate-Behaviours', icon: '' },
+            { idx: 1, name: 'Rate Skills', goto: '/eSkooly/Behaviour-&-Skills/Rate-Behaviours', icon: '' },
+            { idx: 2, name: 'Observations', goto: '/eSkooly/Behaviour-&-Skills/Rate-Behaviours', icon: '' },
+            { idx: 3, name: 'Affective Domain Rating Report', goto: '/eSkooly/Behaviour-&-Skills/Rate-Behaviours', icon: '' },
+            { idx: 4, name: 'Psycomotor Domain Rating Report', goto: '/eSkooly/Behaviour-&-Skills/Rate-Behaviours', icon: '' }
         ]
     },
     {
@@ -183,7 +184,7 @@ const SideNavItems = [
         ]
     },
     { idx: 14, name: 'WhatsApp', icon: '', dropdown: false, Lock: false },
-    { idx: 15, name: 'Messaging', icon: '', dropdown: false, Lock: false },
+    { idx: 15, name: 'Messaging', icon: '', goto: '/eSkooly/Messaging', dropdown: false, Lock: false },
     {
         idx: 16,
         name: 'SMS Services',
@@ -191,7 +192,7 @@ const SideNavItems = [
         dropdown: true,
         Lock: false,
         subItems: [
-            { idx: 0, name: 'Free SMS Gateway', icon: '' },
+            { idx: 0, name: 'Free SMS Gateway', goto: '/eSkooly/SMS-Services/Free-SMS-Gateway', icon: '' },
             { idx: 1, name: 'Branded SMS', icon: '' },
             { idx: 2, name: 'SMS Templates', icon: '' }
         ]
@@ -200,6 +201,7 @@ const SideNavItems = [
         idx: 17,
         name: 'Live Class',
         icon: '',
+        goto: '/eSkooly/Live-Class',
         dropdown: false,
         Lock: false
     },
@@ -222,11 +224,11 @@ const SideNavItems = [
         dropdown: true,
         Lock: false,
         subItems: [
-            { idx: 0, name: 'Create New Exam', icon: '' },
-            { idx: 1, name: 'Edit OR Delete', icon: '' },
-            { idx: 2, name: 'Add / Update Exam Marks', icon: '' },
-            { idx: 3, name: 'Result Card', icon: '' },
-            { idx: 4, name: 'Blank Award List', icon: '' }
+            { idx: 0, name: 'Create New Exam', goto: '/eSkooly/Exams/Create-New-Exam', icon: '' },
+            { idx: 1, name: 'Edit OR Delete', goto: '/eSkooly/Exams/Edit-OR-Delete', icon: '' },
+            { idx: 2, name: 'Add / Update Exam Marks', goto: '/eSkooly/Exams/Add-OR-Update-Exam-Marks', icon: '' },
+            { idx: 3, name: 'Result Card', goto: '/eSkooly/Exams/Result-Card', icon: '' },
+            { idx: 4, name: 'Blank Award List', goto: '/eSkooly/Exams/Blank-Award-List', icon: '' }
         ]
     },
     {
@@ -236,8 +238,8 @@ const SideNavItems = [
         dropdown: true,
         Lock: false,
         subItems: [
-            { idx: 0, name: 'Create New Test', icon: '' },
-            { idx: 1, name: 'Test Result', icon: '' }
+            { idx: 0, name: 'Create New Test', goto: '/eSkooly/Class-Test/Create-Class-Test', icon: '' },
+            { idx: 1, name: 'Test Result', goto: '/eSkooly/Class-Test/Test-Results', icon: '' }
         ]
     },
     {
@@ -247,9 +249,9 @@ const SideNavItems = [
         dropdown: true,
         Lock: false,
         subItems: [
-            { idx: 0, name: 'Student Report Card', icon: '' },
-            { idx: 1, name: 'Student Info Report', icon: '' },
-            { idx: 2, name: 'Parents Info Report', icon: '' },
+            { idx: 0, name: 'Student Report Card', goto: '/eSkooly/Reports/Student-Report-Card', icon: '' },
+            { idx: 1, name: 'Student Info Report', goto: '/eSkooly/Reports/Student-Info-Report', icon: '' },
+            { idx: 2, name: 'Parents Info Report', goto: '/eSkooly/Reports/Parents-Info-Report', icon: '' },
             { idx: 3, name: 'Students Monthly Attendance Report', icon: '' },
             { idx: 4, name: 'Staff Monthly Attendance Report', icon: '' },
             { idx: 5, name: 'Fee Collection Report', icon: '' },
@@ -265,8 +267,8 @@ const SideNavItems = [
         dropdown: true,
         Lock: false,
         subItems: [
-            { idx: 0, name: 'Leave Certificate', icon: '' },
-            { idx: 1, name: 'Character Certificate', icon: '' },
+            { idx: 0, name: 'Leave Certificate', goto: '/eSkooly/Certificates/Leave-Certificate', icon: '' },
+            { idx: 1, name: 'Character Certificate', goto: '/eSkooly/Certificates/Character-Certificate', icon: '' },
             { idx: 2, name: 'Certificate Templates', icon: '' }
         ]
     }
