@@ -3,10 +3,12 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa";
+import { FaLock } from "react-icons/fa";
 // import { AiOutlineHome } from "react-icons/ai";
 import SideNavItems from "./SideNavItems";
 const SideNavDashboard = ({ selectedTab, selectedSubTab, onTabChange }) => {
   const [hoveredIdx, setHoveredIdx] = useState(null);
+  const [hoveredSubIdx, setHoveredSubIdx] = useState(null);
   const [expandedDropdown, setExpandedDropdown] = useState(null);
 
   const toggleDropdown = (idx) => {
@@ -20,16 +22,16 @@ const SideNavDashboard = ({ selectedTab, selectedSubTab, onTabChange }) => {
       onTabChange(idx, null);
     }
   };
-// sideNav-shadow
+  // sideNav-shadow
   return (
-    <div className='z-50 h-screen shadow-2xl overflow-auto' style={{ width: '235px' }}>
+    <div className='z-50 shadow-2xl overflow-auto' style={{ width: '235px', float: 'left', height: 'calc(100% - 50px)', backgroundColor: '#fff' }}>
       <ul>
         <li className='px-2.5 py-1.5'><span></span>menu</li>
         {SideNavItems.map((items) => (
           <li
             key={items.idx}
-            className={`px-5 py-1.5 w-full cursor-pointer hover:${hoveredIdx === items.idx ? 'text-blue-600 ' : ''} ${!items.dropdown && selectedTab === items.idx ? 'border-l-4 border-indigo-500' : ''}`}
-            style={{}}
+            className={`w-full cursor-pointer hover:${hoveredIdx === items.idx ? 'text-blue-600 ' : ''} `}
+            style={{ color: hoveredIdx === items.idx ? '#5e81f4' : '#666' }}
             onMouseEnter={() => setHoveredIdx(items.idx)}
             onMouseLeave={() => setHoveredIdx(null)}
           >
@@ -38,13 +40,18 @@ const SideNavDashboard = ({ selectedTab, selectedSubTab, onTabChange }) => {
               className='flex items-center justify-between w-full'
               onClick={() => handleItemClick(items.idx, items.dropdown)}
             >
-              <div className='flex items-center'>
-                <span className='p-1 pt-2 mr-2.5 inline-block items-center h-8 w-8 rounded'>{items.icon}</span>
+              <div className={`flex items-center px-5 py-1.5  ${ selectedTab === items.idx ? 'border-l-4 border-indigo-500' : ''}`}>
+                <span className='p-1 pt-2 mr-2.5 inline-block items-center h-8 w-8 rounded'>{hoveredIdx === items.idx ? items.hovered_Icon : items.normal_Icon}</span>
                 <span className='text-sm'>{items.name}</span>
               </div>
               {items.dropdown && (
                 <div className='flex items-center w-2 justify-end'>
                   {expandedDropdown === items.idx ? <FaMinus color='gray' /> : <FaPlus color='gray' />}
+                </div>
+              )}
+              {items.Lock && (
+                <div className='flex items-center w-2 justify-end'>
+                  <FaLock color='#ff808b' style={{ opacity: '0.6' }} />
                 </div>
               )}
             </Link>
@@ -53,19 +60,25 @@ const SideNavDashboard = ({ selectedTab, selectedSubTab, onTabChange }) => {
                 {items.subItems.map((item) => (
                   <Link
                     to={item.goto}
-                    className='flex items-center justify-between w-full'
+                    className='flex items-center justify-between w-full px-5'
                     onClick={() => onTabChange(items.idx, item.idx)}
                   >
                     <li
                       key={item.idx}
-                      className={`px-5 py-1.5 w-full cursor-pointer border-indigo-500 ${hoveredIdx === item.idx ? 'text-blue-600 ' : ''} ${selectedSubTab === item.idx ? '' : ''}`}
-                      onMouseEnter={() => setHoveredIdx(item.idx)}
-                      onMouseLeave={() => setHoveredIdx(null)}
-                      style={{ borderLeftWidth: hoveredIdx === item.idx ? '4px' : '1px', }}
+                      className={`px-4 py-1.5 w-full flex justify-between cursor-pointer border-indigo-500 ${hoveredSubIdx === item.idx ? 'text-blue-600 ' : ''} ${selectedSubTab === item.idx ? '' : ''}`}
+                      onMouseEnter={() => setHoveredSubIdx(item.idx)}
+                      onMouseLeave={() => setHoveredSubIdx(null)}
+                      style={{ borderLeftWidth: (selectedSubTab === item.idx || hoveredSubIdx === item.idx) ? '3px' : '1px', color: hoveredSubIdx === item.idx ? '#5e81f4' : '#666', opacity: item.Lock ? '0.6' : '' }}
                     >
+                      
                       <div className='flex items-center'>
                         <span className='text-sm'>{item.name}</span>
                       </div>
+                      {item.Lock && (
+                        <div className='flex items-center w-2 justify-end'>
+                          <FaLock color='#ff808b' style={{ opacity: '0.6' }} />
+                        </div>
+                      )}
                     </li>
                   </Link>
                 ))}

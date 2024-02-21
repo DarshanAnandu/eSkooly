@@ -1,11 +1,33 @@
 import { AiOutlineHome } from "react-icons/ai";
+import { CiSettings } from "react-icons/ci";
+import { TfiRulerPencil } from "react-icons/tfi";
+import { GoBook } from "react-icons/go";
+import { SlUser } from "react-icons/sl";
+import { TfiBriefcase } from "react-icons/tfi";
+import { LuWallet } from "react-icons/lu";
+import { FaRegMoneyBill1 } from "react-icons/fa6";
+import { MdCreditCard } from "react-icons/md";
+import { TfiHandOpen } from "react-icons/tfi";
+import { CiCalendar } from "react-icons/ci";
+import { LuSlice } from "react-icons/lu";
+import { FaRegEye } from "react-icons/fa";
+import { TfiShoppingCart } from "react-icons/tfi";
+import { FaWhatsapp } from "react-icons/fa";
+import { TfiCommentAlt } from "react-icons/tfi";
+import { MdOutlineEmail } from "react-icons/md";
+import { TfiVideoCamera } from "react-icons/tfi";
+import { TfiFiles } from "react-icons/tfi";
+import { TfiWrite } from "react-icons/tfi";
+import { TfiMedall } from "react-icons/tfi";
+
 // import Dashboard from "../pages/Pages";
 
 const SideNavItems = [
     {
         idx: 0,
         name: 'Dashboard',
-        icon: <AiOutlineHome color='gray'/>,
+        normal_Icon: <AiOutlineHome color='#222' size='14px'/>,
+        hovered_Icon: <AiOutlineHome color='#5e81f4'/>,
         dropdown: false,
         Lock: false,
         goto: '/eSkooly',
@@ -13,15 +35,16 @@ const SideNavItems = [
     {
         idx: 1,
         name: 'General Settings',
-        icon: '',
+        normal_Icon: <CiSettings color="#222" size='18px' />,
+        hovered_Icon: <CiSettings color="#5e81f4" size='18px' />,
         dropdown: true,
         drop: false,
         Lock: false,
         subItems: [
             { idx: 110, name: 'Institute Profile', goto: '/eSkooly/General-Settings/Institute-Profile', icon: '' },
             { idx: 111, name: 'Fee Particulars', goto: '/eSkooly/General-Settings/Fee-Particulars', icon: '' },
-            { idx: 112, name: 'Fee Structure', icon: '' },
-            { idx: 113, name: 'Discount Type', icon: '' },
+            { idx: 112, name: 'Fee Structure', Lock: true, icon: '' },
+            { idx: 113, name: 'Discount Type', Lock: true, icon: '' },
             { idx: 114, name: 'Details for Fee challan', goto: '/eSkooly/General-Settings/Details-For-Fee-Challan', icon: '' },
             { idx: 115, name: 'Rules and Regulations', goto: '/eSkooly/General-Settings/Rules&Regulations', icon: '' },
             { idx: 116, name: 'Marks Grading', goto: '/eSkooly/General-Settings/Marks-Grading', icon: '' },
@@ -33,7 +56,8 @@ const SideNavItems = [
     {
         idx: 2,
         name: 'Classes',
-        icon: '',
+        normal_Icon: <TfiRulerPencil color="#222" size='14px' />,
+        hovered_Icon: <TfiRulerPencil color="#5e81f4" size='14px' />,
         dropdown: true,
         Lock: false,
         subItems: [
@@ -45,7 +69,8 @@ const SideNavItems = [
     {
         idx: 3,
         name: 'Subjects',
-        icon: '',
+        normal_Icon: <GoBook color="#222" size='14px' />,
+        hovered_Icon: <GoBook color="#5e81f4" size='14px' />,
         dropdown: true,
         Lock: false,
         subItems: [
@@ -56,14 +81,15 @@ const SideNavItems = [
     {
         idx: 4,
         name: 'Students',
-        icon: '',
+        normal_Icon: <SlUser color="#222" size='14px' />,
+        hovered_Icon: <SlUser color="#5e81f4" size='14px' />,
         dropdown: true,
         Lock: false,
         subItems: [
             { idx: 0, name: 'All Students', goto: '/eSkooly/Students/All-Students', icon: '' },
             { idx: 1, name: 'Add New', goto: '/eSkooly/Students/Add-Students', icon: '' },
-            { idx: 2, name: 'Manage Families', icon: '' },
-            { idx: 3, name: 'Active / Inactive', icon: '' },
+            { idx: 2, name: 'Manage Families', Lock: true, icon: '' },
+            { idx: 3, name: 'Active / Inactive', Lock: true, icon: '' },
             { idx: 4, name: 'Admission Letter', goto: '/eSkooly/Students/Admission-Letter', icon: '' },
             { idx: 5, name: 'Student ID Cards', goto: '/eSkooly/Students/Student-ID-Cards', icon: '' },
             { idx: 6, name: 'Print Basic List', goto: '/eSkooly/Students/Print-Basic-Lists', icon: '' },
@@ -73,20 +99,22 @@ const SideNavItems = [
     {
         idx: 5,
         name: 'Employees',
-        icon: '',
+        normal_Icon: <TfiBriefcase color="#222" size='14px' />,
+        hovered_Icon: <TfiBriefcase color="#5e81f4" size='14px' />,
         dropdown: true,
         Lock: false,
         subItems: [
             { idx: 0, name: 'All Employees', goto: '/eSkooly/Employees/All-Employees', icon: '' },
             { idx: 1, name: 'Add New', goto: '/eSkooly/Employees/Add-Employee', icon: '' },
-            { idx: 2, name: 'Staff ID Cards', goto: '/eSkooly/Employees/Staff-ID-Card', icon: '' },
+            { idx: 2, name: 'Staff ID Cards', Lock: true, goto: '/eSkooly/Employees/Staff-ID-Card', icon: '' },
             { idx: 3, name: 'Job Letter', goto: '/eSkooly/Employees/Job-Letter', icon: '' }
         ]
     },
     {
         idx: 6,
         name: 'Accounts',
-        icon: '',
+        normal_Icon: <LuWallet color="#222" size='14px' />,
+        hovered_Icon: <LuWallet color="#5e81f4" size='14px' />,
         dropdown: true,
         Lock: false,
         subItems: [
@@ -99,7 +127,8 @@ const SideNavItems = [
     {
         idx: 7,
         name: 'Fees',
-        icon: '',
+        normal_Icon: <FaRegMoneyBill1 color="#222" size='14px' />,
+        hovered_Icon: <FaRegMoneyBill1 color="#5e81f4" size='14px' />,
         dropdown: true,
         Lock: false,
         subItems: [
@@ -107,27 +136,29 @@ const SideNavItems = [
             { idx: 1, name: 'Collect Fee', goto: '/eSkooly/Fees/Collect-Fee', icon: '' },
             { idx: 2, name: 'Fee Slip', goto: '/eSkooly/Fees/Fee-Slip', icon: '' },
             { idx: 3, name: 'Fees Defaulters', goto: '/eSkooly/Fees/Fee-Defaulters', icon: '' },
-            { idx: 4, name: 'Fees Report', goto: '/eSkooly/Fees/Fee-Report', icon: '' },
-            { idx: 5, name: 'Delete Fee', goto: '/eSkooly/Fees/Delete-Fee', icon: '' }
+            { idx: 4, name: 'Fees Report', Lock: true, goto: '/eSkooly/Fees/Fee-Report', icon: '' },
+            { idx: 5, name: 'Delete Fee', Lock: true, goto: '/eSkooly/Fees/Delete-Fee', icon: '' }
         ]
     },
     {
         idx: 8,
         name: 'Salary',
-        icon: '',
+        normal_Icon: <MdCreditCard color="#222" size='14px' />,
+        hovered_Icon: <MdCreditCard color="#5e81f4" size='14px' />,
         dropdown: true,
         Lock: false,
         subItems: [
             { idx: 0, name: 'Pay Salary', goto: '/eSkooly/Salary/Pay-Salary', icon: '' },
             { idx: 1, name: 'Salary Slip', goto: '/eSkooly/Salary/Salary-Slip', icon: '' },
-            { idx: 2, name: 'Salary Sheet', goto: '/eSkooly/Salary/Salary', icon: '' },
-            { idx: 3, name: 'Salary Report', goto: '/eSkooly/Salary/Pay-Salary', icon: '' }
+            { idx: 2, name: 'Salary Sheet', Lock: true, goto: '/eSkooly/Salary/Salary', icon: '' },
+            { idx: 3, name: 'Salary Report', Lock: true, goto: '/eSkooly/Salary/Salary-Report', icon: '' }
         ]
     },
     {
         idx: 9,
         name: 'Attendance',
-        icon: '',
+        normal_Icon: <TfiHandOpen color="#222" size='14px' />,
+        hovered_Icon: <TfiHandOpen color="#5e81f4" size='14px' />,
         dropdown: true,
         Lock: false,
         subItems: [
@@ -141,66 +172,71 @@ const SideNavItems = [
     {
         idx: 10,
         name: 'Timetable',
-        icon: '',
+        normal_Icon: <CiCalendar color="#222" size='14px' />,
+        hovered_Icon: <CiCalendar color="#5e81f4" size='14px' />,
         dropdown: true,
         Lock: false,
         subItems: [
-            { idx: 0, name: 'Weekdays', icon: '' },
-            { idx: 1, name: 'Time Periods', icon: '' },
-            { idx: 2, name: 'Class Rooms', icon: '' },
-            { idx: 3, name: 'Create TimeTable', icon: '' },
-            { idx: 4, name: 'Generate for Class', icon: '' },
-            { idx: 5, name: 'Generate for Teacher', icon: '' }
+            { idx: 0, name: 'Weekdays', Lock: true, icon: '' },
+            { idx: 1, name: 'Time Periods', Lock: true, icon: '' },
+            { idx: 2, name: 'Class Rooms', Lock: true, icon: '' },
+            { idx: 3, name: 'Create TimeTable', Lock: true, icon: '' },
+            { idx: 4, name: 'Generate for Class', Lock: true, icon: '' },
+            { idx: 5, name: 'Generate for Teacher', Lock: true, icon: '' }
         ]
     },
-    { idx: 11, name: 'Homework', icon: '', goto: '/eSkooly/Homework', dropdown: false, Lock: false },
+    { idx: 11, name: 'Homework', normal_Icon: <LuSlice color="#222" size='14px' />, hovered_Icon: <LuSlice color="#5e81f4" size='14px' />, goto: '/eSkooly/Homework', dropdown: false, Lock: false },
     {
         idx: 12,
         name: 'Behaviour & Skills',
-        icon: '',
+        normal_Icon: <FaRegEye color="#222" size='14px' />,
+        hovered_Icon: <FaRegEye color="#5e81f4" size='14px' />,
         dropdown: true,
         Lock: false,
         subItems: [
-            { idx: 0, name: 'Rate Behaviours', goto: '/eSkooly/Behaviour-&-Skills/Rate-Behaviours', icon: '' },
-            { idx: 1, name: 'Rate Skills', goto: '/eSkooly/Behaviour-&-Skills/Rate-Behaviours', icon: '' },
-            { idx: 2, name: 'Observations', goto: '/eSkooly/Behaviour-&-Skills/Rate-Behaviours', icon: '' },
-            { idx: 3, name: 'Affective Domain Rating Report', goto: '/eSkooly/Behaviour-&-Skills/Rate-Behaviours', icon: '' },
-            { idx: 4, name: 'Psycomotor Domain Rating Report', goto: '/eSkooly/Behaviour-&-Skills/Rate-Behaviours', icon: '' }
+            { idx: 0, name: 'Rate Behaviours', Lock: true, goto: '/eSkooly/Behaviour-&-Skills/Rate-Behaviours', icon: '' },
+            { idx: 1, name: 'Rate Skills', Lock: true, goto: '/eSkooly/Behaviour-&-Skills/Rate-Behaviours', icon: '' },
+            { idx: 2, name: 'Observations', Lock: true, goto: '/eSkooly/Behaviour-&-Skills/Rate-Behaviours', icon: '' },
+            { idx: 3, name: 'Affective Domain Rating Report', Lock: true, goto: '/eSkooly/Behaviour-&-Skills/Rate-Behaviours', icon: '' },
+            { idx: 4, name: 'Psycomotor Domain Rating Report', Lock: true, goto: '/eSkooly/Behaviour-&-Skills/Rate-Behaviours', icon: '' }
         ]
     },
     {
         idx: 13,
         name: 'Online Store & POS',
-        icon: '',
+        normal_Icon: <TfiShoppingCart color="#222" size='14px' />,
+        hovered_Icon: <TfiShoppingCart color="#5e81f4" size='14px' />,
         dropdown: true,
         Lock: false,
         subItems: [
-            { idx: 0, name: 'Store Analytics', icon: '' },
-            { idx: 1, name: 'Product Categories', icon: '' },
-            { idx: 2, name: 'Product Tax', icon: '' },
-            { idx: 3, name: 'Products', icon: '' },
-            { idx: 4, name: 'New Order', icon: '' },
-            { idx: 5, name: 'All Orders', icon: '' }
+            { idx: 0, name: 'Store Analytics', Lock: true, icon: '' },
+            { idx: 1, name: 'Product Categories', Lock: true, icon: '' },
+            { idx: 2, name: 'Product Tax', Lock: true, icon: '' },
+            { idx: 3, name: 'Products', Lock: true, icon: '' },
+            { idx: 4, name: 'New Order', Lock: true, icon: '' },
+            { idx: 5, name: 'All Orders', Lock: true, icon: '' }
         ]
     },
-    { idx: 14, name: 'WhatsApp', icon: '', dropdown: false, Lock: false },
-    { idx: 15, name: 'Messaging', icon: '', goto: '/eSkooly/Messaging', dropdown: false, Lock: false },
+    { idx: 14, name: 'WhatsApp', normal_Icon: <FaWhatsapp color="#222" size='14px' />, hovered_Icon: <FaWhatsapp color="#5e81f4" size='14px' />, dropdown: false, Lock: true },
+    { idx: 15, name: 'Messaging', normal_Icon: <TfiCommentAlt color="#222" size='14px' />, hovered_Icon: <TfiCommentAlt color="#5e81f4" size='14px' />, goto: '/eSkooly/Messaging', dropdown: false, Lock: false },
     {
         idx: 16,
         name: 'SMS Services',
-        icon: '',
+        normal_Icon: <MdOutlineEmail color="#222" size='14px' />,
+        hovered_Icon: <MdOutlineEmail color="#5e81f4" size='14px' />,
         dropdown: true,
         Lock: false,
         subItems: [
             { idx: 0, name: 'Free SMS Gateway', goto: '/eSkooly/SMS-Services/Free-SMS-Gateway', icon: '' },
-            { idx: 1, name: 'Branded SMS', icon: '' },
-            { idx: 2, name: 'SMS Templates', icon: '' }
+            { idx: 1, name: 'Branded SMS', Lock: true, icon: '' },
+            { idx: 2, name: 'SMS Templates', Lock: true, icon: '' }
         ]
     },
     {
         idx: 17,
         name: 'Live Class',
-        icon: '',
+        normal_Icon: <TfiVideoCamera color="#222" size='14px' />,
+        hovered_Icon: <TfiVideoCamera color="#5e81f4" size='14px' />,
         goto: '/eSkooly/Live-Class',
         dropdown: false,
         Lock: false
@@ -208,19 +244,21 @@ const SideNavItems = [
     {
         idx: 18,
         name: 'Question Paper',
-        icon: '',
+        normal_Icon: <TfiFiles color="#222" size='14px' />,
+        hovered_Icon: <TfiFiles color="#5e81f4" size='14px' />,
         dropdown: true,
         Lock: false,
         subItems: [
-            { idx: 0, name: 'Subject Chapters', icon: '' },
-            { idx: 1, name: 'Question Bank', icon: '' },
-            { idx: 2, name: 'Create Question Paper', icon: '' }
+            { idx: 0, name: 'Subject Chapters', Lock: true, icon: '' },
+            { idx: 1, name: 'Question Bank', Lock: true, icon: '' },
+            { idx: 2, name: 'Create Question Paper', Lock: true, icon: '' }
         ]
     },
     {
         idx: 19,
         name: 'Exams',
-        icon: '',
+        normal_Icon: <TfiWrite color="#222" size='14px' />,
+        hovered_Icon: <TfiWrite color="#5e81f4" size='14px' />,
         dropdown: true,
         Lock: false,
         subItems: [
@@ -228,13 +266,14 @@ const SideNavItems = [
             { idx: 1, name: 'Edit OR Delete', goto: '/eSkooly/Exams/Edit-OR-Delete', icon: '' },
             { idx: 2, name: 'Add / Update Exam Marks', goto: '/eSkooly/Exams/Add-OR-Update-Exam-Marks', icon: '' },
             { idx: 3, name: 'Result Card', goto: '/eSkooly/Exams/Result-Card', icon: '' },
-            { idx: 4, name: 'Blank Award List', goto: '/eSkooly/Exams/Blank-Award-List', icon: '' }
+            { idx: 4, name: 'Blank Award List', goto: '/eSkooly/Exams/Blank-Award-List', Lock: true, icon: '' }
         ]
     },
     {
         idx: 20,
         name: 'Class Tests',
-        icon: '',
+        normal_Icon: <TfiFiles color="#222" size='14px' />,
+        hovered_Icon: <TfiFiles color="#5e81f4" size='14px' />,
         dropdown: true,
         Lock: false,
         subItems: [
@@ -245,31 +284,33 @@ const SideNavItems = [
     {
         idx: 21,
         name: 'Reports',
-        icon: '',
+        normal_Icon: <TfiFiles color="#222" size='14px' />,
+        hovered_Icon: <TfiFiles color="#5e81f4" size='14px' />,
         dropdown: true,
         Lock: false,
         subItems: [
             { idx: 0, name: 'Student Report Card', goto: '/eSkooly/Reports/Student-Report-Card', icon: '' },
             { idx: 1, name: 'Student Info Report', goto: '/eSkooly/Reports/Student-Info-Report', icon: '' },
             { idx: 2, name: 'Parents Info Report', goto: '/eSkooly/Reports/Parents-Info-Report', icon: '' },
-            { idx: 3, name: 'Students Monthly Attendance Report', icon: '' },
-            { idx: 4, name: 'Staff Monthly Attendance Report', icon: '' },
-            { idx: 5, name: 'Fee Collection Report', icon: '' },
-            { idx: 6, name: 'Student Progress Report', icon: '' },
-            { idx: 7, name: 'Accounts Report', icon: '' },
-            { idx: 8, name: 'Customized Reports', icon: '' }
+            { idx: 3, name: 'Students Monthly Attendance Report', Lock: true, icon: '' },
+            { idx: 4, name: 'Staff Monthly Attendance Report', Lock: true, icon: '' },
+            { idx: 5, name: 'Fee Collection Report', Lock: true, icon: '' },
+            { idx: 6, name: 'Student Progress Report', Lock: true, icon: '' },
+            { idx: 7, name: 'Accounts Report', Lock: true, icon: '' },
+            { idx: 8, name: 'Customized Reports', Lock: true, icon: '' }
         ]
     },
     {
         idx: 22,
         name: 'Certificates',
-        icon: '',
+        normal_Icon: <TfiMedall color="#222" size='14px' />,
+        hovered_Icon: <TfiMedall color="#5e81f4" size='14px' />,
         dropdown: true,
         Lock: false,
         subItems: [
             { idx: 0, name: 'Leave Certificate', goto: '/eSkooly/Certificates/Leave-Certificate', icon: '' },
             { idx: 1, name: 'Character Certificate', goto: '/eSkooly/Certificates/Character-Certificate', icon: '' },
-            { idx: 2, name: 'Certificate Templates', icon: '' }
+            { idx: 2, name: 'Certificate Templates', Lock: true, icon: '' }
         ]
     }
 ];
