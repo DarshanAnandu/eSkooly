@@ -24,7 +24,7 @@ const SideNavDashboard = ({ selectedTab, selectedSubTab, onTabChange }) => {
   };
   // sideNav-shadow
   return (
-    <div className='z-50 shadow-2xl overflow-auto' style={{ width: '235px', float: 'left', height: 'calc(100% - 50px)', backgroundColor: '#fff' }}>
+    <div className='z-50 shadow-2xl overflow-auto sid-nav' style={{ width: '235px', float: 'left', height: 'calc(100% - 50px)', backgroundColor: '#fff' }}>
       <ul>
         <li className='px-2.5 py-1.5'><span></span>menu</li>
         {SideNavItems.map((items) => (
@@ -37,15 +37,15 @@ const SideNavDashboard = ({ selectedTab, selectedSubTab, onTabChange }) => {
           >
             <Link
               to={items.goto}
-              className='flex items-center justify-between w-full'
+              className='flex items-center justify-between pr-3 w-full'
               onClick={() => handleItemClick(items.idx, items.dropdown)}
             >
               <div className={`flex items-center px-5 py-1.5  ${ selectedTab === items.idx ? 'border-l-4 border-indigo-500' : ''}`}>
-                <span className='p-1 pt-2 mr-2.5 inline-block items-center h-8 w-8 rounded'>{hoveredIdx === items.idx ? items.hovered_Icon : items.normal_Icon}</span>
+                <span className='p-1 pt-2 mr-0 inline-block items-center h-8 w-8 rounded'>{hoveredIdx === items.idx ? items.hovered_Icon : items.normal_Icon}</span>
                 <span className='text-sm'>{items.name}</span>
               </div>
               {items.dropdown && (
-                <div className='flex items-center w-2 justify-end'>
+                <div className='flex items-center w-2 wl-0 w  r-8 justify-end'>
                   {expandedDropdown === items.idx ? <FaMinus color='gray' /> : <FaPlus color='gray' />}
                 </div>
               )}

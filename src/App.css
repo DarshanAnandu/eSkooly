@@ -17,6 +17,52 @@ body {
   transform: rotate(180deg);
 }
 
+/* dashboard display */
+.dp {
+  display: flex;
+}
+.dp-mb {
+  display: none;
+}
+.display-card {
+  width: 22%;
+}
+@media (max-width: 1200px) {
+  .display-card {
+    width: 47%;
+  }
+}
+@media (max-width: 990px) {
+  .fd {
+    flex-direction: column;
+  }
+  .wd {
+    width: 100%;
+    margin: 5px 20px;
+    /* margin: 0 50px; */
+  }
+  .mtt {
+    margin-top: 20px;
+  }
+  .sid-nav {
+    position: absolute;
+  }
+  .dp {
+    display: none;
+  }
+  .dp-mb {
+    display: flex;
+  }
+}
+@media (max-width: 770px) {
+  .display-card {
+    width: 100%;
+  }
+  .pic-none {
+    display: none;
+  }
+}
+
 .disp-stu-adding {
   display: flex;
 }

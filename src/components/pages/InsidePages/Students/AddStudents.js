@@ -1,4 +1,8 @@
-
+import { TfiReload } from "react-icons/tfi";
+import { TiHomeOutline } from "react-icons/ti";
+import { IoMdCheckmark } from "react-icons/io";
+import { FaPlus } from "react-icons/fa";
+import { CiImport } from "react-icons/ci";
 const AddStudents = () => {
     return (
         <div className='overflow-auto p-9 h-screen w-full' style={{ backgroundColor: '#f3f3f3' }}>

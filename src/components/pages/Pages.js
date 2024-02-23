@@ -53,7 +53,7 @@ import StudentInfoReport from './InsidePages/Reports/StudentInfoReport'
 import ParentsInfoReport from './InsidePages/Reports/ParentsInfoReport'
 import LeaveCertificate from './InsidePages/Certificates/LeaveCertificate'
 import CharacterCertificate from './InsidePages/Certificates/CharacterCertificate'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // import SideNavItems from "./SideNavItems";
 
@@ -119,6 +119,16 @@ const Pages = () => {
   const toggleSideBar = () => {
     setSideBar(!sideBar);
   };
+  const handleResize = () => {
+    setSideBar(window.innerWidth > 990);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   // const [selectedTabName, setSelectedTabName] = useState("");
   // const handleTabChange = (tabIndex, tabName) => {
   //   setSelectedTab(tabIndex);
@@ -132,7 +142,7 @@ const Pages = () => {
   return (
     <div className='bg-gray-100 w-full overflow-hidden'>
       <PageNav sideBar={sideBar} toggle={toggleSideBar} />
-      <div className='flex h-screen'>
+      <div className='flex h-screen w-full'>
         {sideBar ? <SideNavPage selectedTab={selectedTab} selectedSubTab={selectedSubTab} onTabChange={handleTabChange} /> : null}
         {/* {SideNavItems.map((items) => (
         <div key={items.idx === selectedTab}>
@@ -148,7 +158,7 @@ const Pages = () => {
         {/* <GeneralSettings /> */}
         {/* <Classes /> */}
         {/* <Subjects /> */}
-        <div className='flex flex-col flex-grow'>
+        <div className='flex flex-col flex-grow w-full'>
           {/* <Students /> */}
           {/* <Switch>
             <Route path="/general-settings/institute-profile" component={GeneralSettings.InstitureProfile} />

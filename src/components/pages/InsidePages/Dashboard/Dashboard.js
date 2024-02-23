@@ -9,9 +9,9 @@ import { TfiFaceSad } from "react-icons/tfi";
 const Dashboard = () => {
     const Display = () => {
         return (
-            <div>
-                <div className='p-8 flex flex-wrap justify-around sm:justify-start md:justify-center lg:justify-between xl:justify-around'>
-                    <div className='p-6 max-w min-w-48  min-h-36 mx-2 mb-2 mr-0 w-1/6 flex flex-col bg-m-dblue hover:shadow-2xl rounded-2xl xl:w-1/4 text-white'>
+            <div className="p-8">
+                <div className=' flex flex-wrap justify-between' style={{ '@media(max-width: 675px)': { flexDirection: 'column' } }}>{/*  sm:justify-start md:justify-center lg:justify-between xl:justify-around */}
+                    <div className='p-6 display-card min-h-36 m-2 flex flex-col bg-m-dblue hover:shadow-2xl rounded-2xl text-white'>
                         <h6 className='mb-3 text-lg font-semibold'>Total Students</h6>
                         <h2 className='flex mb-2 justify-between font-semibold text-4xl'>
                             <span><FaRegUser /></span>
@@ -19,7 +19,7 @@ const Dashboard = () => {
                         </h2>
                         <p className='flex justify-between'>This Month <span>0</span></p>
                     </div>
-                    <div className='p-6 max-w min-w-48 min-h-36 mb-2 flex w-1/6 flex-col bg-m-gray hover:shadow-2xl rounded-2xl text-white'>
+                    <div className='p-6 display-card min-h-36 m-2 flex flex-col bg-m-gray hover:shadow-2xl rounded-2xl text-white'>
                         <h6 className='mb-5'>Total Employees</h6>
                         <h2 className='flex mb-2 justify-between font-semibold text-4xl'>
                             <span><HiOutlineBriefcase size="36px" /></span>
@@ -27,26 +27,26 @@ const Dashboard = () => {
                         </h2>
                         <p className='flex justify-between'>This Month <span>0</span></p>
                     </div>
-                    <div className='p-6 max-w min-w-48 min-h-36 mb-2 w-1/6 flex flex-col hover:shadow-2xl bg-red-400 rounded-2xl text-white'>
+                    <div className='p-6 display-card min-h-36 m-2 flex flex-col hover:shadow-2xl bg-red-400 rounded-2xl text-white'>
                         <h6 className='mb-5'>Revenue</h6>
                         <h2 className='flex mb-2 justify-between font-semibold items-center text-4xl'>
                             <span><LuDollarSign /></span>
                             <span>0</span>
                         </h2>
-                        <div className='flex'>
+                        <div className='flex justify-between'>
                             <p className=''>This Month </p>
                             <div className='flex items-center'><LuDollarSign /> <span>0</span></div>
                         </div>
                     </div>
-                    <div className='p-6 max-w min-w-48 min-h-36 w-1/6 mb-2 flex flex-col hover:shadow-2xl bg-blue-500 rounded-2xl text-white'>
+                    <div className='p-6 display-card min-h-36 m-2 flex flex-col hover:shadow-2xl bg-blue-500 rounded-2xl text-white'>
                         <h6 className='mb-5'>Total Profit</h6>
                         <h2 className='flex mb-2 justify-between font-semibold text-4xl'>
                             <span><LuDollarSign /></span>
                             <span>0</span>
                         </h2>
-                        <div className='flex'>
+                        <div className='flex justify-between'>
                             <p className=''>This Month </p>
-                            <div className='flex items-center justify-end'><LuDollarSign /> <span>0</span></div>
+                            <div className='flex items-center'><LuDollarSign /> <span>0</span></div>
                         </div>
                     </div>
                 </div>
@@ -55,13 +55,13 @@ const Dashboard = () => {
     }
     const GreetingCard = () => {
         return (
-            <div className='bg-red-100 flex justify-around h-24 w-full p-3 rounded-xl min-w-40 mb-0'>
+            <div className='bg-red-100 flex justify-around w-full p-3 rounded-xl min-w-40 mb-0'>
                 <div>
-                    <h4 className='text-orange-700'>Welcome to Admin Dashboard</h4>
-                    <p>Your Account is not Verified yet! <br />
+                    <h4 className='' style={{ color: '#ff808b', marginBottom: '5px', fontSize: '14px', }}>Welcome to Admin Dashboard</h4>
+                    <p style={{ color: '#777', marginBottom: '1rem', fontSize: '14px', }}>Your Account is not Verified yet! <br />
                         Please Verify your email address. <span className='text-blue-700'>Verify now!</span></p>
                 </div>
-                <img src='https://eskooly.com/bb/assets/images/admin-message.png' className='h-24 mar-min items-center' alt='admin-message-img' />
+                <img src='https://eskooly.com/bb/assets/images/admin-message.png' className='h-24 mar-min items-center pic-none' alt='admin-message-img' />
             </div>
         );
     }
@@ -134,7 +134,7 @@ const Dashboard = () => {
     }
     const SMS = () => {
         return (
-            <div className='flex min-w-min w-full bg-sms rounded-xl text-white p-3 hover:shadow-2xl'>
+            <div className='flex justify-around min-w-min w-full bg-sms rounded-xl text-white p-3 pl-5 hover:shadow-2xl'>
                 <div>
                     <h6 className='font-semibold'>Free SMS Gateway</h6>
                     <p>Send Unlimited Free SMS on Mobile Numbers.</p>
@@ -189,14 +189,14 @@ const Dashboard = () => {
     return (
         <div className='h-full w-full bg-gray-100 overflow-auto'>
             <Display />
-            <div className='flex h-full w-full'>
-                <div className='h-full w-3/5 m-14 mt-0'>
+            <div className='flex h-full w-full fd' style={{ '@media(max-width: 992px)': { flexDirection: 'column' } }}>
+                <div className='h-full w-3/5 m-14 wd mt-0'>
                     <GreetingCard />
                     <TodayAbsentStudents />
                     <TodayPresentEmployees />
                     <NewAdmissions />
                 </div>
-                <div className='h-full w-2/5 mr-12'>
+                <div className='h-full w-2/5 mr-12 fd mtt'>
                     <Estimation />
                     <SMS />
                     <SimpleStat />
