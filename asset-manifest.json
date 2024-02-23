@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "./static/css/main.1d799327.css",
-    "main.js": "./static/js/main.59575841.js",
+    "main.css": "./static/css/main.60d240c5.css",
+    "main.js": "./static/js/main.c8d355c2.js",
     "static/media/Vidyalay.png": "./static/media/Vidyalay.89f9abffbb192d669e9c.png",
     "index.html": "./index.html",
-    "main.1d799327.css.map": "./static/css/main.1d799327.css.map",
-    "main.59575841.js.map": "./static/js/main.59575841.js.map"
+    "main.60d240c5.css.map": "./static/css/main.60d240c5.css.map",
+    "main.c8d355c2.js.map": "./static/js/main.c8d355c2.js.map"
   },
   "entrypoints": [
-    "static/css/main.1d799327.css",
-    "static/js/main.59575841.js"
+    "static/css/main.60d240c5.css",
+    "static/js/main.c8d355c2.js"
   ]
 }
