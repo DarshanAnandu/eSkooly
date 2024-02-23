@@ -6,7 +6,7 @@ import { MdCreditCard } from "react-icons/md";
 const DetailsForFeeChallan = () => {
     const UpdateInstituteLogo = () => {
         return (
-            <div className='hover:shadow-2xl shadow border-black bod-in p-6 flex flex-col m-2 rounded-2xl'>
+            <div className='hover:shadow-2xl shadow border-black bg-white bod-in p-6 flex flex-col m-2 rounded-2xl'>
                 <div className='font-semibold w-full'>
                     <h5>Update Bank Logo Here</h5>
                 </div>
@@ -20,7 +20,7 @@ const DetailsForFeeChallan = () => {
     }
     const UpdateInstituteInfo = () => {
         return (
-            <div className='hover:shadow-2xl shadow border-black bod-in p-6 flex flex-col m-2 rounded-2xl'>
+            <div className='hover:shadow-2xl shadow border-black bg-white bod-in p-6 flex flex-col m-2 rounded-2xl'>
                 <div className='font-semibold w-full'>
                     <h5>Update Instute Info Here</h5>
                 </div>
@@ -47,11 +47,11 @@ const DetailsForFeeChallan = () => {
     }
     const YourInstituteProfile = () => {
         return (
-            <div className=' hover:shadow-2xl w-full text-gray-700 h-auto shadow rounded-2xl flex flex-col m-2 p-6 bod-in'>
+            <div className=' hover:shadow-2xl w-full text-gray-700 h-auto bg-white shadow rounded-2xl flex flex-col m-2 p-6 bod-in'>
                 <div className=' w-full font-semibold text-gray-500'>
                     <h5>Your Bank Profile</h5>
                 </div>
-                <div className='flex justify-center bod-ip p-6 pt-0'><TiHomeOutline color='gray' size="60px" /></div>
+                <div className='flex justify-center bod-ip p-6 pt-0'><TiHomeOutline color='#9698d6' size="60px" /></div>
                 <div className='flex flex-col p-3 '>
                     <h4 className='flex justify-center'>Your Bank Name</h4>
                     <hr />

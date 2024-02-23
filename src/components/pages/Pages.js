@@ -35,6 +35,7 @@ import PaySalary from './InsidePages/Salary/PaySalary'
 import SalarySlip from './InsidePages/Salary/SalarySlip'
 import MarkStudentsAttendance from './InsidePages/Attendance/MarkStudentsAttendance'
 import MarkEmployeesAttendance from './InsidePages/Attendance/MarkEmployeesAttendance'
+import ClassWiseReport from './InsidePages/Attendance/ClassWiseReport'
 import StudentsAttendenceReport from './InsidePages/Attendance/StudentsAttendenceReport'
 import EmployeeAttendenceReport from './InsidePages/Attendance/EmployeeAttendenceReport'
 import HomeWork from './InsidePages/HomeWork/HomeWork'
@@ -53,7 +54,6 @@ import ParentsInfoReport from './InsidePages/Reports/ParentsInfoReport'
 import LeaveCertificate from './InsidePages/Certificates/LeaveCertificate'
 import CharacterCertificate from './InsidePages/Certificates/CharacterCertificate'
 import { useState } from 'react';
-import { CiSearch } from "react-icons/ci";
 
 // import SideNavItems from "./SideNavItems";
 
@@ -190,6 +190,7 @@ const Pages = () => {
             <Route path='/eSkooly/Salary/Salary-Slip' element={<SalarySlip />} />
             <Route path='/eSkooly/Attendance/Mark-Student-Attendance' element={<MarkStudentsAttendance />} />
             <Route path='/eSkooly/Attendance/Mark-Employee-Attendance' element={<MarkEmployeesAttendance />} />
+            <Route path='/eSkooly/Attendance/Class-Wise-Report' element={<ClassWiseReport />} />
             <Route path='/eSkooly/Attendance/Student-Attendance-Report' element={<StudentsAttendenceReport />} />
             <Route path='/eSkooly/Attendance/Employee-Attendance-Report' element={<EmployeeAttendenceReport />} />
             <Route path='/eSkooly/Homework' element={<HomeWork />} />

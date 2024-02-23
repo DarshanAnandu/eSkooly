@@ -4,6 +4,7 @@ import { FaPlus } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
 import { AiOutlineIdcard } from "react-icons/ai";
 import { TfiPrinter } from "react-icons/tfi";
+import { IoTrashOutline } from "react-icons/io5";
 import { FaPencilAlt } from "react-icons/fa";
 
 const AllStudents = () => {
@@ -22,9 +23,9 @@ const AllStudents = () => {
                     <span style={{ fontSize: '11px', color: '#333' }}> 4582333</span>
                     <b style={{ fontSize: '11px', color: '#555' }}>Anuj Pandey</b>
                     <div className='flex'>
-                        <div className='p-2 flex justify-center items-center' style={{ border: '0', height: '30px', width: '30px', background: 'linear-gradient(45deg, #9698d6, #a9abdb)', borderRadius: '15px', margin: '2px' }}><CiSearch size='11px' color='white' /></div>
-                        <div className='p-2 flex justify-center items-center' style={{ border: '0', height: '30px', width: '30px', background: 'linear-gradient(45deg, #5e81f4, #7191f7)', borderRadius: '15px', margin: '2px' }}><FaPencilAlt size='11px' color='white' /></div>
-                        <div className='p-2 flex justify-center items-center' style={{ border: '0', height: '30px', width: '30px', background: 'linear-gradient(45deg, #ff808b, #f79099)', borderRadius: '15px', margin: '2px' }}><IoTrashOutline size='11px' color='white' /></div>
+                        <div className='p-2 flex justify-center items-center cursor-pointer' style={{ border: '0', height: '30px', width: '30px', background: 'linear-gradient(45deg, #9698d6, #a9abdb)', borderRadius: '15px', margin: '2px' }}><CiSearch size='11px' color='white' /></div>
+                        <div className='p-2 flex justify-center items-center cursor-pointer' style={{ border: '0', height: '30px', width: '30px', background: 'linear-gradient(45deg, #5e81f4, #7191f7)', borderRadius: '15px', margin: '2px' }}><FaPencilAlt size='11px' color='white' /></div>
+                        <div className='p-2 flex justify-center items-center cursor-pointer' style={{ border: '0', height: '30px', width: '30px', background: 'linear-gradient(45deg, #ff808b, #f79099)', borderRadius: '15px', margin: '2px' }}><IoTrashOutline size='11px' color='white' /></div>
                     </div>
                 </div>
                 <Link to='/eSkooly/Students/Add-Students'>

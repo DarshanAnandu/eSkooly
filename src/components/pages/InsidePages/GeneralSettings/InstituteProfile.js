@@ -8,7 +8,7 @@ import { CiLocationOn } from "react-icons/ci";
 const InstituteProfile = () => {
     const UpdateInstituteLogo = () => {
         return (
-            <div className='hover:shadow-2xl shadow border-black bod-in p-6 flex flex-col m-2 rounded-2xl'>
+            <div className='hover:shadow-2xl shadow bg-white border-black bod-in p-6 flex flex-col m-2 rounded-2xl'>
                 <div className='font-semibold w-full'>
                     <h5>Update Instute Logo Here</h5>
                 </div>
@@ -22,7 +22,7 @@ const InstituteProfile = () => {
     }
     const UpdateInstituteInfo = () => {
         return (
-            <div className='hover:shadow-2xl shadow border-black bod-in p-6 flex flex-col m-2 rounded-2xl'>
+            <div className='hover:shadow-2xl shadow border-black bod-in bg-white p-6 flex flex-col m-2 rounded-2xl'>
                 <div className='font-semibold w-full'>
                     <h5>Update Instute Info Here</h5>
                 </div>
@@ -66,11 +66,11 @@ const InstituteProfile = () => {
     }
     const YourInstituteProfile = () => {
         return (
-            <div className=' hover:shadow-2xl w-full text-gray-700 h-auto shadow rounded-2xl flex flex-col m-2 p-6 bod-in'>
+            <div className=' hover:shadow-2xl w-full text-gray-700 bg-white h-auto shadow rounded-2xl flex flex-col m-2 p-6 bod-in'>
                 <div className=' w-full font-semibold text-gray-500'>
                     <h5>Your Institute Profile</h5>
                 </div>
-                <div className='flex justify-center bod-ip p-6 pt-0'><TiHomeOutline color='gray' size="60px" /></div>
+                <div className='flex justify-center bod-ip p-6 pt-0'><TiHomeOutline color='#9698d6' size="60px" /></div>
                 <div className='flex flex-col p-3 '>
                     <h4 className='flex justify-center'>Your Institute Name</h4>
                     <h6 className='flex justify-center'>Your Target Line</h6>

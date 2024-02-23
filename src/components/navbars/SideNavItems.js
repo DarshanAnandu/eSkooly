@@ -164,7 +164,7 @@ const SideNavItems = [
         subItems: [
             { idx: 0, name: 'Mark Structure Attendence', goto: '/eSkooly/Attendance/Mark-Student-Attendance', icon: '' },
             { idx: 1, name: 'Mark Employees Attedence', goto: '/eSkooly/Attendance/Mark-Employee-Attendance', icon: '' },
-            { idx: 2, name: 'Class Wise Report', goto: '/eSkooly/Attendance/Mark-Student-Attendan', icon: '' },
+            { idx: 2, name: 'Class Wise Report', goto: '/eSkooly/Attendance/Class-Wise-Report', icon: '' },
             { idx: 3, name: 'Student Attendance Report', goto: '/eSkooly/Attendance/Student-Attendance-Report', icon: '' },
             { idx: 4, name: 'Employee Attendance Report', goto: '/eSkooly/Attendance/Employee-Attendance-Report', icon: '' }
         ]
