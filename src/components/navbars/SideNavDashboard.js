@@ -11,9 +11,9 @@ const SideNavDashboard = ({ selectedTab, selectedSubTab, onTabChange }) => {
   const [hoveredSubIdx, setHoveredSubIdx] = useState(null);
   const [expandedDropdown, setExpandedDropdown] = useState(null);
 
-  const toggleDropdown = (idx) => {
-    setExpandedDropdown((prev) => (prev === idx ? null : idx));
-  };
+  // const toggleDropdown = (idx) => {
+  //   setExpandedDropdown((prev) => (prev === idx ? null : idx));
+  // };
 
   const handleItemClick = (idx, dropdown) => {
     if (dropdown) {
@@ -56,7 +56,7 @@ const SideNavDashboard = ({ selectedTab, selectedSubTab, onTabChange }) => {
               )}
             </Link>
             {items.dropdown && expandedDropdown === items.idx && (
-              <ul>
+              <ul className='relative opacity-100 visible' style={{ transform: 'rotateX(0deg)', transition: 'transform 0.5s, opacity 0.5s, -webkit-transform 0.5s', WebkitTransformStyle: 'preserve-3d'}}>
                 {items.subItems.map((item) => (
                   <Link
                     to={item.goto}
