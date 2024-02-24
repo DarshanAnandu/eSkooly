@@ -4,6 +4,10 @@ import { CiMobile4 } from "react-icons/ci";
 import { CiMail } from "react-icons/ci";
 import { TfiWorld } from "react-icons/tfi";
 import { CiLocationOn } from "react-icons/ci";
+import React, { useState } from 'react';
+import Countries from './Countries'
+// import { countries } from 'countries-list';
+
 
 const InstituteProfile = () => {
     const UpdateInstituteLogo = () => {
@@ -21,15 +25,66 @@ const InstituteProfile = () => {
         );
     }
     const UpdateInstituteInfo = () => {
+        const [institeteName, setInstituteName] = useState('');
+        const [TargetLine, setTargetLine] = useState('');
+        const [phoneNo, setPhoneNo] = useState('');
+        // const [phoneNo, setPhoneNo] = useState('');
+        // const [phoneNo, setPhoneNo] = useState('');
+        // const [phoneNo, setPhoneNo] = useState('');
+
+        const countryOptions = Countries.map((country) => (
+            <option key={country.code} value={country.code}>
+                {country.name}
+            </option>
+        ));
+        const handleInstiteteName = (event) => {
+            setInstituteName(event.target.value);
+        };
+        const handleTargetLine = (event) => {
+            setTargetLine(event.target.value);
+        };
+        const handlePhoneNo = (event) => {
+            setPhoneNo(event.target.value);
+        };
+        const Update = async (event) => {
+            event.preventDefault();
+            try {
+                const response = await fetch('http://vidyalay.saanvigs.com/auth/institutelogin', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        // email: email_LI,
+                        // password: password_LI
+                    }),
+                });
+                const responseData = await response.json();
+                console.log(responseData)
+                const adminId = responseData.adminId;
+                const token = responseData.accessToken;
+                const refreshToken = responseData.refreshToken;
+                localStorage.setItem('loggedIn', 'true');
+                localStorage.setItem('adminId', adminId);
+                localStorage.setItem('token', token);
+                localStorage.setItem('refreshToken', refreshToken);
+                if (!response.ok) {
+                    console.log('Bad Response for sign in, The Response', response);
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+            } catch (error) {
+                console.error('Login Error:', error);
+            }
+        };
         return (
             <div className='hover:shadow-2xl shadow border-black bod-in bg-white p-6 flex flex-col m-2 rounded-2xl'>
                 <div className='font-semibold w-full'>
                     <h5>Update Instute Info Here</h5>
                 </div>
-                <form className='w-full mt-3'>
+                <form className='w-full mt-3' onSubmit={Update}>
                     <div class="relative flex items-center my-3">
                         <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Name of the Institute</label>
-                        <input type="text" placeholder="Name of the Institute"
+                        <input type="text" placeholder="Name of the Institute" value={institeteName} onChange={handleInstiteteName}
                             class="px-2 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none" />
                     </div>
                     <div class="relative flex items-center my-3">
@@ -56,7 +111,7 @@ const InstituteProfile = () => {
                         <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Country</label>
                         <select name='country' className='px-4 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none'>
                             <option value selected="selected">select Country</option>
-                            <option value="India">India</option>
+                            {countryOptions}
                         </select>
                     </div>
                     <div className='flex justify-end'><button className='text-white bg-blue-500 flex flex-end items-center p-2 rounded-sm justify-end mt-3'><TfiReload color='white' /> Update</button></div>
@@ -86,12 +141,12 @@ const InstituteProfile = () => {
         );
     }
     return (
-        <div className='h-full w-full p-10 pl-7 flex'>
-            <div className=' w-3/5 h-full'>
+        <div className='h-screen w-full p-10 pl-7 flex fd overflow-auto'>
+            <div className=' w-3/5 h-full wdd'>
                 <UpdateInstituteLogo />
                 <UpdateInstituteInfo />
             </div>
-            <div className='w-5/12'>
+            <div className='w-5/12 wdd'>
                 <YourInstituteProfile />
             </div>
         </div>

@@ -64,12 +64,12 @@ const DetailsForFeeChallan = () => {
         );
     }
     return (
-        <div className='h-full w-full p-10 pl-7 flex'>
-            <div className=' w-3/5 h-full'>
+        <div className='h-full w-full p-10 pl-7 flex fd overflow-auto'>
+            <div className=' w-3/5 h-full wdd'>
                 <UpdateInstituteLogo />
                 <UpdateInstituteInfo />
             </div>
-            <div className='w-5/12'>
+            <div className='w-5/12 wdd'>
                 <YourInstituteProfile />
             </div>
         </div>

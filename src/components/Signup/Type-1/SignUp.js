@@ -65,18 +65,14 @@ const SignUp = () => {
                 }),
             });
             const responseData = await response.json();
-            if (responseData && responseData.status === 200 && responseData.data) {
-                const adminId = responseData.data.adminId;
-                const token = responseData.data.accessToken;
-                const refreshToken = responseData.data.refreshToken;
-                localStorage.setItem('loggedIn', 'true');
-                localStorage.setItem('adminId', adminId);
-                localStorage.setItem('token', token);
-                localStorage.setItem('refreshToken', refreshToken);
-            } else {
-                // Handle unexpected response structure
-                console.error('Unexpected response structure:', responseData);
-            }
+            console.log(responseData)
+            const adminId = responseData.adminId;
+            const token = responseData.accessToken;
+            const refreshToken = responseData.refreshToken;
+            localStorage.setItem('loggedIn', 'true');
+            localStorage.setItem('adminId', adminId);
+            localStorage.setItem('token', token);
+            localStorage.setItem('refreshToken', refreshToken);
             if (!response.ok) {
                 console.log('Bad Response for sign in, The Response', response);
                 throw new Error(`HTTP error! Status: ${response.status}`);

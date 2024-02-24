@@ -44,6 +44,9 @@ body {
     /* margin: 5px 20px; */
     /* margin: 0 50px; */
   }
+  .wdd {
+    width: 100%;
+  }
   .mtt {
     margin-top: 40px;
   }

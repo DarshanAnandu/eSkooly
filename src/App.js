@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import SignUp from './components/Signup/Type-1/SignUp';
 import React, { useEffect, useState } from 'react';
 import Pages from './components/pages/Pages'
@@ -15,7 +15,7 @@ function App() {
 
     checkLoggedInStatus();
 
-    const intervalId = setInterval(checkLoggedInStatus, 60000);
+    const intervalId = setInterval(checkLoggedInStatus, 600);
 
     return () => clearInterval(intervalId);
   }, [isLoggedIn]);
@@ -24,9 +24,15 @@ function App() {
       {/* <Home /> */}
       <div className='w-full'>
         <Routes>
-          <Route path='/eSkooly/Signup' element={!isLoggedIn ? <SignUp /> : <Navigate to="/eSkooly" />} />
-          <Route path='/eSkooly' element={isLoggedIn ? <Pages /> : <Navigate to="/eSkooly/Signup" />} />
+          {!isLoggedIn && (
+            <Route path='/eSkooly/Signup' element={<SignUp />} />
+          )}
         </Routes>
+      </div>
+      <div>
+        {isLoggedIn && (
+          <Pages />
+        )}
       </div>
     </div>
   );

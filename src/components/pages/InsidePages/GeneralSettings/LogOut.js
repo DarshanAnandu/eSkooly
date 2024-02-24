@@ -4,12 +4,12 @@ import { useNavigate } from 'react-router-dom';
 const LogOut = () => {
     const history = useNavigate();
     useEffect(() => {
-        localStorage.removeItem('loggedIn');
+        localStorage.setItem('loggedIn', 'false');
         localStorage.removeItem('adminId');
         localStorage.removeItem('token');
         localStorage.removeItem('refreshToken');
-        history('/eSkooly');
-        window.location.reload();
+        history('/eSkooly/Signup');
+        // window.location.reload();
     }, [history]);
 
     return null;
