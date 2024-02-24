@@ -30,7 +30,7 @@ const SideNavItems = [
         hovered_Icon: <AiOutlineHome color='#5e81f4'/>,
         dropdown: false,
         Lock: false,
-        goto: '/eSkooly',
+        goto: '/eSkooly/Dashboard',
     },
     {
         idx: 1,
@@ -50,7 +50,7 @@ const SideNavItems = [
             { idx: 116, name: 'Marks Grading', goto: '/eSkooly/General-Settings/Marks-Grading', icon: '' },
             { idx: 117, name: 'Theme & Language', Lock: true, goto: '/eSkooly/General-Settings/Theme&Language', icon: '' },
             { idx: 118, name: 'Account Settings', goto: '/eSkooly/General-Settings/Account-Settings', icon: '' },
-            { idx: 119, name: 'Log out', goto: '/eSkooly/Signup', icon: '' }
+            { idx: 119, name: 'Log out', goto: '/eSkooly/General-Settings/Log-out', icon: '' }
         ]
     },
     {

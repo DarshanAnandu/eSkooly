@@ -9,6 +9,7 @@ import RulesAndRegulations from './InsidePages/GeneralSettings/RulesAndRegulatio
 import MarksGradings from './InsidePages/GeneralSettings/MarksGradings'
 import ThemeAndLanguage from './InsidePages/GeneralSettings/ThemeAndLanguage'
 import AccountSettings from './InsidePages/GeneralSettings/AccountSettings'
+import LogOut from './InsidePages/GeneralSettings/LogOut'
 import AllClasses from './InsidePages/Classes/AllClasses'
 import NewClasses from './InsidePages/Classes/NewClasses'
 import EditORDelete from './InsidePages/Classes/EditORDelete'
@@ -174,6 +175,7 @@ const Pages = () => {
             <Route path='/eSkooly/General-Settings/Marks-Grading' element={<MarksGradings />} />
             <Route path='/eSkooly/General-Settings/Theme&Language' element={<ThemeAndLanguage />} />
             <Route path='/eSkooly/General-Settings/Account-Settings' element={<AccountSettings />} />
+            <Route path='/eSkooly/General-Settings/Log-out' element={<LogOut />} />
             <Route path='/eSkooly/Classes/All-Classes' element={<AllClasses />} />
             <Route path='/eSkooly/Classes/New-Class' element={<NewClasses />} />
             <Route path='/eSkooly/Classes/Edit-Or-Delete' element={<EditORDelete />} />
