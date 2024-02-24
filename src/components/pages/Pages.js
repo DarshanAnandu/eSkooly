@@ -165,7 +165,8 @@ const Pages = () => {
             <Route path="/general-settings/fee-particulars" component={GeneralSettings.FeeParticulars} />
           </Switch> */}
           <Routes>
-            <Route path='/eSkooly' Component={Dashboard} defaultValue />
+            {/* <Route path='/eSkooly/Signup' element={<SignUp />} defaultValue /> */}
+            <Route path='/eSkooly/Dashboard' element={<Dashboard />} />
             <Route path='/eSkooly/General-Settings/Institute-Profile' element={<InstituteProfile />} />
             <Route path='/eSkooly/General-Settings/Fee-Particulars' element={<FeeParticulars />} />
             <Route path='/eSkooly/General-Settings/Details-For-Fee-Challan' element={<DetailsForFeeChallan />} />

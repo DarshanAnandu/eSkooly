@@ -38,11 +38,14 @@ body {
   }
   .wd {
     width: 100%;
-    margin: 5px 20px;
+    padding: 2rem 2rem;
+    margin: 10px;
+    /* margin-right: 3rem; */
+    /* margin: 5px 20px; */
     /* margin: 0 50px; */
   }
   .mtt {
-    margin-top: 20px;
+    margin-top: 40px;
   }
   .sid-nav {
     position: absolute;
@@ -54,12 +57,14 @@ body {
     display: flex;
   }
 }
+@media (max-width: 640px) {
+  .pic-none {
+    display: none;
+  }
+}
 @media (max-width: 770px) {
   .display-card {
     width: 100%;
-  }
-  .pic-none {
-    display: none;
   }
 }
 
@@ -127,7 +132,7 @@ body {
   border-radius: 60px;
   margin: 0 auto;
   padding-top: 25px;
-  background: #E6E9FF;
+  background: #e6e9ff;
 }
 .mar-min {
   margin-top: -20px;

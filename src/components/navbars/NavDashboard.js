@@ -6,7 +6,7 @@ import Logo from '../../assets/Vidyalay.png';
 
 const OrdinaryNav = ({ sidebar, toggle }) => {
     return (
-        <div className="h-14 d-bg dp items-center">
+        <div className="h-14 d-bg dp items-center relative">
             <div className='h-full w-60 flex items-center justify-between p-2.5'>
                 <img src={Logo} className="pl-7 max-h-11" alt="eSkooly-Logo" />
                 <RxHamburgerMenu color="white" fontSize="30px" className='cursor-pointer' onClick={() => toggle(!sidebar)} />
@@ -31,7 +31,7 @@ const OrdinaryNav = ({ sidebar, toggle }) => {
 }
 const MobileNav = ({ sidebar, toggle }) => {
     return (
-        <div className="h-14 d-bg dp-mb items-center">
+        <div className="h-14 d-bg dp-mb items-center relative">
             <div className='h-full w-full flex items-center justify-between p-2.5'>
                 <img src={Logo} className="pl-7 max-h-11" alt="eSkooly-Logo" />
                 <RxHamburgerMenu color="white" fontSize="30px" className='cursor-pointer mr-7' onClick={() => toggle(!sidebar)} />

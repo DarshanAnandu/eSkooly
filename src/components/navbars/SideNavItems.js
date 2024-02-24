@@ -46,11 +46,11 @@ const SideNavItems = [
             { idx: 112, name: 'Fee Structure', Lock: true, icon: '' },
             { idx: 113, name: 'Discount Type', Lock: true, icon: '' },
             { idx: 114, name: 'Details for Fee challan', goto: '/eSkooly/General-Settings/Details-For-Fee-Challan', icon: '' },
-            { idx: 115, name: 'Rules and Regulations', goto: '/eSkooly/General-Settings/Rules&Regulations', icon: '' },
+            { idx: 115, name: 'Rules and Regulations', Lock: true, goto: '/eSkooly/General-Settings/Rules&Regulations', icon: '' },
             { idx: 116, name: 'Marks Grading', goto: '/eSkooly/General-Settings/Marks-Grading', icon: '' },
-            { idx: 117, name: 'Theme & Language', goto: '/eSkooly/General-Settings/Theme&Language', icon: '' },
+            { idx: 117, name: 'Theme & Language', Lock: true, goto: '/eSkooly/General-Settings/Theme&Language', icon: '' },
             { idx: 118, name: 'Account Settings', goto: '/eSkooly/General-Settings/Account-Settings', icon: '' },
-            { idx: 119, name: 'Log out', icon: '' }
+            { idx: 119, name: 'Log out', goto: '/eSkooly/Signup', icon: '' }
         ]
     },
     {

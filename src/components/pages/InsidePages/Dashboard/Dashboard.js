@@ -196,7 +196,7 @@ const Dashboard = () => {
                     <TodayPresentEmployees />
                     <NewAdmissions />
                 </div>
-                <div className='h-full w-2/5 mr-12 fd mtt'>
+                <div className='h-full w-2/5 mr-12 wd mtt'>
                     <Estimation />
                     <SMS />
                     <SimpleStat />
