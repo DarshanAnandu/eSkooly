@@ -15,24 +15,22 @@ function App() {
 
     checkLoggedInStatus();
 
-    const intervalId = setInterval(checkLoggedInStatus, 600);
+    // const intervalId = setInterval(checkLoggedInStatus, 600);
 
-    return () => clearInterval(intervalId);
+    // return () => clearInterval(intervalId);
   }, [isLoggedIn]);
   return (
     <div className='overflow-auto w-full'>
       {/* <Home /> */}
       <div className='w-full'>
         <Routes>
-          {!isLoggedIn && (
-            <Route path='/eSkooly/Signup' element={<SignUp />} />
+          {/* {!isLoggedIn && ( */}
+          <Route path='/eSkooly/Signup' element={<SignUp />} />
+          {/* )} */}
+          {isLoggedIn && (
+            <Route path='/eSkooly/pages' element={<Pages />} />
           )}
         </Routes>
-      </div>
-      <div>
-        {isLoggedIn && (
-          <Pages />
-        )}
       </div>
     </div>
   );

@@ -240,3 +240,4 @@ const Countries = [
     { "name": "Zambia", "code": "ZM" },
     { "name": "Zimbabwe", "code": "ZN" }
 ];
+export default Countries;

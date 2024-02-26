@@ -166,61 +166,61 @@ const Pages = () => {
             <Route path="/general-settings/fee-particulars" component={GeneralSettings.FeeParticulars} />
           </Switch> */}
           <Routes>
-            {/* <Route path='/eSkooly/Signup' element={<SignUp />} defaultValue /> */}
-            <Route path='/eSkooly/Dashboard' element={<Dashboard />} />
-            <Route path='/eSkooly/General-Settings/Institute-Profile' element={<InstituteProfile />} />
-            <Route path='/eSkooly/General-Settings/Fee-Particulars' element={<FeeParticulars />} />
-            <Route path='/eSkooly/General-Settings/Details-For-Fee-Challan' element={<DetailsForFeeChallan />} />
-            <Route path='/eSkooly/General-Settings/Rules&Regulations' element={<RulesAndRegulations />} />
-            <Route path='/eSkooly/General-Settings/Marks-Grading' element={<MarksGradings />} />
-            <Route path='/eSkooly/General-Settings/Theme&Language' element={<ThemeAndLanguage />} />
-            <Route path='/eSkooly/General-Settings/Account-Settings' element={<AccountSettings />} />
-            <Route path='/eSkooly/General-Settings/Log-out' element={<LogOut />} />
-            <Route path='/eSkooly/Classes/All-Classes' element={<AllClasses />} />
-            <Route path='/eSkooly/Classes/New-Class' element={<NewClasses />} />
-            <Route path='/eSkooly/Classes/Edit-Or-Delete' element={<EditORDelete />} />
-            <Route path='/eSkooly/Subjects/Classes-With-Subjects' element={<ClassesWithSubjects />} />
-            <Route path='/eSkooly/Subjects/Assign-Subjects' element={<AssignSubjects />} />
-            <Route path='/eSkooly/Students/All-Students' element={<AllStudents />} />
-            <Route path='/eSkooly/Students/Add-Students' element={<AddStudents />} />
-            <Route path='/eSkooly/Students/Admission-Letter' element={<AdmissionLetter />} />
-            <Route path='/eSkooly/Students/Student-ID-Cards' element={<IDCard />} />
-            <Route path='/eSkooly/Students/Print-Basic-Lists' element={<PrintBasicList />} />
-            <Route path='/eSkooly/Students/Promote-Students' element={<PromoteStudents />} />
-            <Route path='/eSkooly/Employees/All-Employees' element={<AllEmployees />} />
-            <Route path='/eSkooly/Employees/Add-Employee' element={<AddEmployee />} />
-            {/* <Route path='/eSkooly/Employees/Staff-ID-Card' element={<AllEmployees />} /> */}
-            <Route path='/eSkooly/Employees/Job-Letter' element={<JobLetter />} />
-            <Route path='/eSkooly/Accounts/Chart-Of-Account' element={<ChartOfAccount />} />
-            <Route path='/eSkooly/Accounts/Add-Income' element={<AddIncome />} />
-            <Route path='/eSkooly/Accounts/Add-Expense' element={<AddExpense />} />
-            <Route path='/eSkooly/Accounts/Account-Statement' element={<AccountStatement />} />
-            <Route path='/eSkooly/Fees/Generate-Bank-Challan' element={<GenerateBankChallan />} />
-            <Route path='/eSkooly/Fees/Collect-Fee' element={<CollectFee />} />
-            <Route path='/eSkooly/Fees/Fee-Slip' element={<FeeSlip />} />
-            <Route path='/eSkooly/Fees/Fee-Defaulters' element={<FeeDefaulters />} />
-            <Route path='/eSkooly/Salary/Pay-Salary' element={<PaySalary />} />
-            <Route path='/eSkooly/Salary/Salary-Slip' element={<SalarySlip />} />
-            <Route path='/eSkooly/Attendance/Mark-Student-Attendance' element={<MarkStudentsAttendance />} />
-            <Route path='/eSkooly/Attendance/Mark-Employee-Attendance' element={<MarkEmployeesAttendance />} />
-            <Route path='/eSkooly/Attendance/Class-Wise-Report' element={<ClassWiseReport />} />
-            <Route path='/eSkooly/Attendance/Student-Attendance-Report' element={<StudentsAttendenceReport />} />
-            <Route path='/eSkooly/Attendance/Employee-Attendance-Report' element={<EmployeeAttendenceReport />} />
-            <Route path='/eSkooly/Homework' element={<HomeWork />} />
-            <Route path='/eSkooly/Messaging' element={<Messaging />} />
-            <Route path='/eSkooly/SMS-Services/Free-SMS-Gateway' element={<FreeSMSGateWay />} />
-            <Route path='/eSkooly/Live-Class' element={<LiveClass />} />
-            <Route path='/eSkooly/Exams/Create-New-Exam' element={<CreateNewExam />} />
-            <Route path='/eSkooly/Exams/Edit-OR-Delete' element={<EditORDeleteExam />} />
-            <Route path='/eSkooly/Exams/Add-OR-Update-Exam-Marks' element={<AddORUpdateExam />} />
-            <Route path='/eSkooly/Exams/Result-Card' element={<ResultCard />} />
-            <Route path='/eSkooly/Class-Test/Create-Class-Test' element={<CreateNewTest />} />
-            <Route path='/eSkooly/Class-Test/Test-Results' element={<TestResults />} />
-            <Route path='/eSkooly/Reports/Student-Report-Card' element={<StudentsReportCard />} />
-            <Route path='/eSkooly/Reports/Student-Info-Report' element={<StudentInfoReport />} />
-            <Route path='/eSkooly/Reports/Parents-Info-Report' element={<ParentsInfoReport />} />
-            <Route path='/eSkooly/Certificates/Leave-Certificate' element={<LeaveCertificate />} />
-            <Route path='/eSkooly/Certificates/Character-Certificate' element={<CharacterCertificate />} />
+            {/* <Route path='/eSkooly/pages/Signup' element={<SignUp />} defaultValue /> */}
+            <Route path='/eSkooly/pages/Dashboard' element={<Dashboard />} />
+            <Route path='/eSkooly/pages/General-Settings/Institute-Profile' element={<InstituteProfile />} />
+            <Route path='/eSkooly/pages/General-Settings/Fee-Particulars' element={<FeeParticulars />} />
+            <Route path='/eSkooly/pages/General-Settings/Details-For-Fee-Challan' element={<DetailsForFeeChallan />} />
+            <Route path='/eSkooly/pages/General-Settings/Rules&Regulations' element={<RulesAndRegulations />} />
+            <Route path='/eSkooly/pages/General-Settings/Marks-Grading' element={<MarksGradings />} />
+            <Route path='/eSkooly/pages/General-Settings/Theme&Language' element={<ThemeAndLanguage />} />
+            <Route path='/eSkooly/pages/General-Settings/Account-Settings' element={<AccountSettings />} />
+            <Route path='/eSkooly/pages/General-Settings/Log-out' element={<LogOut />} />
+            <Route path='/eSkooly/pages/Classes/All-Classes' element={<AllClasses />} />
+            <Route path='/eSkooly/pages/Classes/New-Class' element={<NewClasses />} />
+            <Route path='/eSkooly/pages/Classes/Edit-Or-Delete' element={<EditORDelete />} />
+            <Route path='/eSkooly/pages/Subjects/Classes-With-Subjects' element={<ClassesWithSubjects />} />
+            <Route path='/eSkooly/pages/Subjects/Assign-Subjects' element={<AssignSubjects />} />
+            <Route path='/eSkooly/pages/Students/All-Students' element={<AllStudents />} />
+            <Route path='/eSkooly/pages/Students/Add-Students' element={<AddStudents />} />
+            <Route path='/eSkooly/pages/Students/Admission-Letter' element={<AdmissionLetter />} />
+            <Route path='/eSkooly/pages/Students/Student-ID-Cards' element={<IDCard />} />
+            <Route path='/eSkooly/pages/Students/Print-Basic-Lists' element={<PrintBasicList />} />
+            <Route path='/eSkooly/pages/Students/Promote-Students' element={<PromoteStudents />} />
+            <Route path='/eSkooly/pages/Employees/All-Employees' element={<AllEmployees />} />
+            <Route path='/eSkooly/pages/Employees/Add-Employee' element={<AddEmployee />} />
+            {/* <Route path='/eSkooly/pages/Employees/Staff-ID-Card' element={<AllEmployees />} /> */}
+            <Route path='/eSkooly/pages/Employees/Job-Letter' element={<JobLetter />} />
+            <Route path='/eSkooly/pages/Accounts/Chart-Of-Account' element={<ChartOfAccount />} />
+            <Route path='/eSkooly/pages/Accounts/Add-Income' element={<AddIncome />} />
+            <Route path='/eSkooly/pages/Accounts/Add-Expense' element={<AddExpense />} />
+            <Route path='/eSkooly/pages/Accounts/Account-Statement' element={<AccountStatement />} />
+            <Route path='/eSkooly/pages/Fees/Generate-Bank-Challan' element={<GenerateBankChallan />} />
+            <Route path='/eSkooly/pages/Fees/Collect-Fee' element={<CollectFee />} />
+            <Route path='/eSkooly/pages/Fees/Fee-Slip' element={<FeeSlip />} />
+            <Route path='/eSkooly/pages/Fees/Fee-Defaulters' element={<FeeDefaulters />} />
+            <Route path='/eSkooly/pages/Salary/Pay-Salary' element={<PaySalary />} />
+            <Route path='/eSkooly/pages/Salary/Salary-Slip' element={<SalarySlip />} />
+            <Route path='/eSkooly/pages/Attendance/Mark-Student-Attendance' element={<MarkStudentsAttendance />} />
+            <Route path='/eSkooly/pages/Attendance/Mark-Employee-Attendance' element={<MarkEmployeesAttendance />} />
+            <Route path='/eSkooly/pages/Attendance/Class-Wise-Report' element={<ClassWiseReport />} />
+            <Route path='/eSkooly/pages/Attendance/Student-Attendance-Report' element={<StudentsAttendenceReport />} />
+            <Route path='/eSkooly/pages/Attendance/Employee-Attendance-Report' element={<EmployeeAttendenceReport />} />
+            <Route path='/eSkooly/pages/Homework' element={<HomeWork />} />
+            <Route path='/eSkooly/pages/Messaging' element={<Messaging />} />
+            <Route path='/eSkooly/pages/SMS-Services/Free-SMS-Gateway' element={<FreeSMSGateWay />} />
+            <Route path='/eSkooly/pages/Live-Class' element={<LiveClass />} />
+            <Route path='/eSkooly/pages/Exams/Create-New-Exam' element={<CreateNewExam />} />
+            <Route path='/eSkooly/pages/Exams/Edit-OR-Delete' element={<EditORDeleteExam />} />
+            <Route path='/eSkooly/pages/Exams/Add-OR-Update-Exam-Marks' element={<AddORUpdateExam />} />
+            <Route path='/eSkooly/pages/Exams/Result-Card' element={<ResultCard />} />
+            <Route path='/eSkooly/pages/Class-Test/Create-Class-Test' element={<CreateNewTest />} />
+            <Route path='/eSkooly/pages/Class-Test/Test-Results' element={<TestResults />} />
+            <Route path='/eSkooly/pages/Reports/Student-Report-Card' element={<StudentsReportCard />} />
+            <Route path='/eSkooly/pages/Reports/Student-Info-Report' element={<StudentInfoReport />} />
+            <Route path='/eSkooly/pages/Reports/Parents-Info-Report' element={<ParentsInfoReport />} />
+            <Route path='/eSkooly/pages/Certificates/Leave-Certificate' element={<LeaveCertificate />} />
+            <Route path='/eSkooly/pages/Certificates/Character-Certificate' element={<CharacterCertificate />} />
           </Routes>
         </div>
 

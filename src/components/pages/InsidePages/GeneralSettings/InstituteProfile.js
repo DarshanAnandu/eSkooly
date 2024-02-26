@@ -26,11 +26,11 @@ const InstituteProfile = () => {
     }
     const UpdateInstituteInfo = () => {
         const [institeteName, setInstituteName] = useState('');
-        const [TargetLine, setTargetLine] = useState('');
+        const [targetLine, setTargetLine] = useState('');
         const [phoneNo, setPhoneNo] = useState('');
-        // const [phoneNo, setPhoneNo] = useState('');
-        // const [phoneNo, setPhoneNo] = useState('');
-        // const [phoneNo, setPhoneNo] = useState('');
+        const [website, setWebsite] = useState('');
+        const [address, setAddress] = useState('');
+        const [country, setCountry] = useState('');
 
         const countryOptions = Countries.map((country) => (
             <option key={country.code} value={country.code}>
@@ -46,28 +46,33 @@ const InstituteProfile = () => {
         const handlePhoneNo = (event) => {
             setPhoneNo(event.target.value);
         };
+        const handleWebsite = (event) => {
+            setWebsite(event.target.value);
+        };
+        const handleAddress = (event) => {
+            setAddress(event.target.value);
+        };
+        const handleCountry = (event) => {
+            setCountry(event.target.value);
+        };
         const Update = async (event) => {
             event.preventDefault();
             try {
-                const response = await fetch('http://vidyalay.saanvigs.com/auth/institutelogin', {
+                const response = await fetch('http://vidyalay.saanvigs.com/institute/updateinstitute', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        // email: email_LI,
-                        // password: password_LI
+                        institutionID: '',
+                        name: institeteName,
+                        targetLine: targetLine,
+                        mobile: phoneNo,
+                        website: website,
+                        email: '',
                     }),
                 });
-                const responseData = await response.json();
-                console.log(responseData)
-                const adminId = responseData.adminId;
-                const token = responseData.accessToken;
-                const refreshToken = responseData.refreshToken;
-                localStorage.setItem('loggedIn', 'true');
-                localStorage.setItem('adminId', adminId);
-                localStorage.setItem('token', token);
-                localStorage.setItem('refreshToken', refreshToken);
+                // const responseData = await response.json();
                 if (!response.ok) {
                     console.log('Bad Response for sign in, The Response', response);
                     throw new Error(`HTTP error! Status: ${response.status}`);
@@ -81,7 +86,7 @@ const InstituteProfile = () => {
                 <div className='font-semibold w-full'>
                     <h5>Update Instute Info Here</h5>
                 </div>
-                <form className='w-full mt-3' onSubmit={Update}>
+                <form className='w-full mt-3'>
                     <div class="relative flex items-center my-3">
                         <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Name of the Institute</label>
                         <input type="text" placeholder="Name of the Institute" value={institeteName} onChange={handleInstiteteName}
@@ -89,32 +94,34 @@ const InstituteProfile = () => {
                     </div>
                     <div class="relative flex items-center my-3">
                         <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Target Line</label>
-                        <input type="text" placeholder="Target Line"
+                        <input type="text" placeholder="Target Line" value={targetLine} onChange={handleTargetLine}
                             class="px-2 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none" />
                     </div>
                     <div class="relative flex items-center my-3">
                         <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Phone Number</label>
-                        <input type="tel" placeholder="Phone"
+                        <input type="tel" placeholder="Phone" value={phoneNo} onChange={handlePhoneNo}
                             class="px-2 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none" />
                     </div>
                     <div class="relative flex items-center my-3">
                         <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Website</label>
-                        <input type="text" placeholder="Website"
+                        <input type="text" placeholder="Website" value={website} onChange={handleWebsite}
                             class="px-2 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none" />
                     </div>
                     <div class="relative flex items-center my-3">
                         <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Address</label>
-                        <input type="text" placeholder="Address"
+                        <input type="text" placeholder="Address" value={address} onChange={handleAddress}
                             class="px-2 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none" />
                     </div>
                     <div class="relative flex items-center my-3">
                         <label class="text-[13px] bg-white lab-txt absolute px-2 top-[-10px] left-[18px] font-semibold">Country</label>
-                        <select name='country' className='px-4 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none'>
+                        <select name='country' value={country} onChange={handleCountry} className='px-4 bod-sin py-3.5 bg-white text-black w-full text-sm border-2 rounded outline-none'>
                             <option value selected="selected">select Country</option>
-                            {countryOptions}
+                            {/* {Countries.map((i) => (
+                                <option>{i.name}</option>
+                            ))} */}{countryOptions}
                         </select>
                     </div>
-                    <div className='flex justify-end'><button className='text-white bg-blue-500 flex flex-end items-center p-2 rounded-sm justify-end mt-3'><TfiReload color='white' /> Update</button></div>
+                    <div className='flex justify-end'><button className='text-white bg-blue-500 flex flex-end items-center p-2 rounded-sm justify-end mt-3' onSubmit={Update}><TfiReload color='white' /> Update</button></div>
                 </form>
             </div>
         );

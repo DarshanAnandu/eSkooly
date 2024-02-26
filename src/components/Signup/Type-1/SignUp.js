@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import './SignUp.css';
 
 const SignUp = () => {
@@ -50,10 +50,46 @@ const SignUp = () => {
         }
     };
 
-    const handleSignUp = async (event) => {
-        event.preventDefault();
+    const getInstituteInfo = async (event) => {
+        // event.preventDefault();
         try {
-            const response = await fetch(`${process.env.HOSTNAME}/auth/instituteregister`, {
+            const response = await fetch(`http://vidyalay.saanvigs.com/institute/instituteid?institutionID=${localStorage.getItem('institutionId')}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+            const responseData = await response.json();
+            console.log(responseData)
+            localStorage.setItem('targetLine', responseData.targetLine);
+            localStorage.setItem('website', responseData.website);
+            localStorage.setItem('instituteType', responseData.instituteType);
+            localStorage.setItem('_id', responseData._id);
+            localStorage.setItem('institutionID', responseData.institutionID);
+            localStorage.setItem('name', responseData.name);
+            localStorage.setItem('board', responseData.board);
+            localStorage.setItem('country', responseData.country);
+            localStorage.setItem('currency', responseData.currency);
+            localStorage.setItem('address', responseData.address);
+            localStorage.setItem('academicSession', responseData.academicSession);
+            localStorage.setItem('profilePicture', responseData.profilePicture);
+            localStorage.setItem('email', responseData.email);
+            localStorage.setItem('mobile', responseData.mobile);
+            localStorage.setItem('adminID', responseData.adminID);
+            localStorage.setItem('__v', responseData.__v);
+            if (!response.ok) {
+                console.log('Bad Response for sign in, The Response', response);
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+        } catch (error) {
+            console.error('Info Error:', error);
+        }
+    }
+
+    const handleSignUp = async (event) => {
+        // event.preventDefault();
+        try {
+            const response = await fetch('http://vidyalay.saanvigs.com/auth/instituteregister', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -67,12 +103,17 @@ const SignUp = () => {
             const responseData = await response.json();
             console.log(responseData)
             const adminId = responseData.adminId;
+            const institutionId = responseData.institutionId;
             const token = responseData.accessToken;
             const refreshToken = responseData.refreshToken;
             localStorage.setItem('loggedIn', 'true');
             localStorage.setItem('adminId', adminId);
+            localStorage.setItem('institutionId', institutionId);
             localStorage.setItem('token', token);
             localStorage.setItem('refreshToken', refreshToken);
+            getInstituteInfo();
+            // window.location.reload();
+            <Navigate to='/eSkooly/pages' />
             if (!response.ok) {
                 console.log('Bad Response for sign in, The Response', response);
                 throw new Error(`HTTP error! Status: ${response.status}`);
@@ -82,31 +123,38 @@ const SignUp = () => {
         }
     };
     const handleLogin = async (event) => {
-        event.preventDefault();
+        // event.preventDefault();
         try {
-            const response = await fetch('http://vidyalay.saanvigs.com/auth/institutelogin', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email: email_LI,
-                    password: password_LI
-                }),
-            });
-            const responseData = await response.json();
-            console.log(responseData)
-            const adminId = responseData.adminId;
-            const token = responseData.accessToken;
-            const refreshToken = responseData.refreshToken;
-            localStorage.setItem('loggedIn', 'true');
-            localStorage.setItem('adminId', adminId);
-            localStorage.setItem('token', token);
-            localStorage.setItem('refreshToken', refreshToken);
-            if (!response.ok) {
-                console.log('Bad Response for sign in, The Response', response);
-                throw new Error(`HTTP error! Status: ${response.status}`);
+            if (!localStorage.getItem('loggedIn')) {
+                const response = await fetch('http://vidyalay.saanvigs.com/auth/institutelogin', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: email_LI,
+                        password: password_LI
+                    }),
+                });
+                const responseData = await response.json();
+                console.log(responseData)
+                const adminId = responseData.adminId;
+                const institutionId = responseData.institutionId;
+                const token = responseData.accessToken;
+                const refreshToken = responseData.refreshToken;
+                localStorage.setItem('loggedIn', 'true');
+                localStorage.setItem('adminId', adminId);
+                localStorage.setItem('institutionId', institutionId);
+                localStorage.setItem('token', token);
+                localStorage.setItem('refreshToken', refreshToken);
+                if (!response.ok) {
+                    console.log('Bad Response for sign in, The Response', response);
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
             }
+            getInstituteInfo();
+            // window.location.reload();
+            <Navigate to='/eSkooly/pages' />
         } catch (error) {
             console.error('Login Error:', error);
         }
