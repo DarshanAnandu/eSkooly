@@ -5,8 +5,9 @@ import { IoMdCheckmark } from "react-icons/io";
 import { FaPlus } from "react-icons/fa";
 import { CiImport } from "react-icons/ci";
 const AddStudents = () => {
-    const [formData, setFormData] = useState({
+    const initialFormData = {
         studentName: '',
+        fileToUpload: null,
         registrationNo: '',
         admissionDate: '',
         selectedClass: '',
@@ -42,7 +43,8 @@ const AddStudents = () => {
         motherOccupation: '',
         motherProfession: '',
         motherIncome: ''
-    });
+    };
+    const [formData, setFormData] = useState(initialFormData);
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -51,7 +53,63 @@ const AddStudents = () => {
             [name]: value
         });
     };
+    const handleReset = () => {
+        setFormData(initialFormData);
+    };
 
+    const Create = async (event) => {
+        try {
+            const response = await fetch('http://vidyalay.saanvigs.com/student/create', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: formData.studentName,
+                    institutionId: localStorage.getItem('institutionID'),
+                    picture: formData.fileToUpload,
+                    registrationNumber: formData.registrationNo,
+                    admissionDate: formData.admissionDate,
+                    class_: formData.selectedClass,
+                    feeDiscountPercentage: formData.discountInFee,
+                    mobileNumber: formData.mobileNo,
+                    dateOfBirth: formData.dateOfBirth,
+                    gender: formData.gender,
+                    identificationMark: formData.identificationMark,
+                    bloodGroup: formData.bloodGroup,
+                    diseases: formData.disease,
+                    caste: formData.cast,
+                    previousSchool: formData.previousSchool,
+                    previousRollNumber: formData.previousID,
+                    additionalNote: formData.additionalNote,
+                    isOrphan: formData.orphanStudent,
+                    totalSiblings: formData.totalSiblings,
+                    address: formData.address,
+                    religion: formData.religion,
+                    father: {
+                        name: formData.fatherName,
+                        education: formData.fatherEducation,
+                        mobileNumber: formData.fatherMobileNo,
+                        occupation: formData.fatherOccupation,
+                        income: formData.fatherIncome,
+                    },
+                    mother: {
+                        name: formData.motherName,
+                        education: formData.motherEducation,
+                        mobileNumber: formData.motherMobileNo,
+                        occupation: formData.motherOccupation,
+                        income: formData.motherIncome,
+                    }
+                }),
+            });
+            if (!response.ok) {
+                console.log('Bad Response for sign in, The Response', response);
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+        } catch (error) {
+            console.error('Login Error:', error);
+        }
+    };
     return (
         <div className='overflow-auto p-9 h-screen w-full' style={{ backgroundColor: '#f3f3f3' }}>
             <div className='bg-white flex flex-wrap justify-between rounded-xl'>
@@ -66,21 +124,21 @@ const AddStudents = () => {
                 </h5>
                 <div className='disp-stu-adding my-1 mb-3'>
                     <div className='flex flex-col wid-stu-adding mx-2'>
-                        <input type='text' name='studentName' value={formData.studentName} onChange={handleInputChange} placeholder='Name of the Student' className='outline-black p-2 focus:outline-blue-500' />
-                        <label className='flex flex-col mb-3'><span className='flex items-center'><span>Picture:</span><span className='pl-1' style={{ fontSize: '10px' }}>[ optional ]</span></span> <input type='file' name='fileToUpload' className='bod-in p-2 focus:outline-blue-500 bg-white' /><span className='' style={{ fontSize: '10px' }}>[ Max size 100KB ]</span></label>
+                        <input type='text' name='studentName' value={formData.studentName} onChange={handleInputChange} placeholder='Name of the Student' className='outline-black p-2 focus:outline-blue-500' required />
+                        <label className='flex flex-col mb-3'><span className='flex items-center'><span>Picture:</span><span className='pl-1' style={{ fontSize: '10px' }}>[ optional ]</span></span> <input type='file' name='fileToUpload' onChange={handleInputChange} className='bod-in p-2 focus:outline-blue-500 bg-white' /><span className='' style={{ fontSize: '10px' }}>[ Max size 100KB ]</span></label>
                     </div>
                     <div className='wid-stu-adding mx-2' style={{ marginTop: '-10px' }}>
                         <div className="relative flex items-center my-3">
                             <label className="text-[13px] bg-white lab-txt absolute px-1 top-[-10px] left-[18px]">Last Reg: None</label>
-                            <input type="text" placeholder="Registration No:" name="registrationNo" value={formData.registrationNo} onChange={handleInputChange} className="bod-sin p-2 bg-white text-black w-full text-sm border-2 rounded outline-none" />
+                            <input type="text" placeholder="Registration No:" name="registrationNo" value={formData.registrationNo} onChange={handleInputChange} className="bod-sin p-2 bg-white text-black w-full text-sm border-2 rounded outline-none" required />
                         </div>
-                        <label className='flex flex-col mb-3' style={{ marginTop: '-10px' }}>Admission Date: <input type='date' className='p-2 bod-in focus:outline-blue-500' name="admissionDate" value={formData.admissionDate} onChange={handleInputChange} /></label>
+                        <label className='flex flex-col mb-3' style={{ marginTop: '-10px' }}>Admission Date: <input type='date' className='p-2 bod-in focus:outline-blue-500' name="admissionDate" value={formData.admissionDate} onChange={handleInputChange} required /></label>
                     </div>
                     <div className='wid-stu-adding mx-2 flex flex-col'>
                         <select className='p-2 mb-2 bod-in' required>
                             <option>select class</option>
                         </select>
-                        <input type='number' name='discountInFee' value={formData.discountInFee} onChange={handleInputChange} placeholder='Discount In Fee in %' className='p-2 bod-in' />
+                        <input type='number' name='discountInFee' value={formData.discountInFee} onChange={handleInputChange} placeholder='Discount In Fee in %' className='p-2 bod-in' required />
                         <font className='mt-2' style={{ fontSize: '9px', color: '#999' }}>Student / Guardian mobile no to receive SMS / WhatsApp</font>
                         <input type='tel' name='mobileNo' value={formData.mobileNo} onChange={handleInputChange} placeholder='Mobile No: e.g +44xxxxxxxxxx' className='p-2 bod-in' />
                     </div>
@@ -192,8 +250,8 @@ const AddStudents = () => {
                 </div>
                 <hr />
                 <div className='mb-20 mt-5 flex inlin justify-center'>
-                    <button className='flex items-center text-white' style={{ background: 'linear-gradient(45deg, #ff808b, #f79099)', padding: '10px 19px', fontSize: '15px', borderRadius: '2px' }}><TfiReload color='white' /> <span className='pl-2'>Reset</span></button>
-                    <button className='flex items-center text-white justify-center ml-3' style={{ background: 'linear-gradient(45deg, #4d4cac, #5a59ab)', width: '170px', padding: '10px', fontSize: '15px', borderRadius: '2px' }}><IoMdCheckmark color='white' /><span className='pl-2'>Submit</span></button>
+                    <button className='flex items-center text-white' onClick={handleReset} style={{ background: 'linear-gradient(45deg, #ff808b, #f79099)', padding: '10px 19px', fontSize: '15px', borderRadius: '2px' }}><TfiReload color='white' /> <span className='pl-2'>Reset</span></button>
+                    <button className='flex items-center text-white justify-center ml-3' onClick={Create} style={{ background: 'linear-gradient(45deg, #4d4cac, #5a59ab)', width: '170px', padding: '10px', fontSize: '15px', borderRadius: '2px' }}><IoMdCheckmark color='white' /><span className='pl-2'>Submit</span></button>
                 </div>
             </div>
         </div>

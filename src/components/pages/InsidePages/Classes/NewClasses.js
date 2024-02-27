@@ -15,25 +15,25 @@ const NewClasses = () => {
     const classteacher = (event) => {
         setClassTeacher(event.target.value);
     };
-    const getClassesInfo = async (event) => {
-        try {
-            const response = await fetch(`http://vidyalay.saanvigs.com/class/getclasses?institutionId=${localStorage.getItem('institutionId')}`, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            });
-            const responseData = await response.json();
-            setClasses(JSON.parse(responseData));
-            localStorage.setItem('Classes', JSON.stringify(responseData));
-            if (!response.ok) {
-                console.log('Bad Response for sign in, The Response', response);
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-        } catch (error) {
-            console.error('Info Error:', error);
-        }
-    };
+    // const getClassesInfo = async (event) => {
+    //     try {
+    //         const response = await fetch(`http://vidyalay.saanvigs.com/class/getclasses?institutionId=${localStorage.getItem('institutionId')}`, {
+    //             method: 'GET',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //         });
+    //         const responseData = await response.json();
+    //         setClasses(JSON.parse(responseData));
+    //         localStorage.setItem('Classes', JSON.stringify(responseData));
+    //         if (!response.ok) {
+    //             console.log('Bad Response for sign in, The Response', response);
+    //             throw new Error(`HTTP error! Status: ${response.status}`);
+    //         }
+    //     } catch (error) {
+    //         console.error('Info Error:', error);
+    //     }
+    // };
     const Create = async (event) => {
         try {
             const response = await fetch('http://vidyalay.saanvigs.com/class/create', {
@@ -50,7 +50,7 @@ const NewClasses = () => {
                 }),
             });
             // const responseData = await response.json();
-            getClassesInfo();
+            // getClassesInfo();
             if (!response.ok) {
                 console.log('Bad Response for sign in, The Response', response);
                 throw new Error(`HTTP error! Status: ${response.status}`);

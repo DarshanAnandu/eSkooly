@@ -60,10 +60,10 @@ const SignUp = () => {
         }
     };
 
-    const getInstituteInfo = async (callback) => {
+    const getInstituteInfo = async (e) => {
         // event.preventDefault();
         try {
-            const response = await fetch(`http://vidyalay.saanvigs.com/institute/instituteid?institutionID=${localStorage.getItem('institutionID')}`, {
+            const response = await fetch(`http://vidyalay.saanvigs.com/institute/instituteid?institutionID=${localStorage.getItem('institutionId')}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -92,7 +92,8 @@ const SignUp = () => {
             localStorage.setItem('mobile', responseData.mobile);
             localStorage.setItem('adminID', responseData.adminID);
             localStorage.setItem('__v', responseData.__v);
-            return '/eSkooly/pages';
+            window.location.reload();
+            // return '/eSkooly/pages';
         } catch (error) {
             console.error('Info Error:', error);
         }
@@ -120,7 +121,7 @@ const SignUp = () => {
             console.log(responseData)
             localStorage.setItem('loggedIn', 'true');
             localStorage.setItem('adminId', responseData.adminId);
-            localStorage.setItem('institutionId', responseData.accessToken);
+            localStorage.setItem('institutionId', responseData.institutionId);
             localStorage.setItem('token', responseData.accessToken);
             localStorage.setItem('refreshToken', responseData.refreshToken);
             console.log('signup is successful')
@@ -152,7 +153,7 @@ const SignUp = () => {
             console.log(responseData)
             localStorage.setItem('loggedIn', 'true');
             localStorage.setItem('adminId', responseData.adminId);
-            localStorage.setItem('institutionId', responseData.accessToken);
+            localStorage.setItem('institutionId', responseData.institutionId);
             localStorage.setItem('token', responseData.accessToken);
             localStorage.setItem('refreshToken', responseData.refreshToken);
             console.log('login successful')

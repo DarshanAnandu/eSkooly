@@ -9,7 +9,7 @@ class AllClasses extends Component {
             feefor: '',
             // allStudents: [],
             // specificStudent: [],
-            classesInfo: JSON.parse(localStorage.getItem('Classes')) || [],
+            classesInfo: JSON.parse(localStorage.getItem('Classes')),
             specificClass: []
         };
     }
@@ -26,6 +26,7 @@ class AllClasses extends Component {
                 },
             });
             const responseData = await response.json();
+            console.log(responseData);
             this.setState({ classesInfo: responseData });
             localStorage.setItem('Classes', JSON.stringify(responseData));
             if (!response.ok) {

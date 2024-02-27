@@ -1,16 +1,17 @@
-// import { useEffect } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const LogOut = () => {
-    // const history = useNavigate();
-    // useEffect(() => {
-    //     localStorage.setItem('loggedIn', 'false');
-    //     localStorage.removeItem('adminId');
-    //     localStorage.removeItem('token');
-    //     localStorage.removeItem('refreshToken');
-    //     history('/eSkooly/Signup');
-    //     // window.location.reload();
-    // }, [history]);
+    const history = useNavigate();
+    useEffect(() => {
+        // localStorage.setItem('loggedIn', 'false');
+        // localStorage.removeItem('adminId');
+        // localStorage.removeItem('token');
+        // localStorage.removeItem('refreshToken');
+        localStorage.clear();
+        history('/eSkooly');
+        window.location.reload();
+    }, [history]);
 
     return null;
 }
