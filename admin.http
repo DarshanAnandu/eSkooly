@@ -1,0 +1,420 @@
+@hostname=http://vidyalay.saanvigs.com
+# @hostname=http://localhost:3000
+
+
+###  Admin Registration
+POST {{hostname}}/auth/instituteregister
+Content-Type: application/json
+
+{
+  "email": "divya42s@gmail.com",
+  "password" : "123456789",
+  "mobileNumber" : "9876543210"
+}
+ 
+
+### Admin Login  - Login Route -
+POST {{hostname}}/auth/institutelogin
+Content-Type: application/json
+
+{
+  "email": "divya42s@gmail.com",
+  "password": "123456789"
+}
+
+
+###  Admin - Logout
+POST {{hostname}}/auth/institutelogout
+Content-Type: application/json
+
+{
+  "email": "divyank.sharma0601@gmail.com",
+  "password": "12345678"
+}
+
+### Register - Institute
+POST {{hostname}}/institute/create
+Content-Type: application/json
+
+{
+  "institutionID": "krkschool1",
+  "name": "KRK Academy ",
+  "board": "Example Board",
+  "country": "Example Country",
+  "currency": "Example Currency",
+  "address": "Example Address",
+  "academicSession": "2024-02-05",
+  "profilePicture": "example.jpg",
+  "email": "krk1213@google.com",
+  "mobile": "1234567890",
+  "adminID" : "MXoDc0L9aa"
+}
+
+### Update Instiute Profile under General Settings
+POST {{hostname}}/institute/updateinstitute
+Content-Type: application/json
+
+{
+  "institutionID": "jingle122",
+  "name": "JB Academy",
+  "targetLine": "Arise Awake and Shine",
+  "mobile": "9876543210",
+  "website": "https://example.com",
+  "email": "email12dwaf3@example.com"
+}
+
+###  Get Institute Details by InstituionId
+GET {{hostname}}/institute/instituteid?institutionID=HCJ34e21
+
+
+###  Get all classes belonging to an institution using instituionId
+GET {{hostname}}/class/getclasses?institutionId=jingle122
+
+
+### Add  Subjects to class using classId
+POST {{hostname}}/class/updatesubjects
+Content-Type: application/json
+
+{
+  "classId": "X2scli-r2",
+  "subject": {
+    "name": "Political Science",
+    "marks": 100
+  }
+}
+
+### Create new student /new student admission 
+POST {{hostname}}/student/create
+Content-Type: application/json
+
+{
+  "name": "shibang",
+  "institutionId" : "KTPS3421",
+  "picture": "student.jpg",
+  "registrationNumber": "ktpskr101",
+  "admissionDate": "2023-09-01",
+  "class_": "10th A",
+  "feeDiscountPercentage": 10,
+  "mobileNumber": "9876543210",
+  "dateOfBirth": "2005-05-15",
+  "gender": "Male",
+  "identificationMark": "Mole on left cheek",
+  "bloodGroup": "O+",
+  "diseases": "None",
+  "caste": "General",
+  "previousSchool": "ABC School",
+  "previousRollNumber": "ROLL12345",
+  "additionalNote": "None",
+  "isOrphan": "false",
+  "totalSiblings": 2,
+  "address": "123 Main St, City",
+  "religion": "Christian",
+  "father": {
+    "name": "John Doe Sr.",
+    "education": "Graduate",
+    "mobileNumber": "9876543211",
+    "occupation": "Engineer",
+    "income": 50000
+  },
+  "mother": {
+    "name": "Jane Doe",
+    "education": "Post Graduate",
+    "mobileNumber": "9876543212",
+    "occupation": "Teacher",
+    "income": 40000
+  }
+}
+
+
+### Get all students belonging to an institution using institutionId
+GET {{hostname}}/student/getstudents?institutionId=jingle122
+
+### Create new class 
+POST {{hostname}}/class/create
+Content-Type: application/json
+
+{
+ "institutionID" : "JBA3421",
+  "className": "12th B",
+  "classTeacher": "Mr. Avinash",
+  "studentStrength": 30,
+  "monthlyTuitionFee": 1000
+}
+
+
+### Delete class using classId
+DELETE {{hostname}}/class/deleteclass?classId=e8CtUmfKy
+Content-Type: application/json
+
+
+
+###update classTeacher and monthlyTutionFee using classId 
+POST {{hostname}}/class/updateclass
+Content-Type: application/json
+
+{
+  "classId": "X2scli-r2",
+  "className": "X A",
+  "classTeacher": "arjun",
+  "monthlyTuitionFee": 6000
+}
+
+
+
+
+
+### Create new Employee / New employee admission
+POST {{hostname}}/employee/create
+Content-Type: application/json
+Authorization: Bearer "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDczOTU5NjIsImV4cCI6MTcwNzM5OTU2MiwiYXVkIjoiNjVjNGE3MmY4ZTJiM2M0N2E0NDZhN2Q0IiwiaXNzIjoicGlja3VycGFnZS5jb20ifQ.eJW_UmBGaVk2sBR6oux5OpiJ8sZCFlFSRrNngOE2pc4"
+
+{
+  "name": "Ayushi Sharma",
+  "institutionId": "JBA3421" ,
+  "picture": "employee.jpg",
+  "mobileNumber": "9876543210",
+  "joiningDate": "2023-01-15",
+  "employeeType": "Full-time",
+  "monthlySalary": 5000,
+  "fatherName": "John Doe Sr.",
+  "fatherEducation": "Graduate",
+  "fatherMobileNumber": "9876543211",
+  "fatherOccupation": "Engineer",
+  "fatherIncome": 50000,
+  "motherName": "Jane Doe",
+  "motherEducation": "Post Graduate",
+  "motherMobileNumber": "9876543212",
+  "motherOccupation": "Teacher",
+  "motherIncome": 40000,
+  "gender": "Male",
+  "religion": "Christian",
+  "bloodGroup": "O+",
+  "dateOfBirth": "1990-05-15",
+  "experience": 5,
+  "email": "ayushi@example.com", 
+  "address": "123 Main St, City"
+}
+
+###Get all employees belonging to institution
+GET {{hostname}}/employee/getemployees?institutionId=JBA3421
+
+
+
+###Get details of particular employee using employeeId
+GET {{hostname}}/employee/id?employeeId=8anrMKZMr
+
+
+
+### Mark student attendance
+POST {{hostname}}/attendance/mark
+Content-Type: application/json
+
+{
+  "date": "2024-02-14",
+  "institutionId": "jingle122",
+  "class_" : "10 A",
+  "attendance": [
+    {
+      "registrationNumber": "harsh123",
+      "status": "present"
+    },
+    {
+      "registrationNumber": "shikhar123",
+      "status": "absent"
+    }
+  ]
+}
+
+
+###get student attendance according to registartion Number of student
+POST {{hostname}}/attendance/getAttendaceDetails
+Content-Type: application/json
+
+{
+ "registrationNumber": "ktpskr10a"  
+}
+
+
+
+### Mark employee attendance
+POST {{hostname}}/attendance/markEmpAttendance
+Content-Type: application/json
+
+{
+  "institutionId": "JBA3421",
+  "date": "2024-02-18",
+  "attendance": [
+    {
+      "employeeId": "aiath8PBZ",
+      "status": "present"
+    }
+  ]
+}
+
+
+### Get employee Attendance for particular date.
+POST {{hostname}}/attendance/getEmpAttendance
+Content-Type: application/json
+
+{
+  "institutionId"  : "jingle122",
+  "date": "2024-02-18"
+}
+
+
+
+###Get students attendace record for a class according to institutionId, className and Date.
+POST {{hostname}}/attendance/getClassAttendance
+Content-Type: application/json
+
+{
+  "institutionId"  : "jingle122",
+  "class_": "X A",
+  "date": "2024-01-06"
+}
+
+###Create chart of account under Accounts Section
+POST {{hostname}}/chartofaccounts/createchartofaccount
+Content-Type: application/json
+
+{
+  "institutionId": "jingle122",
+  "headName": "Ashish",
+  "type": "Expense"
+}
+
+### Get chart of account by institutionId
+GET {{hostname}}/chartofaccounts/getchartofaccount?institutionId=jingle122
+
+
+### Add Income / Expense in accounts
+POST {{hostname}}/chartofaccounts/addAccountStatement
+Content-Type: application/json
+
+{
+  "institutionId": "jingle122",
+  "date": "2024-02-18",
+  "description": "other",
+  "type": "EXPENSE",
+  "amount": 9000.02
+}
+
+### Get Account Statement using institutionId
+GET {{hostname}}/chartofaccounts/getAccountStatement?institutionId=ayushps97
+
+
+
+### CREATE FEE Particular  according to class
+POST {{hostname}}/fees/create
+Content-Type: application/json
+Authorization: Bearer "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDczMDM3ODgsImV4cCI6MTcwNzMwNzM4OCwiYXVkIjoiNjVjMzU0YTNjMjhlYWQ2YTUwNzM4OTYzIiwiaXNzIjoicGlja3VycGFnZS5jb20ifQ.OAtjlCo53cst9LFqEyQDsXDDbP02CPONsTeo0kqRtW0"
+
+{
+  "classID": "c11QmCRbS",
+  "institutionID": "ayushps97",
+  "AdmissionFee" : 4000,
+  "registrationFee" : 2000,
+  "tuitionFee": 1500,
+  "booksFee": 500,
+  "uniformFee": 300,
+  "examFee": 200,
+  "transportationFee": 400,
+  "FineFee" : 2000,
+  "otherFee": 100
+}
+
+### Get fee particular for particular class of an institution
+GET {{hostname}}/fees/getFeesByClassAndInstitution?classId=X2scli-r2&institutionId=ayushps97
+
+
+### Collect Student Fee / Submit Student Fee
+POST {{hostname}}/fees/collectFee
+Content-Type: application/json
+
+{
+  "registrationNumber": "raghy345",
+  "feeMonth": "December 2024",
+  "institutionId": "ayushps97",
+  "classId": "X2scli-r2",
+  "transactionNumber": "trans123",
+  "paymentDate" : "2024-03-02",
+  "tuitionFee": 100,
+  "admissionFee": 50,
+  "registrationFee": 20,
+  "transportationFee": 30,
+  "booksFee": 40,
+  "uniformFee": 25,
+  "examFee": 35,
+  "fineFee": 10,
+  "otherFee": 15
+}
+
+
+### Get fee details of student for particular feeMonth using registrationNumber
+GET {{hostname}}/fees/getFeeDetails?registrationNumber=raghy345&feeMonth=August%202024
+
+
+### Submit Employee Salary 
+POST {{hostname}}/salary/submitEmployeeSalary
+Content-Type: application/json
+
+{
+    "employeeId": "123456",
+    "employeeType": "Full Time",
+    "employeeName": "John Doe",
+    "salaryMonth": "April 2024",
+    "paymentDate": "2024-02-20",
+    "salaryAmount": 5000,
+    "bonus": 200,
+    "deduction": 100,
+    "transactionNumber": "1234567890"
+}
+
+
+### Get employee  Salaray Details for particular month
+GET {{hostname}}/salary/getEmployeeSalary?employeeId=123456&salaryMonth=February%202024
+
+
+
+
+###
+POST {{hostname}}/homework/createHomework
+Content-Type: application/json
+
+{
+  "institutionId": "345678",
+  "date": "2024-02-25",
+  "className" : "arjun",
+  "classId": "A001",
+  "teacher": "John Doe",
+  "teacherId": "T001",
+  "subject": "Mathematics",
+  "homework": "Complete exercises 1-3 on page 51."
+}
+
+
+###
+GET {{hostname}}/homework/getHomework?institutionId=ayushps97&date=2024-02-26&classId=X2scli-r2&teacherId=X2scli-r2
+
+###
+GET {{hostname}}/homework/getHomework?institutionId=345678&date=2024-02-25&classId=A001&teacherId=T001
+
+###
+POST h{{hostname}}/timetable/addorupdateTimetable
+Content-Type: application/json
+
+{
+    "institutionId": "123456",
+    "classId": "A001",
+    "className" : "X A",
+    "startTime": "08:00",
+    "endTime": "09:00",
+    "day" : "Monday",
+    "subject": "Mathematics",
+    "teacher": "John Doe",
+    "teacherId": "T001"
+}
+
+
+###
+GET {{hostname}}/timetable/getTimetable?institutionId=123456&classId=A001&day=Monday

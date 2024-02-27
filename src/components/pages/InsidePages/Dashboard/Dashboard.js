@@ -1,6 +1,6 @@
 import { FaRegUser } from "react-icons/fa6";
 import { HiOutlineBriefcase } from "react-icons/hi2";
-import { LuDollarSign } from "react-icons/lu";
+import { FaIndianRupeeSign } from "react-icons/fa6";
 import { TfiTarget } from "react-icons/tfi";
 import { CiWallet } from "react-icons/ci";
 import { FaWindows, FaApple } from "react-icons/fa";
@@ -30,23 +30,23 @@ const Dashboard = () => {
                     <div className='p-6 display-card min-h-36 m-2 flex flex-col hover:shadow-2xl bg-red-400 rounded-2xl text-white'>
                         <h6 className='mb-5'>Revenue</h6>
                         <h2 className='flex mb-2 justify-between font-semibold items-center text-4xl'>
-                            <span><LuDollarSign /></span>
+                            <span><FaIndianRupeeSign /></span>
                             <span>0</span>
                         </h2>
                         <div className='flex justify-between'>
                             <p className=''>This Month </p>
-                            <div className='flex items-center'><LuDollarSign /> <span>0</span></div>
+                            <div className='flex items-center'><FaIndianRupeeSign /> <span>0</span></div>
                         </div>
                     </div>
                     <div className='p-6 display-card min-h-36 m-2 flex flex-col hover:shadow-2xl bg-blue-500 rounded-2xl text-white'>
                         <h6 className='mb-5'>Total Profit</h6>
                         <h2 className='flex mb-2 justify-between font-semibold text-4xl'>
-                            <span><LuDollarSign /></span>
+                            <span><FaIndianRupeeSign /></span>
                             <span>0</span>
                         </h2>
                         <div className='flex justify-between'>
                             <p className=''>This Month </p>
-                            <div className='flex items-center'><LuDollarSign /> <span>0</span></div>
+                            <div className='flex items-center'><FaIndianRupeeSign /> <span>0</span></div>
                         </div>
                     </div>
                 </div>

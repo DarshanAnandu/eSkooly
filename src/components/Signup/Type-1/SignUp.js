@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './SignUp.css';
 
 const SignUp = () => {
@@ -12,6 +12,8 @@ const SignUp = () => {
     const [passwordsMatch, setPasswordsMatch] = useState(true);
     const [mobileNo, setMobileNo] = useState('');
     const [validMobileNo, setValidMobileNo] = useState(true);
+    const navigate = useNavigate();
+
 
     const handleMobileNoChange = (event) => {
         const inputValue = event.target.value;
@@ -49,16 +51,29 @@ const SignUp = () => {
             console.log('Passwords do not match');
         }
     };
+    const handleGetInstituteInfo = async () => {
+        try {
+            const path = await getInstituteInfo();
+            navigate(path);
+        } catch (error) {
+            console.error('Error getting institute info:', error);
+        }
+    };
 
-    const getInstituteInfo = async (event) => {
+    const getInstituteInfo = async (callback) => {
         // event.preventDefault();
         try {
-            const response = await fetch(`http://vidyalay.saanvigs.com/institute/instituteid?institutionID=${localStorage.getItem('institutionId')}`, {
+            const response = await fetch(`http://vidyalay.saanvigs.com/institute/instituteid?institutionID=${localStorage.getItem('institutionID')}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
                 },
             });
+            if (!response.ok) {
+                console.log('Bad Response for sign in, The Response', response);
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            console.log('reached get information')
             const responseData = await response.json();
             console.log(responseData)
             localStorage.setItem('targetLine', responseData.targetLine);
@@ -77,17 +92,14 @@ const SignUp = () => {
             localStorage.setItem('mobile', responseData.mobile);
             localStorage.setItem('adminID', responseData.adminID);
             localStorage.setItem('__v', responseData.__v);
-            if (!response.ok) {
-                console.log('Bad Response for sign in, The Response', response);
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
+            return '/eSkooly/pages';
         } catch (error) {
             console.error('Info Error:', error);
         }
     }
 
     const handleSignUp = async (event) => {
-        // event.preventDefault();
+        event.preventDefault();
         try {
             const response = await fetch('http://vidyalay.saanvigs.com/auth/instituteregister', {
                 method: 'POST',
@@ -100,61 +112,53 @@ const SignUp = () => {
                     mobileNumber: mobileNo
                 }),
             });
-            const responseData = await response.json();
-            console.log(responseData)
-            const adminId = responseData.adminId;
-            const institutionId = responseData.institutionId;
-            const token = responseData.accessToken;
-            const refreshToken = responseData.refreshToken;
-            localStorage.setItem('loggedIn', 'true');
-            localStorage.setItem('adminId', adminId);
-            localStorage.setItem('institutionId', institutionId);
-            localStorage.setItem('token', token);
-            localStorage.setItem('refreshToken', refreshToken);
-            getInstituteInfo();
-            // window.location.reload();
-            <Navigate to='/eSkooly/pages' />
             if (!response.ok) {
                 console.log('Bad Response for sign in, The Response', response);
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
+            const responseData = await response.json();
+            console.log(responseData)
+            localStorage.setItem('loggedIn', 'true');
+            localStorage.setItem('adminId', responseData.adminId);
+            localStorage.setItem('institutionId', responseData.accessToken);
+            localStorage.setItem('token', responseData.accessToken);
+            localStorage.setItem('refreshToken', responseData.refreshToken);
+            console.log('signup is successful')
+            await handleGetInstituteInfo();
+            // window.location.reload();
+            // <Navigate to='/eSkooly/pages' />
         } catch (error) {
             console.error('Login Error:', error);
         }
     };
     const handleLogin = async (event) => {
-        // event.preventDefault();
+        event.preventDefault();
         try {
-            if (!localStorage.getItem('loggedIn')) {
-                const response = await fetch('http://vidyalay.saanvigs.com/auth/institutelogin', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        email: email_LI,
-                        password: password_LI
-                    }),
-                });
-                const responseData = await response.json();
-                console.log(responseData)
-                const adminId = responseData.adminId;
-                const institutionId = responseData.institutionId;
-                const token = responseData.accessToken;
-                const refreshToken = responseData.refreshToken;
-                localStorage.setItem('loggedIn', 'true');
-                localStorage.setItem('adminId', adminId);
-                localStorage.setItem('institutionId', institutionId);
-                localStorage.setItem('token', token);
-                localStorage.setItem('refreshToken', refreshToken);
-                if (!response.ok) {
-                    console.log('Bad Response for sign in, The Response', response);
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
+            const response = await fetch('http://vidyalay.saanvigs.com/auth/institutelogin', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: email_LI,
+                    password: password_LI
+                }),
+            });
+            if (!response.ok) {
+                console.log('Bad Response for sign in, The Response', response);
+                throw new Error(`HTTP error! Status: ${response.status}`);
             }
-            getInstituteInfo();
+            const responseData = await response.json();
+            console.log(responseData)
+            localStorage.setItem('loggedIn', 'true');
+            localStorage.setItem('adminId', responseData.adminId);
+            localStorage.setItem('institutionId', responseData.accessToken);
+            localStorage.setItem('token', responseData.accessToken);
+            localStorage.setItem('refreshToken', responseData.refreshToken);
+            console.log('login successful')
+            await handleGetInstituteInfo();
             // window.location.reload();
-            <Navigate to='/eSkooly/pages' />
+            // <Navigate to='/eSkooly/pages' />
         } catch (error) {
             console.error('Login Error:', error);
         }
@@ -180,7 +184,7 @@ const SignUp = () => {
                     </div>
                     <div className="form-inner">
                         {isLoginForm ? (
-                            <form action="" onSubmit={handleLogin} className="login">
+                            <form action="" className="login">
                                 <div className="field">
                                     <input type="text" placeholder="Email Address" value={email_LI} onChange={handleEmail_LI} required />
                                 </div>
@@ -192,14 +196,14 @@ const SignUp = () => {
                                 </div>
                                 <div className="field btn">
                                     <div className="btn-layer" />
-                                    <input type="submit" defaultValue="Login" />
+                                    <input type="submit" onClick={handleLogin} defaultValue="Login" />
                                 </div>
                                 <div className="signup-link flex justify-center">
                                     Not a member? <div className='text-blue-600 cursor-pointer' onClick={() => handleToggleForm()}>Signup now</div>
                                 </div>
                             </form>
                         ) : (
-                            <form action="" onSubmit={handleSignUp} className="signup">
+                            <form action="" className="signup">
                                 <div className="field">
                                     <input type="text" placeholder="Email Address" value={email} onChange={handleEmail} required />
                                 </div>
@@ -220,7 +224,7 @@ const SignUp = () => {
                                 )}
                                 <div className="field btn">
                                     <div className="btn-layer" />
-                                    <input type="submit" defaultValue="Signup" />
+                                    <input type="submit" onClick={handleSignUp} defaultValue="Signup" />
                                 </div>
                             </form>
                         )}

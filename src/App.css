@@ -18,6 +18,9 @@ body {
 }
 
 /* dashboard display */
+.l-b {
+  color: #495057;
+}
 .dp {
   display: flex;
 }
