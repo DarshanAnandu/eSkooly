@@ -100,7 +100,7 @@ const SignUp = () => {
     }
 
     const handleSignUp = async (event) => {
-        event.preventDefault();
+        // event.preventDefault();
         try {
             const response = await fetch('http://vidyalay.saanvigs.com/auth/instituteregister', {
                 method: 'POST',
@@ -133,7 +133,6 @@ const SignUp = () => {
         }
     };
     const handleLogin = async (event) => {
-        event.preventDefault();
         try {
             const response = await fetch('http://vidyalay.saanvigs.com/auth/institutelogin', {
                 method: 'POST',
@@ -145,18 +144,23 @@ const SignUp = () => {
                     password: password_LI
                 }),
             });
+
             if (!response.ok) {
-                console.log('Bad Response for sign in, The Response', response);
+                const errorText = await response.text(); // Get error details from response body
+                console.error('Bad Response for sign in:', errorText);
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
+
             const responseData = await response.json();
-            console.log(responseData)
+            console.log(responseData);
+
             localStorage.setItem('loggedIn', 'true');
             localStorage.setItem('adminId', responseData.adminId);
             localStorage.setItem('institutionId', responseData.institutionId);
             localStorage.setItem('token', responseData.accessToken);
             localStorage.setItem('refreshToken', responseData.refreshToken);
-            console.log('login successful')
+
+            console.log('Login successful');
             await handleGetInstituteInfo();
             // window.location.reload();
             // <Navigate to='/eSkooly/pages' />
@@ -204,7 +208,7 @@ const SignUp = () => {
                                 </div>
                             </form>
                         ) : (
-                            <form action="" className="signup">
+                            <form action="POST" onSubmit={handleSignUp} className="signup">
                                 <div className="field">
                                     <input type="text" placeholder="Email Address" value={email} onChange={handleEmail} required />
                                 </div>
@@ -225,7 +229,7 @@ const SignUp = () => {
                                 )}
                                 <div className="field btn">
                                     <div className="btn-layer" />
-                                    <input type="submit" onClick={handleSignUp} defaultValue="Signup" />
+                                    <input type="submit" defaultValue="Signup" />
                                 </div>
                             </form>
                         )}

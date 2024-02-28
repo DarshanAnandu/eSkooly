@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
 import PageNav from '../navbars/NavDashboard'
 import SideNavPage from '../navbars/SideNavDashboard'
 import Dashboard from './InsidePages/Dashboard/Dashboard'
@@ -159,7 +159,7 @@ const Pages = () => {
         {/* <GeneralSettings /> */}
         {/* <Classes /> */}
         {/* <Subjects /> */}
-        <div className='flex flex-col flex-grow w-full'>
+        <div className='flex flex-col flex-grow w-full bg-white'>
           {/* <Students /> */}
           {/* <Switch>
             <Route path="/general-settings/institute-profile" component={GeneralSettings.InstitureProfile} />
@@ -167,6 +167,7 @@ const Pages = () => {
           </Switch> */}
           <Routes>
             {/* <Route path='/eSkooly/pages/Signup' element={<SignUp />} defaultValue /> */}
+            <Route path="/" element={<Navigate to="/eSkooly/pages/Dashboard" />} />
             <Route path='/eSkooly/pages/Dashboard' element={<Dashboard />} />
             <Route path='/eSkooly/pages/General-Settings/Institute-Profile' element={<InstituteProfile />} />
             <Route path='/eSkooly/pages/General-Settings/Fee-Particulars' element={<FeeParticulars />} />

@@ -12,7 +12,7 @@ class AllStudents extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            feefor: '',
+            // feefor: '',
             studentsInfo: JSON.parse(localStorage.getItem('studentsInfo')) || [],
         };
     }
