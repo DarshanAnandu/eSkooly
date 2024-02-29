@@ -168,6 +168,9 @@ const Pages = () => {
           <Routes>
             {/* <Route path='/eSkooly/pages/Signup' element={<SignUp />} defaultValue /> */}
             <Route path="/" element={<Navigate to="/eSkooly/pages/Dashboard" />} />
+            <Route path="/eSkooly" element={<Navigate to="/eSkooly/pages/Dashboard" />} />
+            <Route path="/eSkooly/pages" element={<Navigate to="/eSkooly/pages/Dashboard" />} />
+            <Route path="/eSkooly/pages?" element={<Navigate to="/eSkooly/pages/Dashboard" />} />
             <Route path='/eSkooly/pages/Dashboard' element={<Dashboard />} />
             <Route path='/eSkooly/pages/General-Settings/Institute-Profile' element={<InstituteProfile />} />
             <Route path='/eSkooly/pages/General-Settings/Fee-Particulars' element={<FeeParticulars />} />

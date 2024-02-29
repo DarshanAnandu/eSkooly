@@ -9,7 +9,7 @@ class AllClasses extends Component {
             feefor: '',
             // allStudents: [],
             // specificStudent: [],
-            classesInfo: JSON.parse(localStorage.getItem('Classes')),
+            classesInfo: JSON.parse(localStorage.getItem('Classes')) || [],
             specificClass: []
         };
     }
