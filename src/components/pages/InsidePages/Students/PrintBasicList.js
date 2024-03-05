@@ -51,27 +51,27 @@ class PrintBasicList extends Component {
                 </div>
                 <table className='text-black bg-white w-full'>
                     <thead>
-                        <tr className='h-0 font-bold' style={{ background: 'linear-gradient(45deg, #ff808b, #f79099)' }}>
-                            <th className='py-0 border-y-0 h-0' style={{ width: '37px', borderRight: '1px solid white', textAlign: 'left' }}><div className='overflow-hidden text-left'>Sr</div></th>
-                            <th className='py-0 border-y-0 h-0' style={{ width: '147px', borderRight: '1px solid white', textAlign: 'left' }}><div className='overflow-hidden text-left'>Registration No.</div></th>
-                            <th className='py-0 border-y-0 h-0' style={{ width: '69px', borderRight: '1px solid white', textAlign: 'left' }}><div className='overflow-hidden text-left'>Name</div></th>
-                            <th className='py-0 border-y-0 h-0' style={{ width: '72px', borderRight: '1px solid white', textAlign: 'left' }}><div className='overflow-hidden text-left'>Father</div></th>
-                            <th className='py-0 border-y-0 h-0' style={{ width: '65px', borderRight: '1px solid white', textAlign: 'left' }}><div className='overflow-hidden text-left'>Class</div></th>
-                            <th className='py-0 border-y-0 h-0' style={{ width: '147px', borderRight: '1px solid white', textAlign: 'left' }}><div className='overflow-hidden text-left'>Fee Remainings</div></th>
-                            <th className='py-0 border-y-0 h-0' style={{ width: '71px', textAlign: 'left' }}><div className='overflow-hidden'>Phone</div></th>
+                        <tr className='h-0 font-bold text-[#333333]' style={{ background: 'linear-gradient(45deg, #ff808b, #f79099)' }}>
+                            <th className='py-[10px] px-[18px] border-b-[#111111] border-y-[1px] h-0' style={{ width: '37px', borderRight: '1px solid white', textAlign: 'left' }}><div className='overflow-hidden text-left'>Sr</div></th>
+                            <th className='py-[10px] px-[18px] border-b-[#111111] border-y-[1px] h-0' style={{ width: '147px', borderRight: '1px solid white', textAlign: 'left' }}><div className='overflow-hidden text-left'>Registration No.</div></th>
+                            <th className='py-[10px] px-[18px] border-b-[#111111] border-y-[1px] h-0' style={{ width: '69px', borderRight: '1px solid white', textAlign: 'left' }}><div className='overflow-hidden text-left'>Name</div></th>
+                            <th className='py-[10px] px-[18px] border-b-[#111111] border-y-[1px] h-0' style={{ width: '72px', borderRight: '1px solid white', textAlign: 'left' }}><div className='overflow-hidden text-left'>Father</div></th>
+                            <th className='py-[10px] px-[18px] border-b-[#111111] border-y-[1px] h-0' style={{ width: '65px', borderRight: '1px solid white', textAlign: 'left' }}><div className='overflow-hidden text-left'>Class</div></th>
+                            <th className='py-[10px] px-[18px] border-b-[#111111] border-y-[1px] h-0' style={{ width: '147px', borderRight: '1px solid white', textAlign: 'left' }}><div className='overflow-hidden text-left'>Fee Remainings</div></th>
+                            <th className='py-[10px] px-[18px] border-b-[#111111] border-y-[1px] h-0' style={{ width: '71px', textAlign: 'left' }}><div className='overflow-hidden'>Phone</div></th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className='border-b-[#111111] border-b'>
                         {this.state.studentsInfo.map((e, idx) => (
-                            <tr key={idx} className='' style={{ background: 'rgb(255, 255, 255)' }}>
+                            <tr key={idx} className='' style={{ background: idx%2===0 ? 'rgb(255, 255, 255)' : 'rgba(0, 0, 0, .05)' }}>
                                 {/* <td className='' colSpan={8} style={{ verticalAlign: 'middle', textAlign: 'left' }}>No data Available in the table</td> */}
-                                <td className='' style={{ verticalAlign: 'middle', textAlign: 'left' }}>{idx}</td>
-                                <td className='' style={{ verticalAlign: 'middle', textAlign: 'left' }}>{e.registrationNumber}</td>
-                                <td className='' style={{ verticalAlign: 'middle', textAlign: 'left' }}>{e.name}</td>
-                                <td className='' style={{ verticalAlign: 'middle', textAlign: 'left' }}>{e.father.name}</td>
-                                <td className='' style={{ verticalAlign: 'middle', textAlign: 'left' }}>{e.class_}</td>
-                                <td className='' style={{ verticalAlign: 'middle', textAlign: 'left' }}>0</td>
-                                <td className='' style={{ verticalAlign: 'middle', textAlign: 'left' }}>{e.mobileNumber}</td>
+                                <td className='py-[8px] px-[10px]' style={{ verticalAlign: 'middle', textAlign: 'left' }}>{idx}</td>
+                                <td className='py-[8px] px-[10px]' style={{ verticalAlign: 'middle', textAlign: 'left' }}>{e.registrationNumber}</td>
+                                <td className='py-[8px] px-[10px]' style={{ verticalAlign: 'middle', textAlign: 'left' }}>{e.name}</td>
+                                <td className='py-[8px] px-[10px]' style={{ verticalAlign: 'middle', textAlign: 'left' }}>{e.father.name}</td>
+                                <td className='py-[8px] px-[10px]' style={{ verticalAlign: 'middle', textAlign: 'left' }}>{e.class_}</td>
+                                <td className='py-[8px] px-[10px]' style={{ verticalAlign: 'middle', textAlign: 'left' }}>0</td>
+                                <td className='py-[8px] px-[10px]' style={{ verticalAlign: 'middle', textAlign: 'left' }}>{e.mobileNumber}</td>
                             </tr>
                         ))}
                     </tbody>

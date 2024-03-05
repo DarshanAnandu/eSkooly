@@ -6,7 +6,6 @@ class AllClasses extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            feefor: '',
             // allStudents: [],
             // specificStudent: [],
             classesInfo: JSON.parse(localStorage.getItem('Classes')) || [],

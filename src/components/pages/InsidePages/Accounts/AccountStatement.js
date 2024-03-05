@@ -92,7 +92,7 @@ class AccountStatement extends Component {
                 <div className=''>
                     <table className="w-full " style={{ border: '1px solid #e9ecef', backgroundColor: 'transparent' }}>
                         <thead>
-                            <tr className='text-black' style={{}}>
+                            <tr className='text-black' style={{ borderBottom: '2px solid #e9ecef'}}>
                                 <th className='cursor-pointer text-left' style={{ padding: '10px 18px', border: '1px solid #e9ecef' }}>Date</th>
                                 <th className='cursor-pointer text-left' style={{ padding: '10px 18px', border: '1px solid #e9ecef' }}>Description</th>
                                 <th className='cursor-pointer text-left' style={{ padding: '10px 18px', border: '1px solid #e9ecef' }}>Debit</th>
@@ -112,7 +112,7 @@ class AccountStatement extends Component {
                                 }
 
                                 return (
-                                    <tr className='' key={idx} style={{ backgroundColor: 'rgba(0,0,0,.05)' }}>
+                                    <tr className='' key={idx} style={{ backgroundColor: idx%2===0 ? 'rgba(0, 0, 0, .05)' : '' }}>
                                         <td style={{ padding: '10px 18px', border: '1px solid #e9ecef' }}>{formattedDate}</td>
                                         <td style={{ padding: '10px 18px', border: '1px solid #e9ecef' }}>{e.description}</td>
                                         <td style={{ padding: '10px 18px', border: '1px solid #e9ecef' }}>{e.type === 'EXPENSE' ? ` ₹ ${e.amount}` : ''}</td>

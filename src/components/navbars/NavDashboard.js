@@ -9,16 +9,16 @@ const OrdinaryNav = ({ sidebar, toggle }) => {
         <div className="h-14 d-bg dp items-center relative">
             <div className='h-full w-60 flex items-center justify-between p-2.5'>
                 <img src={Logo} className="pl-7 max-h-11" alt="eSkooly-Logo" />
-                <RxHamburgerMenu color="white" fontSize="30px" className='cursor-pointer' onClick={() => toggle(!sidebar)} />
+                <RxHamburgerMenu color="#000000" fontSize="20px" className='cursor-pointer' onClick={() => toggle(!sidebar)} />
             </div>
             <div>
                 <ul className='flex items-center'>
                     <li></li>
                     <li className='p-2'>
-                        <CiSearch color='white' fontSize="30px" />
+                        <CiSearch color='#000000' fontSize="20px" />
                     </li>
                     <li className='p-1'>
-                        <TfiFullscreen color='white' fontSize="30px" />
+                        <TfiFullscreen color='#000000' fontSize="20px" />
                     </li>
                 </ul>
                 <ul>

@@ -28,13 +28,15 @@ class AllStudents extends Component {
                     'Content-Type': 'application/json',
                 },
             });
-            const responseData = await response.json();
-            this.setState({ studentsInfo: responseData });
-            localStorage.setItem('studentsInfo', JSON.stringify(responseData));
             if (!response.ok) {
                 console.log('Bad Response for sign in, The Response', response);
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
+            const responseData = await response.json();
+            this.setState({ studentsInfo: responseData });
+            localStorage.setItem('studentsInfo', JSON.stringify(responseData));
+            console.log('get req success')
+            console.log(responseData)
         } catch (error) {
             console.error('Info Error:', error);
         }

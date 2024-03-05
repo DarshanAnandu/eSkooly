@@ -15,11 +15,15 @@ const SideNavDashboard = ({ selectedTab, selectedSubTab, onTabChange }) => {
   //   setExpandedDropdown((prev) => (prev === idx ? null : idx));
   // };
 
-  const handleItemClick = (idx, dropdown) => {
+  const handleItemClick = (idx, dropdown, idsx) => {
     if (dropdown) {
-      setExpandedDropdown((prev) => (prev === idx ? null : idx)); // Toggle dropdown only if it's the same item
+      setExpandedDropdown((prev) => (prev === idx ? null : idx));
+      localStorage.setItem('tabIndex', idx)
+      localStorage.setItem('subTabIndex', idsx)
     } else {
       onTabChange(idx, null);
+      localStorage.setItem('tabIndex', idx)
+      localStorage.setItem('subTabIndex', null)
     }
   };
   // sideNav-shadow
@@ -38,9 +42,9 @@ const SideNavDashboard = ({ selectedTab, selectedSubTab, onTabChange }) => {
             <Link
               to={items.goto}
               className='flex items-center justify-between pr-3 w-full'
-              onClick={() => handleItemClick(items.idx, items.dropdown)}
+              onClick={() => handleItemClick(items.idx, items.dropdown, null)}
             >
-              <div className={`flex items-center px-5 py-1.5  ${ selectedTab === items.idx ? 'border-l-4 border-indigo-500' : ''}`}>
+              <div className={`flex items-center px-5 py-1.5  ${selectedTab === items.idx ? 'border-l-4 border-indigo-500' : ''}`}>
                 <span className='p-1 pt-2 mr-0 inline-block items-center h-8 w-8 rounded'>{hoveredIdx === items.idx ? items.hovered_Icon : items.normal_Icon}</span>
                 <span className='text-sm'>{items.name}</span>
               </div>
@@ -56,12 +60,12 @@ const SideNavDashboard = ({ selectedTab, selectedSubTab, onTabChange }) => {
               )}
             </Link>
             {items.dropdown && expandedDropdown === items.idx && (
-              <ul className='relative opacity-100 visible' style={{ transform: 'rotateX(0deg)', transition: 'transform 0.5s, opacity 0.5s, -webkit-transform 0.5s', WebkitTransformStyle: 'preserve-3d'}}>
+              <ul className='relative opacity-100 visible' style={{ transform: 'rotateX(0deg)', transition: 'transform 0.5s, opacity 0.5s, -webkit-transform 0.5s', WebkitTransformStyle: 'preserve-3d' }}>
                 {items.subItems.map((item) => (
                   <Link
                     to={item.goto}
                     className='flex items-center justify-between w-full px-5'
-                    onClick={() => onTabChange(items.idx, item.idx)}
+                    onClick={() => onTabChange(items.idx, items.dropdown, item.idx)}
                   >
                     <li
                       key={item.idx}
@@ -70,7 +74,7 @@ const SideNavDashboard = ({ selectedTab, selectedSubTab, onTabChange }) => {
                       onMouseLeave={() => setHoveredSubIdx(null)}
                       style={{ borderLeftWidth: (selectedSubTab === item.idx || hoveredSubIdx === item.idx) ? '3px' : '1px', color: hoveredSubIdx === item.idx ? '#5e81f4' : '#666', opacity: item.Lock ? '0.6' : '' }}
                     >
-                      
+
                       <div className='flex items-center'>
                         <span className='text-sm'>{item.name}</span>
                       </div>

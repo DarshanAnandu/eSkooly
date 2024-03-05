@@ -46,54 +46,37 @@ class InstituteProfile extends Component {
     };
 
     getInstituteInfo = async (event) => {
-        if (!localStorage.getItem('targetLine') ||
-            !localStorage.getItem('website') ||
-            !localStorage.getItem('instituteType') ||
-            !localStorage.getItem('_id') ||
-            !localStorage.getItem('institutionID') ||
-            !localStorage.getItem('name') ||
-            !localStorage.getItem('board') ||
-            !localStorage.getItem('country') ||
-            !localStorage.getItem('currency') ||
-            !localStorage.getItem('address') ||
-            !localStorage.getItem('academicSession') ||
-            !localStorage.getItem('profilePicture') ||
-            !localStorage.getItem('email') ||
-            !localStorage.getItem('mobile') ||
-            !localStorage.getItem('adminID') ||
-            !localStorage.getItem('__v')) {
-            try {
-                const response = await fetch(`http://vidyalay.saanvigs.com/institute/instituteid?institutionID=HCJ34e21`, {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                });
-                const responseData = await response.json();
-                console.log(responseData)
-                localStorage.setItem('targetLine', responseData.targetLine);
-                localStorage.setItem('website', responseData.website);
-                localStorage.setItem('instituteType', responseData.instituteType);
-                localStorage.setItem('_id', responseData._id);
-                localStorage.setItem('institutionID', responseData.institutionID);
-                localStorage.setItem('name', responseData.name);
-                localStorage.setItem('board', responseData.board);
-                localStorage.setItem('country', responseData.country);
-                localStorage.setItem('currency', responseData.currency);
-                localStorage.setItem('address', responseData.address);
-                localStorage.setItem('academicSession', responseData.academicSession);
-                localStorage.setItem('profilePicture', responseData.profilePicture);
-                localStorage.setItem('email', responseData.email);
-                localStorage.setItem('mobile', responseData.mobile);
-                localStorage.setItem('adminID', responseData.adminID);
-                localStorage.setItem('__v', responseData.__v);
-                if (!response.ok) {
-                    console.log('Bad Response for sign in, The Response', response);
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-            } catch (error) {
-                console.error('Info Error:', error);
+        try {
+            const response = await fetch(`http://vidyalay.saanvigs.com/institute/instituteid?institutionID=HCJ34e21`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+            const responseData = await response.json();
+            console.log(responseData)
+            localStorage.setItem('targetLine', responseData.targetLine);
+            localStorage.setItem('website', responseData.website);
+            localStorage.setItem('instituteType', responseData.instituteType);
+            localStorage.setItem('_id', responseData._id);
+            localStorage.setItem('institutionID', responseData.institutionID);
+            localStorage.setItem('name', responseData.name);
+            localStorage.setItem('board', responseData.board);
+            localStorage.setItem('country', responseData.country);
+            localStorage.setItem('currency', responseData.currency);
+            localStorage.setItem('address', responseData.address);
+            localStorage.setItem('academicSession', responseData.academicSession);
+            localStorage.setItem('profilePicture', responseData.profilePicture);
+            localStorage.setItem('email', responseData.email);
+            localStorage.setItem('mobile', responseData.mobile);
+            localStorage.setItem('adminID', responseData.adminID);
+            localStorage.setItem('__v', responseData.__v);
+            if (!response.ok) {
+                console.log('Bad Response for sign in, The Response', response);
+                throw new Error(`HTTP error! Status: ${response.status}`);
             }
+        } catch (error) {
+            console.error('Info Error:', error);
         }
     };
     getUpdatedInstituteInfo = async (event) => {

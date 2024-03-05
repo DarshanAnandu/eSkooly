@@ -49,6 +49,7 @@ class ChartOfAccount extends Component {
     };
     async setAccountInfo() {
         try {
+            console.log(localStorage.getItem('institutionId'), this.state.headName, this.state.type)
             const response = await fetch(`http://vidyalay.saanvigs.com/chartofaccounts/createchartofaccount`, {
                 method: 'POST',
                 headers: {
@@ -59,7 +60,34 @@ class ChartOfAccount extends Component {
                     type: this.state.type
                 }),
             });
-            // const responseData = await response.json();
+            const responseData = await response.json();
+            console.log(responseData)
+            // this.setState({ accountsInfo: responseData });
+            // localStorage.setItem('accountsInfo', JSON.stringify(responseData));
+            if (!response.ok) {
+                console.log('Bad Response for sign in, The Response', response);
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            this.getAccountsInfo();
+        } catch (error) {
+            console.error('Info Error:', error);
+        }
+    };
+    async removeAccountInfo() {
+        try {
+            console.log(localStorage.getItem('institutionId'), this.state.headName, this.state.type)
+            const response = await fetch(`http://vidyalay.saanvigs.com/chartofaccounts/createchartofaccount`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                }, body: JSON.stringify({
+                    institutionId: localStorage.getItem('institutionId'),
+                    headName: this.state.headName,
+                    type: this.state.type
+                }),
+            });
+            const responseData = await response.json();
+            console.log(responseData)
             // this.setState({ accountsInfo: responseData });
             // localStorage.setItem('accountsInfo', JSON.stringify(responseData));
             if (!response.ok) {

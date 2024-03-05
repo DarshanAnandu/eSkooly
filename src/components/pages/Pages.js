@@ -33,6 +33,7 @@ import CollectFee from './InsidePages/Fees/CollectFee'
 import FeeSlip from './InsidePages/Fees/FeeSlip'
 import FeeDefaulters from './InsidePages/Fees/FeeDefaulters'
 import PaySalary from './InsidePages/Salary/PaySalary'
+import InsidePaySalary from './InsidePages/Salary/InsidePaySalary'
 import SalarySlip from './InsidePages/Salary/SalarySlip'
 import MarkStudentsAttendance from './InsidePages/Attendance/MarkStudentsAttendance'
 import MarkEmployeesAttendance from './InsidePages/Attendance/MarkEmployeesAttendance'
@@ -55,6 +56,10 @@ import ParentsInfoReport from './InsidePages/Reports/ParentsInfoReport'
 import LeaveCertificate from './InsidePages/Certificates/LeaveCertificate'
 import CharacterCertificate from './InsidePages/Certificates/CharacterCertificate'
 import { useState, useEffect } from 'react';
+import { InnerSalarySlip } from './InsidePages/Salary/InnerSalarySlip'
+import UpdateClass from './InsidePages/Classes/UpdateClass'
+import InnerAdmissionLetter from './InsidePages/Students/InnerAdmissionLetter'
+import InnerJobLetter from './InsidePages/Employees/InnerJobLetter'
 
 // import SideNavItems from "./SideNavItems";
 
@@ -114,8 +119,8 @@ import { useState, useEffect } from 'react';
 
 
 const Pages = () => {
-  const [selectedTab, setSelectedTab] = useState(0);
-  const [selectedSubTab, setSelectedSubTab] = useState(null);
+  const [selectedTab, setSelectedTab] = useState(localStorage.getItem('tabIndex') || null);
+  const [selectedSubTab, setSelectedSubTab] = useState(localStorage.getItem('subTabIndex') || null);
   const [sideBar, setSideBar] = useState(true);
   const toggleSideBar = () => {
     setSideBar(!sideBar);
@@ -183,11 +188,13 @@ const Pages = () => {
             <Route path='/eSkooly/pages/Classes/All-Classes' element={<AllClasses />} />
             <Route path='/eSkooly/pages/Classes/New-Class' element={<NewClasses />} />
             <Route path='/eSkooly/pages/Classes/Edit-Or-Delete' element={<EditORDelete />} />
+            <Route path='/eSkooly/pages/Classes/Edit' element={<UpdateClass />} />
             <Route path='/eSkooly/pages/Subjects/Classes-With-Subjects' element={<ClassesWithSubjects />} />
             <Route path='/eSkooly/pages/Subjects/Assign-Subjects' element={<AssignSubjects />} />
             <Route path='/eSkooly/pages/Students/All-Students' element={<AllStudents />} />
             <Route path='/eSkooly/pages/Students/Add-Students' element={<AddStudents />} />
             <Route path='/eSkooly/pages/Students/Admission-Letter' element={<AdmissionLetter />} />
+            <Route path='/eSkooly/pages/Students/Admission-Letter/Inner-Admission-Letter' element={<InnerAdmissionLetter />} />
             <Route path='/eSkooly/pages/Students/Student-ID-Cards' element={<IDCard />} />
             <Route path='/eSkooly/pages/Students/Print-Basic-Lists' element={<PrintBasicList />} />
             <Route path='/eSkooly/pages/Students/Promote-Students' element={<PromoteStudents />} />
@@ -195,6 +202,7 @@ const Pages = () => {
             <Route path='/eSkooly/pages/Employees/Add-Employee' element={<AddEmployee />} />
             {/* <Route path='/eSkooly/pages/Employees/Staff-ID-Card' element={<AllEmployees />} /> */}
             <Route path='/eSkooly/pages/Employees/Job-Letter' element={<JobLetter />} />
+            <Route path='/eSkooly/pages/Employees/Job-Letter/Inner-Job-Letter' element={<InnerJobLetter />} />
             <Route path='/eSkooly/pages/Accounts/Chart-Of-Account' element={<ChartOfAccount />} />
             <Route path='/eSkooly/pages/Accounts/Add-Income' element={<AddIncome />} />
             <Route path='/eSkooly/pages/Accounts/Add-Expense' element={<AddExpense />} />
@@ -204,7 +212,9 @@ const Pages = () => {
             <Route path='/eSkooly/pages/Fees/Fee-Slip' element={<FeeSlip />} />
             <Route path='/eSkooly/pages/Fees/Fee-Defaulters' element={<FeeDefaulters />} />
             <Route path='/eSkooly/pages/Salary/Pay-Salary' element={<PaySalary />} />
+            <Route path='/eSkooly/pages/Salary/Pay-Salary/Inside-Pay-Salary' element={<InsidePaySalary />} />
             <Route path='/eSkooly/pages/Salary/Salary-Slip' element={<SalarySlip />} />
+            <Route path='/eSkooly/pages/Salary/Salary-Slip/Inner-Salary-Slip' element={<InnerSalarySlip />} />
             <Route path='/eSkooly/pages/Attendance/Mark-Student-Attendance' element={<MarkStudentsAttendance />} />
             <Route path='/eSkooly/pages/Attendance/Mark-Employee-Attendance' element={<MarkEmployeesAttendance />} />
             <Route path='/eSkooly/pages/Attendance/Class-Wise-Report' element={<ClassWiseReport />} />
@@ -243,4 +253,3 @@ const Pages = () => {
 }
 
 export default Pages;
-export { Dashboard };

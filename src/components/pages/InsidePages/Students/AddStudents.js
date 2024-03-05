@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TfiReload } from "react-icons/tfi";
 import { TiHomeOutline } from "react-icons/ti";
 import { IoMdCheckmark } from "react-icons/io";
@@ -45,6 +45,13 @@ const AddStudents = () => {
         motherIncome: ''
     };
     const [formData, setFormData] = useState(initialFormData);
+    const [classData, setClassData] = useState([]);
+    useEffect(() => {
+        const localStorageData = JSON.parse(localStorage.getItem('Classes'));
+        if (localStorageData) {
+            setClassData(localStorageData);
+        }
+    }, []);
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -57,7 +64,7 @@ const AddStudents = () => {
         setFormData(initialFormData);
     };
 
-    const Create = async (event) => {
+    const handleCreate = async (event) => {
         try {
             const response = await fetch('http://vidyalay.saanvigs.com/student/create', {
                 method: 'POST',
@@ -66,7 +73,7 @@ const AddStudents = () => {
                 },
                 body: JSON.stringify({
                     name: formData.studentName,
-                    institutionId: localStorage.getItem('institutionID'),
+                    institutionId: localStorage.getItem('institutionId'),
                     picture: formData.fileToUpload,
                     registrationNumber: formData.registrationNo,
                     admissionDate: formData.admissionDate,
@@ -106,8 +113,24 @@ const AddStudents = () => {
                 console.log('Bad Response for sign in, The Response', response);
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
+            console.log('post success')
         } catch (error) {
             console.error('Login Error:', error);
+        }
+    };
+    const Create = () => {
+        console.log(formData.studentName,formData.registrationNo,formData.admissionDate,formData.selectedClass,formData.discountInFee)
+        if (
+            formData.studentName.trim() !== '' &&
+            formData.registrationNo.trim() !== '' &&
+            formData.admissionDate.trim() !== '' &&
+            formData.selectedClass.trim() !== '' &&
+            formData.discountInFee.trim() !== ''
+        ) {
+            console.log('entered if')
+            handleCreate();
+        } else {
+            console.log('All fields are required.');
         }
     };
     return (
@@ -135,8 +158,9 @@ const AddStudents = () => {
                         <label className='flex flex-col mb-3' style={{ marginTop: '-10px' }}>Admission Date: <input type='date' className='p-2 bod-in focus:outline-blue-500' name="admissionDate" value={formData.admissionDate} onChange={handleInputChange} required /></label>
                     </div>
                     <div className='wid-stu-adding mx-2 flex flex-col'>
-                        <select className='p-2 mb-2 bod-in' required>
+                        <select className='p-2 mb-2 bod-in' name='selectedClass' value={formData.selectedClass} onChange={handleInputChange} required>
                             <option>select class</option>
+                            {classData.map((e) => <option key={e.classId} value={e.className}>{e.className}</option>)}
                         </select>
                         <input type='number' name='discountInFee' value={formData.discountInFee} onChange={handleInputChange} placeholder='Discount In Fee in %' className='p-2 bod-in' required />
                         <font className='mt-2' style={{ fontSize: '9px', color: '#999' }}>Student / Guardian mobile no to receive SMS / WhatsApp</font>

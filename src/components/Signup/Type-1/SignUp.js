@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import './SignUp.css';
 
 const SignUp = () => {
@@ -13,7 +12,7 @@ const SignUp = () => {
     const [passwordsMatch, setPasswordsMatch] = useState(true);
     const [mobileNo, setMobileNo] = useState('');
     const [validMobileNo, setValidMobileNo] = useState(true);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
 
     const handleMobileNoChange = (event) => {
@@ -88,46 +87,46 @@ const SignUp = () => {
     const handleLogin = async (event) => {
         event.preventDefault();
         try {
-          const response = await fetch(
-            "http://vidyalay.saanvigs.com/auth/institutelogin",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                email: email_LI,
-                password: password_LI,
-              }),
+            const response = await fetch(
+                "http://vidyalay.saanvigs.com/auth/institutelogin",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        email: email_LI,
+                        password: password_LI,
+                    }),
+                }
+            );
+
+            console.log(response);
+
+            if (!response.ok) {
+                const errorText = await response.text(); // Get error details from response body
+                console.error("Bad Response for sign in:", errorText);
+                throw new Error(`HTTP error! Status: ${response.status}`);
             }
-          );
-     
-          console.log(response);
-     
-          if (!response.ok) {
-            const errorText = await response.text(); // Get error details from response body
-            console.error("Bad Response for sign in:", errorText);
-            throw new Error(`HTTP error! Status: ${response.status}`);
-          }
-     
-          const responseData = await response.json();
-          console.log(responseData);
-     
-          localStorage.setItem("loggedIn", "true");
-          localStorage.setItem("adminId", responseData.adminId);
-          localStorage.setItem("institutionId", responseData.institutionId);
-          localStorage.setItem("token", responseData.accessToken);
-          localStorage.setItem("refreshToken", responseData.refreshToken);
-     
-          console.log("Login successful");
-          //   localStorage.setItem("institutionID", );
-          //   //   await handleGetInstituteInfo();
-          window.location.reload();
-          //   <Navigate to="/eSkooly/pages" />;
+
+            const responseData = await response.json();
+            console.log(responseData);
+
+            localStorage.setItem("loggedIn", "true");
+            localStorage.setItem("adminId", responseData.adminId);
+            localStorage.setItem("institutionId", responseData.institutionId);
+            localStorage.setItem("token", responseData.accessToken);
+            localStorage.setItem("refreshToken", responseData.refreshToken);
+
+            console.log("Login successful");
+            //   localStorage.setItem("institutionID", );
+            //   //   await handleGetInstituteInfo();
+            window.location.reload();
+            //   <Navigate to="/eSkooly/pages" />;
         } catch (error) {
-          console.error("Login Error:", error);
+            console.error("Login Error:", error);
         }
-      };
+    };
 
     return (
         <div className='wrapper-body'>
@@ -165,6 +164,14 @@ const SignUp = () => {
                                 </div>
                                 <div className="signup-link flex justify-center">
                                     Not a member? <div className='text-blue-600 cursor-pointer' onClick={() => handleToggleForm()}>Signup now</div>
+                                </div>
+                                <div className="field btn">
+                                    {/* <div /> */}
+                                    <button className="btn-layer text-[#fff] font-semibold text-[20px]" onClick={() => {
+                                        localStorage.setItem('loggedIn', true);
+                                        localStorage.setItem('institutionId', "KTPS3421");
+                                        window.location.reload();
+                                    }}>Sign in as Guest {`> > >`}</button>
                                 </div>
                             </form>
                         ) : (
