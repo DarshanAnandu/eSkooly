@@ -1,7 +1,7 @@
 import { CiSearch } from "react-icons/ci";
 const ParentsInfoReport = () => {
     return (
-        <div className='p-9'>
+        <div className='p-9 overflow-x-auto max-w-full'>
             <div className='flex w-1/4 items-center'><select className='focus:outline-none p-3 ml-4 w-11/12' style={{ background: 'none', border: 'none', borderBottom: '1px solid gray', padding: '9px 10px 8px 10px' }}><option>--select class--</option></select> <CiSearch size='25px' /></div>
             <div className='flex items-center justify-between text-black mt-6'>
                 <div className='flex items-center'>
@@ -16,7 +16,7 @@ const ParentsInfoReport = () => {
                     <label className='mb-1'>Search: <input type='search' className='focus:outline-none p-2' style={{ borderRadius: '3px', border: '1px solid #aaa', backgroundColor: 'transparent', marginLeft: '0.5em', fontSize: '14px', }} /></label>
                 </div>
             </div>
-            <table className='text-black bg-white w-full'>
+            <table className='text-black bg-white w-full overflow-x-auto max-w-full'>
                 <thead>
                     <tr className='h-0 ' style={{ background: 'linear-gradient(45deg, #ff808b, #f79099)' }}>
                         <th className='py-0 border-y-0 h-0' style={{ borderRight: '1px solid white', }}><div className='overflow-hidden'>Sr</div></th>

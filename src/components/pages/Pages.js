@@ -60,6 +60,8 @@ import { InnerSalarySlip } from './InsidePages/Salary/InnerSalarySlip'
 import UpdateClass from './InsidePages/Classes/UpdateClass'
 import InnerAdmissionLetter from './InsidePages/Students/InnerAdmissionLetter'
 import InnerJobLetter from './InsidePages/Employees/InnerJobLetter'
+import InnerEmployeesAttendance from './InsidePages/Attendance/InnerEmployeesAttendance'
+import InnerStudentsAttendance from './InsidePages/Attendance/InnerStudentsAttendance'
 
 // import SideNavItems from "./SideNavItems";
 
@@ -164,7 +166,7 @@ const Pages = () => {
         {/* <GeneralSettings /> */}
         {/* <Classes /> */}
         {/* <Subjects /> */}
-        <div className='flex flex-col flex-grow w-full bg-white'>
+        <div className='flex flex-col flex-grow w-full bg-[#f3f3f3]'>
           {/* <Students /> */}
           {/* <Switch>
             <Route path="/general-settings/institute-profile" component={GeneralSettings.InstitureProfile} />
@@ -216,7 +218,9 @@ const Pages = () => {
             <Route path='/eSkooly/pages/Salary/Salary-Slip' element={<SalarySlip />} />
             <Route path='/eSkooly/pages/Salary/Salary-Slip/Inner-Salary-Slip' element={<InnerSalarySlip />} />
             <Route path='/eSkooly/pages/Attendance/Mark-Student-Attendance' element={<MarkStudentsAttendance />} />
+            <Route path='/eSkooly/pages/Attendance/Mark-Student-Attendance/Inner-Student-Attendance' element={<InnerStudentsAttendance />} />
             <Route path='/eSkooly/pages/Attendance/Mark-Employee-Attendance' element={<MarkEmployeesAttendance />} />
+            <Route path='/eSkooly/pages/Attendance/Mark-Employee-Attendance/Inner-Employee-Attendandce' element={<InnerEmployeesAttendance />} />
             <Route path='/eSkooly/pages/Attendance/Class-Wise-Report' element={<ClassWiseReport />} />
             <Route path='/eSkooly/pages/Attendance/Student-Attendance-Report' element={<StudentsAttendenceReport />} />
             <Route path='/eSkooly/pages/Attendance/Employee-Attendance-Report' element={<EmployeeAttendenceReport />} />

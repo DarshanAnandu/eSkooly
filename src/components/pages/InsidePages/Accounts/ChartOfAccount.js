@@ -103,10 +103,10 @@ class ChartOfAccount extends Component {
         const { entriesPerPage, searchQuery, currentPage, accountsInfo } = this.state;
 
         // Filter accounts based on search query
-        const filteredAccounts = accountsInfo.filter(account =>
+        const filteredAccounts = Array.isArray(accountsInfo) ? accountsInfo.filter(account =>
             (account.name && account.name.toLowerCase().includes(searchQuery.toLowerCase())) ||
             (account.type && account.type.toLowerCase().includes(searchQuery.toLowerCase()))
-        );        
+        ) : [];
 
         // Pagination logic
         const indexOfLastEntry = currentPage * entriesPerPage;

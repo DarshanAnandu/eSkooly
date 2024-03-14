@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { IoMdCheckmark } from "react-icons/io";
 
 const NewClasses = () => {
@@ -6,25 +6,29 @@ const NewClasses = () => {
     const [tutionFee, setTutionFees] = useState('');
     const [classTeacher, setClassTeacher] = useState('');
     const [classes, setClasses] = useState(JSON.parse(localStorage.getItem('Classes')) || []);
-    // const getClassesInfo = async (event) => {
-    //     try {
-    //         const response = await fetch(`http://vidyalay.saanvigs.com/class/getclasses?institutionId=${localStorage.getItem('institutionId')}`, {
-    //             method: 'GET',
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //             },
-    //         });
-    //         const responseData = await response.json();
-    //         setClasses(JSON.parse(responseData));
-    //         localStorage.setItem('Classes', JSON.stringify(responseData));
-    //         if (!response.ok) {
-    //             console.log('Bad Response for sign in, The Response', response);
-    //             throw new Error(`HTTP error! Status: ${response.status}`);
-    //         }
-    //     } catch (error) {
-    //         console.error('Info Error:', error);
-    //     }
-    // };
+    const getClassesInfo = async (event) => {
+        try {
+            const response = await fetch(`http://vidyalay.saanvigs.com/class/getclasses?institutionId=${localStorage.getItem('institutionId')}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+            const responseData = await response.json();
+            setClasses(JSON.parse(responseData));
+            localStorage.setItem('Classes', JSON.stringify(responseData));
+            console.log(responseData, 'responseData', JSON.stringify(responseData));
+            if (!response.ok) {
+                console.log('Bad Response for sign in, The Response', response);
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+        } catch (error) {
+            console.error('Info Error:', error);
+        }
+    };
+    useEffect(() => {
+        getClassesInfo();
+    }, [])
     const Create = async (event) => {
         try {
             console.log('entered inside create req')

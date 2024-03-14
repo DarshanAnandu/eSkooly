@@ -3,7 +3,7 @@ import { FaPencilAlt } from "react-icons/fa";
 const ClassesWithSubjects = () => {
     return (
         <div className='p-9 flex'>
-            <div className='hover:shadow-2xl shadow rounded-2xl flex flex-col px-8 w-1/2'>
+            <div className='hover:shadow-2xl bg-white shadow rounded-2xl flex flex-col px-8 w-1/2'>
                 <div className='flex justify-between' style={{ padding: '25px 15px' }}>
                     <span style={{ color: '#5e81f4' }}>10</span>
                     <span className='p-2' style={{ background: 'linear-gradient(45deg, #ff808b, #f79099)' }}><FaPencilAlt color='white' /></span>

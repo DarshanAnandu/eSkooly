@@ -17,10 +17,10 @@ class AllEmployees extends Component {
         };
     }
     componentDidMount() {
-        this.getClassesInfo();
+        this.getEmpInfo();
     }
 
-    async getClassesInfo() {
+    async getEmpInfo() {
         try {
             const response = await fetch(`http://vidyalay.saanvigs.com/employee/getemployees?institutionId=${localStorage.getItem('institutionId')}`, {
                 method: 'GET',

@@ -1,7 +1,7 @@
 import { CiSearch } from "react-icons/ci";
 const StudentInfoReport = () => {
     return (
-        <div className='p-9'>
+        <div className='p-9 overflow-x-auto max-w-full'>
             <div className='flex w-1/4 items-center'><select className='focus:outline-none p-3 ml-4 w-11/12' style={{ background: 'none', border: 'none', borderBottom: '1px solid gray', padding: '9px 10px 8px 10px' }}><option>--select class--</option></select> <CiSearch size='25px' /></div>
             <div className='flex items-center justify-between text-black mt-6'>
                 <div className='flex items-center'>

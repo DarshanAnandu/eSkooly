@@ -28,7 +28,7 @@ const SideNavDashboard = ({ selectedTab, selectedSubTab, onTabChange }) => {
   };
   // sideNav-shadow
   return (
-    <div className='z-50 shadow-2xl overflow-auto sid-nav' style={{ width: '235px', float: 'left', height: 'calc(100% - 50px)', backgroundColor: '#fff' }}>
+    <div className=' shadow-2xl overflow-auto sid-nav' style={{ width: '235px', float: 'left', height: 'calc(100% - 50px)', backgroundColor: '#fff' }}>
       <ul>
         <li className='px-2.5 py-1.5'><span></span>menu</li>
         {SideNavItems.map((items) => (

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './SignUp.css';
 
-const SignUp = () => {
-    const [isLoginForm, setIsLoginForm] = useState(true);
+const SignUp = ({ loginType }) => {
+    const [isLoginForm, setIsLoginForm] = useState(loginType);
     const [email, setEmail] = useState('');
     const [email_LI, setEmail_LI] = useState('');
     const [password_LI, setPassword_LI] = useState('');
@@ -129,7 +129,7 @@ const SignUp = () => {
     };
 
     return (
-        <div className='wrapper-body'>
+        <div className='wrapper-body h-full w-full'>
             <div className="wrapper">
                 <div className="title-text">
                     <div className={`title ${isLoginForm ? 'login' : 'signup'}`}>{isLoginForm ? 'Login Form' : 'Signup Form'}</div>
@@ -169,7 +169,7 @@ const SignUp = () => {
                                     {/* <div /> */}
                                     <button className="btn-layer text-[#fff] font-semibold text-[20px]" onClick={() => {
                                         localStorage.setItem('loggedIn', true);
-                                        localStorage.setItem('institutionId', "KTPS3421");
+                                        localStorage.setItem('institutionId', "jingle122");
                                         window.location.reload();
                                     }}>Sign in as Guest {`> > >`}</button>
                                 </div>

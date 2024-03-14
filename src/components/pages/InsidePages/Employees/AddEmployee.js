@@ -46,6 +46,7 @@ const AddEmployee = () => {
                 body: JSON.stringify({
                     name: formData.employeeName,
                     institutionId: localStorage.getItem('institutionId'),
+                    employeeId: formData.registrationNo,
                     picture: formData.fileToUpload,
                     mobileNumber: 0,
                     joiningDate: formData.joiningDate,

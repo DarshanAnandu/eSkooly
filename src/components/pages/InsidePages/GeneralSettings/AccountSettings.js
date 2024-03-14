@@ -13,17 +13,17 @@ const AccountSettings = () => {
                     <div class="relative flex items-center my-3 mt-5">
                         <label class="text-[13px] text-white absolute px-2 top-[-10px] left-[18px] font-semibold" style={{ background: 'linear-gradient(87deg, #5e72e4 0, #825ee4 100%)', borderRadius: '30px', border: '1px solid #999' }}>Username*</label>
                         <input type="text" placeholder="New Email ?"
-                            class="px-5 bod-sin py-3.5 bg-transparent text-black w-full text-sm border-2 rounded outline-none" style={{ borderRadius: '30px' }} />
+                            class="px-5 bod-sin py-3.5 bg-[#fff] text-black w-full text-sm border-2 rounded outline-none" style={{ borderRadius: '30px' }} />
                     </div>
                     <div class="relative flex items-center my-3 mt-5">
                         <label class="text-[13px] text-white absolute px-2 top-[-10px] left-[18px] font-semibold" style={{ background: 'linear-gradient(87deg, #5e72e4 0, #825ee4 100%)', borderRadius: '30px', border: '1px solid #999' }}>Password*</label>
                         <input type="text" placeholder="******"
-                            class="px-5 bod-sin py-3.5 bg-transparent text-black w-full text-sm border-2 rounded outline-none" style={{ borderRadius: '30px' }} />
+                            class="px-5 bod-sin py-3.5 bg-[#fff] text-black w-full text-sm border-2 rounded outline-none" style={{ borderRadius: '30px' }} />
                     </div>
                     <div class="relative flex items-center my-3 mt-5">
                         <label class="text-[13px] text-white absolute px-2 top-[-10px] left-[18px] font-semibold" style={{ background: 'linear-gradient(87deg, #5e72e4 0, #825ee4 100%)', borderRadius: '30px', border: '1px solid #999' }}>TimeZone*</label>
                         <select name="timezone" id='searchlist'
-                            class="px-5 bod-sin py-3.5 bg-transparent text-black w-full text-sm border-2 rounded outline-none" style={{ borderRadius: '30px', }}>
+                            class="px-5 bod-sin py-3.5 bg-[#fff] text-black w-full text-sm border-2 rounded outline-none" style={{ borderRadius: '30px', }}>
                             <option value="Asia/Karachi" selected>Asia/Karachi</option>
                             <option value="Asia/kabul">Asia/kabul</option>
                             <option value="Asia/India">Asia/India</option>
@@ -33,7 +33,7 @@ const AccountSettings = () => {
                         <div class="relative flex items-center my-3 mt-5 w-1/2">
                             <label class="text-[13px] text-white absolute px-2 top-[-10px] left-[18px] font-semibold" style={{ background: 'linear-gradient(87deg, #5e72e4 0, #825ee4 100%)', borderRadius: '30px', border: '1px solid #999' }}>Currency*</label>
                             <select name="timezone" id='searchlist'
-                                class="px-5 bod-sin py-3.5 bg-transparent text-black w-full text-sm border-2 rounded outline-none" style={{ borderRadius: '30px', }}>
+                                class="px-5 bod-sin py-3.5 bg-[#fff] text-black w-full text-sm border-2 rounded outline-none" style={{ borderRadius: '30px', }}>
                                 <option value="Dollar (USD)" selected>Dollar (USD)</option>
                                 <option value="Dollar (TTD)">Dollar (TTD)</option>
                                 <option value="Dollar (TVD)">Dollar (TVD)</option>
@@ -42,7 +42,7 @@ const AccountSettings = () => {
                         <div class="relative flex items-center my-3 mt-5 ml-3 w-1/2">
                             <label class="text-[13px] text-white absolute px-2 top-[-10px] left-[18px] font-semibold" style={{ background: 'linear-gradient(87deg, #5e72e4 0, #825ee4 100%)', borderRadius: '30px', border: '1px solid #999' }}>Symbol*</label>
                             <input type="text" placeholder="Currency Symbol"
-                                class="px-5 bod-sin py-3.5 bg-transparent text-black w-full text-sm border-2 rounded outline-none" style={{ borderRadius: '30px' }} />
+                                class="px-5 bod-sin py-3.5 bg-[#fff] text-black w-full text-sm border-2 rounded outline-none" style={{ borderRadius: '30px' }} />
                         </div>
                     </div>
                     <div className='flex justify-center'><button className='flex items-center mt-2 p-2 px-5 text-white' style={{ background: 'linear-gradient(87deg, #11cdef 0, #1171ef 100%)', borderRadius: '20px' }}><TfiReload color='white' /> <span className='pl-2'>Update Settings</span></button></div>

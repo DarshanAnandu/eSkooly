@@ -4,11 +4,13 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import SignUp from './components/Signup/Type-1/SignUp';
 import React, { useEffect, useState } from 'react';
 import Pages from './components/pages/Pages'
+import DivertPages from './components/pages/DivertPages';
 
 function App() {
   const [isLoggedIn, setLoggedIn] = useState(
     localStorage.getItem('loggedIn') === 'true'
   );
+  console.log(process.env.kkk, 'env')
   useEffect(() => {
     const checkLoggedInStatus = () => {
       setLoggedIn(localStorage.getItem('loggedIn') === 'true');
@@ -21,12 +23,12 @@ function App() {
     // return () => clearInterval(intervalId);
   }, [isLoggedIn]);
   return (
-    <div className='overflow-auto w-full'>
+    <div className='overflow-auto w-full flex flex-col'>
       {/* <Home /> */}
-      <div className='w-full'>
+      <div className='w-full flex h-full'>
         {/* <Routes> */}
         {!isLoggedIn && (
-          <div><SignUp /></div>
+          <div className='w-full flex h-full'><DivertPages /></div>
         )}
         {/* {isLoggedIn && ( */}
         {/* <Route path='/eSkooly/pages' element={<Pages />} /> */}
@@ -34,7 +36,7 @@ function App() {
         {/* </Routes> */}
       </div>
       {isLoggedIn && (
-        <div>
+        <div className='flex'>
           <Pages />
         </div>
       )}

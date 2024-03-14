@@ -34,7 +34,7 @@ const MobileNav = ({ sidebar, toggle }) => {
         <div className="h-14 d-bg dp-mb items-center relative">
             <div className='h-full w-full flex items-center justify-between p-2.5'>
                 <img src={Logo} className="pl-7 max-h-11" alt="eSkooly-Logo" />
-                <RxHamburgerMenu color="white" fontSize="30px" className='cursor-pointer mr-7' onClick={() => toggle(!sidebar)} />
+                <RxHamburgerMenu color="#000000" fontSize="30px" className='cursor-pointer mr-7' onClick={() => toggle(!sidebar)} />
             </div>
             {/* <div>
                 <ul className='flex items-center'>

@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
 import { IoMdCheckmark } from "react-icons/io";
+import { useLocation } from 'react-router-dom'
 
 const UpdateClass = () => {
+    const location = useLocation()
+    // const { lc } = location;
+    console.log(location, 'update class id and idx');
     const [updateClass, setUpdateClass] = useState(JSON.parse(localStorage.getItem('updateClass')) || []);
     const [className, setClassName] = useState(updateClass.className);
     const [tutionFee, setTutionFees] = useState(updateClass.tutionFee);

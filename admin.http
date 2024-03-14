@@ -191,7 +191,7 @@ Authorization: Bearer "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDczOTU5
   "bloodGroup": "O+",
   "dateOfBirth": "1990-05-15",
   "experience": 5,
-  "email": "ayushi@example.com", 
+  "email": "ayush@example.com", 
   "address": "123 Main St, City"
 }
 
@@ -382,14 +382,14 @@ POST {{hostname}}/homework/createHomework
 Content-Type: application/json
 
 {
-  "institutionId": "345678",
-  "date": "2024-02-25",
-  "className" : "arjun",
-  "classId": "A001",
-  "teacher": "John Doe",
-  "teacherId": "T001",
-  "subject": "Mathematics",
-  "homework": "Complete exercises 1-3 on page 51."
+  "institutionId": "jingle122",
+  "date": "2024-03-11",
+  "className" : "X",
+  "classId": "JhAfjSIBN",
+  "teacher": "Darshan",
+  "teacherId": "abc007",
+  "subject": "Social",
+  "homework": "Complete exercises 1-3 on page 22."
 }
 
 
